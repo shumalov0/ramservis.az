@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 100% 96%;
+    --foreground: 0 0% 10%;
+    --card: 45 100% 98%;
+    --card-foreground: 0 0% 10%;
+    --popover: 45 100% 98%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 45 89% 64%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 45 30% 90%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 45 30% 92%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 45 89% 64%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 10%;
+    --border: 45 30% 85%;
+    --input: 45 30% 85%;
+    --ring: 45 89% 64%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 45 100% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 45 100% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 45 100% 95%;
+    --primary: 45 89% 64%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 100% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 45 89% 64%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 45 100% 95%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 89% 64%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes slide-in-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-from-top-2 {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.slide-in-from-right {
+  animation: slide-in-from-right 0.3s ease-out;
+}
+
+.slide-in-from-top-2 {
+  animation: slide-in-from-top-2 0.2s ease-out;
+}
+
+.fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+.sari{
+  font-size: 10px;
+  line-height: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: #f5b754;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+
+.bookau{
+
+  font-size: 35px;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 15px;
+  line-height: 1.25em;
+  font-weight: 700;
+}
+
+.imageParent{
+  max-height: 300px;
+  overflow: hidden;
+
+}
+
+.imag{
+  width: 100%;
+  inset: 0px;
+  color: transparent;
+  max-width: 100%;
+  height: auto;
+  min-width: auto;
+  margin: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.info{
+  overflow: visible;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 14px;
+  margin: -9px -1px -1px;
+  padding: 33px 20px;
+  position: relative;
+}
+
+.btn{
+
+  padding: 8px 18px !important;
+  color: var(--bs-neutral-1000) !important;
+  font-size: 14px !important;
+  line-height: 22px !important;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700 !important;
+  background-color: #f2f4f6 ;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0  ;
+}
+
+/* Mobile date input fixes */
+.date-input {
+  position: relative;
+}
+
+/* Fix for mobile date input visibility */
+.date-input::-webkit-datetime-edit {
+  color: transparent;
+}
+
+.date-input::-webkit-datetime-edit-fields-wrapper {
+  color: transparent;
+}
+
+.date-input::-webkit-datetime-edit-text {
+  color: transparent;
+}
+
+.date-input::-webkit-datetime-edit-month-field {
+  color: transparent;
+}
+
+.date-input::-webkit-datetime-edit-day-field {
+  color: transparent;
+}
+
+.date-input::-webkit-datetime-edit-year-field {
+  color: transparent;
+}
+
+.date-input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+}
+
+/* When date is selected, show the value */
+.date-input:not(:placeholder-shown)::-webkit-datetime-edit,
+.date-input:focus::-webkit-datetime-edit {
+  color: #374151;
+}
+
+.date-input:not(:placeholder-shown)::-webkit-datetime-edit-fields-wrapper,
+.date-input:focus::-webkit-datetime-edit-fields-wrapper {
+  color: #374151;
+}
+
+.date-input:not(:placeholder-shown)::-webkit-datetime-edit-text,
+.date-input:focus::-webkit-datetime-edit-text {
+  color: #374151;
+}
+
+.date-input:not(:placeholder-shown)::-webkit-datetime-edit-month-field,
+.date-input:focus::-webkit-datetime-edit-month-field {
+  color: #374151;
+}
+
+.date-input:not(:placeholder-shown)::-webkit-datetime-edit-day-field,
+.date-input:focus::-webkit-datetime-edit-day-field {
+  color: #374151;
+}
+
+.date-input:not(:placeholder-shown)::-webkit-datetime-edit-year-field,
+.date-input:focus::-webkit-datetime-edit-year-field {
+  color: #374151;
+}
+
+/* Dark mode support for date inputs */
+.dark .date-input:not(:placeholder-shown)::-webkit-datetime-edit,
+.dark .date-input:focus::-webkit-datetime-edit {
+  color: #f9fafb;
+}
+
+.dark .date-input:not(:placeholder-shown)::-webkit-datetime-edit-fields-wrapper,
+.dark .date-input:focus::-webkit-datetime-edit-fields-wrapper {
+  color: #f9fafb;
+}
+
+.dark .date-input:not(:placeholder-shown)::-webkit-datetime-edit-text,
+.dark .date-input:focus::-webkit-datetime-edit-text {
+  color: #f9fafb;
+}
+
+.dark .date-input:not(:placeholder-shown)::-webkit-datetime-edit-month-field,
+.dark .date-input:focus::-webkit-datetime-edit-month-field {
+  color: #f9fafb;
+}
+
+.dark .date-input:not(:placeholder-shown)::-webkit-datetime-edit-day-field,
+.dark .date-input:focus::-webkit-datetime-edit-day-field {
+  color: #f9fafb;
+}
+
+.dark .date-input:not(:placeholder-shown)::-webkit-datetime-edit-year-field,
+.dark .date-input:focus::-webkit-datetime-edit-year-field {
+  color: #f9fafb;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+  .date-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .date-input::-webkit-calendar-picker-indicator {
+    right: 12px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+

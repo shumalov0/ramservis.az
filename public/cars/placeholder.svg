@@ -1,0 +1,6 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f3f4f6"/>
+  <circle cx="400" cy="250" r="80" fill="#d5d9df"/>
+  <path d="m360 230 20 20 40-40 20 20v50H360z" fill="#a7b6c2"/>
+  <text x="50%" y="70%" font-family="Arial, sans-serif" font-size="24" fill="#677489" text-anchor="middle">Car Image</text>
+</svg>
