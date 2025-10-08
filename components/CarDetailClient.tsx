@@ -16,12 +16,12 @@ export default function CarDetailClient({ car, currentLang, onShowBookingForm }:
 
   const handleWhatsApp = () => {
     const message = `Salam! ${car.brand} ${car.model} (${car.year}) haqqında məlumat almaq istəyirəm.`;
-    const whatsappUrl = `https://wa.me/+994708559001?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+994707004444?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handlePhoneCall = () => {
-    window.location.href = 'tel:+994708559001';
+    window.location.href = 'tel:+994707004444';
   };
 
   return (

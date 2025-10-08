@@ -226,7 +226,7 @@ Rezervasiyanız uğurla qəbul edildi!
 2. Təsdiq edildikdən sonra ödəniş linki göndərəcəyik
 3. Ödənişdən sonra rezervasiya tam təsdiqlənəcək
 
-📞 Əlaqə: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994501234567'}
+📞 Əlaqə: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994707004444'}
 
 Təşəkkürlər,
 Ram Servis Komandası
@@ -253,7 +253,7 @@ Your booking has been successfully received!
 2. Payment link will be sent after confirmation
 3. Booking will be fully confirmed after payment
 
-📞 Contact: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994501234567'}
+📞 Contact: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994707004444'}
 
 Thank you,
 Ram Servis Team
@@ -280,7 +280,7 @@ Ram Servis Team
 2. Отправим ссылку для оплаты после подтверждения
 3. Бронирование будет полностью подтверждено после оплаты
 
-📞 Контакт: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994501234567'}
+📞 Контакт: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994707004444'}
 
 Спасибо,
 Команда Ram Servis
@@ -316,7 +316,7 @@ ${paymentLink}
 
 ⚠️ Qeyd: Ödəniş linkinin müddəti 24 saatdır.
 
-📞 Suallarınız üçün: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994501234567'}
+📞 Suallarınız üçün: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994707004444'}
 
 Təşəkkürlər,
 Ram Servis Komandası
@@ -338,7 +338,7 @@ ${paymentLink}
 
 ⚠️ Note: Payment link expires in 24 hours.
 
-📞 For questions: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994501234567'}
+📞 For questions: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994707004444'}
 
 Thank you,
 Ram Servis Team
@@ -360,7 +360,7 @@ ${paymentLink}
 
 ⚠️ Примечание: Ссылка действительна 24 часа.
 
-📞 По вопросам: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994501234567'}
+📞 По вопросам: ${process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994707004444'}
 
 Спасибо,
 Команда Ram Servis

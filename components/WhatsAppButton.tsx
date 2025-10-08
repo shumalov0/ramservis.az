@@ -14,7 +14,7 @@ interface WhatsAppButtonProps {
 }
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = memo(function WhatsAppButton({
-  phoneNumber = '+994708559001', // Default Ram Servis phone number
+  phoneNumber = '+994707004444', // Default Ram Servis phone number
   currentLang,
   t,
   position = 'bottom-right',

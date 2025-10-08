@@ -216,14 +216,14 @@ export function PricingCard({
             </p>
             <div className="flex items-center justify-center gap-4 text-sm">
               <a 
-                href="tel:+994123456789" 
+                href="tel:+994707004444" 
                 className="text-primary hover:underline font-medium"
               >
                 +994 12 345 67 89
               </a>
               <span className="text-muted-foreground">və ya</span>
               <a 
-                href="https://wa.me/994123456789" 
+                href="https://wa.me/994707004444" 
                 className="text-green-600 hover:underline font-medium"
                 target="_blank"
                 rel="noopener noreferrer"

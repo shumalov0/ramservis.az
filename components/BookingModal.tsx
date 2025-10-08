@@ -159,7 +159,7 @@ export default function BookingModal({ car, currentLang, onClose }: BookingModal
     if (formData.paymentMethod === 'online') {
       // Send WhatsApp message for online payment
       const message = `Yeni rezervasiya:\n\nMüştəri: ${formData.firstName} ${formData.lastName}\nMaşın: ${car.brand} ${car.model}\nTarix: ${formData.pickupDate} - ${formData.dropoffDate}\nÜmumi məbləğ: ₼${pricing.total}\n\nOnline ödəniş üçün kart məlumatlarını göndərin.`;
-      const whatsappUrl = `https://wa.me/+994708559001?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/+994707004444?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
     }
 

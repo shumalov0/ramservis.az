@@ -91,7 +91,7 @@ const ClientLayout: React.FC<ClientLayoutProps> = ({ children }) => {
     <>
       {children}
       <WhatsAppButton
-        phoneNumber="+994708559001"
+        phoneNumber="+994707004444"
         currentLang={currentLang}
         t={t}
         position="bottom-right"

@@ -333,7 +333,7 @@ export default function CarDetailPageContent({
                   // Send WhatsApp message for online payments
                   if (data.paymentMethod === "online" && data.paymentLink) {
                     const message = `Yeni online rezervasiya:\n\nMüştəri: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nTelefon: ${data.phone}\nMaşın: ${car.brand} ${car.model} (${car.year})\nTarix: ${data.pickupDate} - ${data.dropoffDate}\nÜmumi məbləğ: ${data.totalPrice} AZN\nÖdəniş linki: ${data.paymentLink}`;
-                    const whatsappUrl = `https://wa.me/+994708559001?text=${encodeURIComponent(
+                    const whatsappUrl = `https://wa.me/+994707004444?text=${encodeURIComponent(
                       message
                     )}`;
                     window.open(whatsappUrl, "_blank");
