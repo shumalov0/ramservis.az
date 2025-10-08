@@ -21,9 +21,9 @@ export default function SEOAnalytics() {
     }
 
     // Core Web Vitals tracking
-    if ('web-vital' in window) {
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS((metric) => {
+    if (typeof window !== 'undefined') {
+      import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
+        onCLS((metric) => {
           if (typeof window.gtag !== 'undefined') {
             window.gtag('event', 'web_vital', {
               event_category: 'Web Vitals',
@@ -34,7 +34,7 @@ export default function SEOAnalytics() {
           }
         });
 
-        getFID((metric) => {
+        onINP((metric) => {
           if (typeof window.gtag !== 'undefined') {
             window.gtag('event', 'web_vital', {
               event_category: 'Web Vitals',
@@ -45,7 +45,7 @@ export default function SEOAnalytics() {
           }
         });
 
-        getFCP((metric) => {
+        onFCP((metric) => {
           if (typeof window.gtag !== 'undefined') {
             window.gtag('event', 'web_vital', {
               event_category: 'Web Vitals',
@@ -56,7 +56,7 @@ export default function SEOAnalytics() {
           }
         });
 
-        getLCP((metric) => {
+        onLCP((metric) => {
           if (typeof window.gtag !== 'undefined') {
             window.gtag('event', 'web_vital', {
               event_category: 'Web Vitals',
@@ -67,7 +67,7 @@ export default function SEOAnalytics() {
           }
         });
 
-        getTTFB((metric) => {
+        onTTFB((metric) => {
           if (typeof window.gtag !== 'undefined') {
             window.gtag('event', 'web_vital', {
               event_category: 'Web Vitals',
