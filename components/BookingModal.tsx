@@ -172,19 +172,19 @@ export default function BookingModal({ car, currentLang, onClose }: BookingModal
                      formData.dropoffLocation && pricing.days >= 2;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-modal">
+      <div className="bg-white dark:bg-brand-dark rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{t.onlineReservation}</h2>
-            <p className="text-gray-600">{car.brand} {car.model} ({car.year})</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{t.onlineReservation}</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">{car.brand} {car.model} ({car.year})</p>
           </div>
-          <Button variant="ghost" onClick={onClose}>
+          <Button variant="ghost" onClick={onClose} className="shrink-0">
             <X className="h-6 w-6" />
           </Button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-8">
+        <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-6 sm:space-y-8">
           {/* Personal Information */}
           <Card>
             <CardHeader>

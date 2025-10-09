@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
-import { createNavigationHandler } from '@/lib/navigation-utils';
 import { ChevronDown, Car } from 'lucide-react';
 import { CarCategory } from '@/lib/types';
 import { carCategories } from '@/lib/data';
@@ -65,14 +63,36 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
     };
   }, []);
 
-  // Removed document event listeners to prevent navigation interference
-  // Using only hover-based interactions now
+  // Handle click/touch for mobile
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+        setIsHovering(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isOpen]);
 
   // Simplified keyboard navigation
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
-      setIsOpen(!isOpen);
+      handleToggle();
     }
   };
 
@@ -97,6 +117,7 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
             ? "text-gray-800 dark:text-gray-200"
             : "text-white"
         } transition-colors duration-200`}
+        onClick={handleToggle}
         onKeyDown={handleKeyDown}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -124,7 +145,7 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
 
       {/* Dropdown Menu */}
       <div
-        className={`absolute top-full left-0 mt-1 w-96 bg-white dark:bg-[#1a1a1a] rounded-lg shadow-xl border border-gray-200 dark:border-[#2a2a2a] z-50 transition-all duration-150 ${
+        className={`absolute top-full left-0 mt-1 w-96 max-w-[90vw] bg-white dark:bg-[#1a1a1a] rounded-lg shadow-xl border border-gray-200 dark:border-[#2a2a2a] z-dropdown transition-all duration-150 ${
           isOpen 
             ? 'opacity-100 visible translate-y-0' 
             : 'opacity-0 invisible -translate-y-2'
@@ -144,19 +165,20 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
           </div>
         </div>
 
-        {/* Categories List - 2 Column Grid */}
+        {/* Categories List - Responsive Grid */}
         <div className="py-2 px-2">
-          <div className="grid grid-cols-2 gap-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
             {carCategories.map((category) => (
-              <a
+              <button
                 key={category.id}
-                href={`/cars?category=${category.displayName}`}
-                onClick={(e) => {
+                onClick={() => {
                   setIsOpen(false);
                   setIsHovering(false);
-                  createNavigationHandler(`/cars?category=${category.displayName}`)(e);
+                  setTimeout(() => {
+                    window.location.href = `/cars?category=${category.displayName}`;
+                  }, 100);
                 }}
-                className="flex items-center px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 group cursor-pointer rounded-md"
+                className="flex items-center px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 dark:active:bg-gray-600 transition-colors duration-150 group cursor-pointer rounded-md w-full text-left touch-manipulation"
                 role="menuitem"
               >
                 {/* Category Icon */}
@@ -182,25 +204,26 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
                     </p>
                   )}
                 </div>
-              </a>
+              </button>
             ))}
           </div>
         </div>
 
         {/* Footer */}
         <div className="px-4 py-3 border-t border-gray-200 dark:border-[#2a2a2a]">
-          <a
-            href="/cars"
-            onClick={(e) => {
+          <button
+            onClick={() => {
               setIsOpen(false);
               setIsHovering(false);
-              createNavigationHandler("/cars")(e);
+              setTimeout(() => {
+                window.location.href = "/cars";
+              }, 100);
             }}
-            className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-brand-gold hover:text-brand-gold/80 hover:bg-brand-gold/5 rounded-md transition-colors duration-150 cursor-pointer"
+            className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-brand-gold hover:text-brand-gold/80 hover:bg-brand-gold/5 active:bg-brand-gold/10 rounded-md transition-colors duration-150 cursor-pointer touch-manipulation"
           >
             Bütün Maşınları Gör
             <ChevronDown className="h-4 w-4 ml-1 rotate-[-90deg]" />
-          </a>
+          </button>
         </div>
       </div>
     </div>

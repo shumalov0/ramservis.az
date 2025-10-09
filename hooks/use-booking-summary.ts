@@ -168,7 +168,8 @@ export const useBookingSummary = (
           if (!value || value.trim().length < 2) {
             return `${FIELD_LABELS[fieldName]} minimum 2 simvol olmalıdır`;
           }
-          if (!/^[a-zA-ZəüöğıçşƏÜÖĞIÇŞ\s'-]+$/.test(value)) {
+          // Azərbaycan, ingilis və rus hərflərinə icazə ver
+          if (!/^[a-zA-ZəüöğıçşƏÜÖĞIÇŞа-яА-Я\s'-]+$/.test(value)) {
             return `${FIELD_LABELS[fieldName]} yalnız hərflər olmalıdır`;
           }
           break;

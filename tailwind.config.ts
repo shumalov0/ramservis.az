@@ -66,6 +66,13 @@ const config: Config = {
           gold: '#f5b754',
         },
       },
+      zIndex: {
+        'modal': '200',
+        'sheet': '100',
+        'sheet-overlay': '99',
+        'dropdown': '50',
+        'header': '40',
+      },
       keyframes: {
         'accordion-down': {
           from: {

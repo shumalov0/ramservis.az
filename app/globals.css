@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .z-modal {
+    z-index: 200;
+  }
+  
+  .z-sheet {
+    z-index: 100;
+  }
+  
+  .z-sheet-overlay {
+    z-index: 99;
+  }
+  
+  .z-dropdown {
+    z-index: 50;
+  }
+  
+  .z-header {
+    z-index: 40;
+  }
+}
+
 @layer base {
   :root {
     --background: 45 100% 96%;

@@ -71,12 +71,12 @@ export default function CarsPage() {
     // if navigated with category from dropdown, preset category filter
     const category = params?.get('category');
     if (category) {
-      setFilters({
-        ...filters,
+      setFilters(prevFilters => ({
+        ...prevFilters,
         category: [category]
-      });
+      }));
     }
-  }, [params, setCarClass, setFilters]);
+  }, [params?.toString(), setCarClass, setFilters]);
 
   const handleLanguageChange = (lang: string) => {
     setCurrentLang(lang);

@@ -238,7 +238,6 @@ import {
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import { Translation } from "@/lib/translations";
-import Link from "next/link";
 import {
   Sheet,
   SheetContent,
@@ -249,7 +248,6 @@ import {
 } from "@/components/ui/sheet";
 import { useFavorites } from "@/hooks/use-favorites";
 import Logo from "./Logo";
-// Removed framer-motion for faster navigation
 import { carCategories } from "@/lib/data";
 import { useState } from "react";
 
@@ -266,6 +264,7 @@ export default function MobileMenu({
 }: MobileMenuProps) {
   const { count } = useFavorites();
   const [isCarsExpanded, setIsCarsExpanded] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
     { href: "/", label: "Home", icon: Home },
@@ -274,8 +273,15 @@ export default function MobileMenu({
     { href: "/contact", label: t?.contact || "Contact", icon: Phone },
   ];
 
+  const handleNavigation = (href: string) => {
+    setIsOpen(false);
+    setTimeout(() => {
+      window.location.href = href;
+    }, 150);
+  };
+
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       {/* Trigger button */}
       <SheetTrigger asChild>
         <Button
@@ -283,6 +289,7 @@ export default function MobileMenu({
           size="icon"
           className="md:hidden w-10 h-10 text-gray-700 dark:text-gray-300 hover:bg-gray-200/40 dark:hover:bg-[#1a1a1a]/40 rounded-full"
           aria-label="Open menu"
+          onClick={() => setIsOpen(true)}
         >
           <Menu className="h-6 w-6" />
         </Button>
@@ -291,7 +298,7 @@ export default function MobileMenu({
       {/* Menu Content */}
       <SheetContent
         side="right"
-        className="w-80 max-w-[90vw] bg-white dark:bg-brand-dark/70 border-l border-gray-200/30 dark:border-gray-700/30 backdrop-blur-xl p-0 shadow-2xl [&>button:first-of-type]:hidden"
+        className="w-80 max-w-[90vw] bg-white dark:bg-brand-dark border-l border-gray-200/30 dark:border-gray-700/30 p-0 shadow-2xl z-sheet [&>button:first-of-type]:hidden"
       >
         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <SheetDescription className="sr-only">Main navigation menu for the website</SheetDescription>
@@ -299,31 +306,32 @@ export default function MobileMenu({
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200/30 dark:border-gray-700/30">
             {/* Logo */}
-              <div className="flex items-center space-x-2 cursor-pointer w-8 h-8">
-                <Logo
-                  href="/"
-                  lightSrc="/icons/logowhite.png"
-                  darkSrc="/icons/logosyellow.png"
-                  heightClass="h-[140px]"
-                />
-              </div>
+            <button
+              onClick={() => handleNavigation("/")}
+              className="flex items-center space-x-2 cursor-pointer w-8 h-8"
+            >
+              <Logo
+                lightSrc="/icons/logowhite.png"
+                darkSrc="/icons/logosyellow.png"
+                heightClass="h-[140px]"
+              />
+            </button>
 
             {/* Language + Close */}
-            <div className="flex items-center ">
+            <div className="flex items-center gap-2">
               <LanguageSwitcher
                 currentLang={currentLang}
                 onLanguageChange={onLanguageChange}
               />
-              <SheetClose asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="w-10 h-10 rounded-full hover:bg-gray-200/60 dark:hover:bg-[#1a1a1a]/60 transition"
-                  aria-label="Close menu"
-                >
-                  <X className="h-6 w-6 text-gray-700 dark:text-gray-300" />
-                </Button>
-              </SheetClose>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="w-10 h-10 rounded-full hover:bg-gray-200/60 dark:hover:bg-[#1a1a1a]/60 transition"
+                aria-label="Close menu"
+                onClick={() => setIsOpen(false)}
+              >
+                <X className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+              </Button>
             </div>
           </div>
 
@@ -332,14 +340,13 @@ export default function MobileMenu({
             <ul className="space-y-4">
               {menuItems.map((item, i) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    prefetch={true}
-                    className="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-brand-gold dark:hover:text-brand-gold transition-colors py-3 px-4 rounded-xl hover:bg-amber-50/60 dark:hover:bg-[#1a1a1a]/50"
+                  <button
+                    onClick={() => handleNavigation(item.href)}
+                    className="flex items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-brand-gold dark:hover:text-brand-gold active:text-brand-gold transition-colors py-3 px-4 rounded-xl hover:bg-amber-50/60 dark:hover:bg-[#1a1a1a]/50 active:bg-amber-100/60 dark:active:bg-[#1a1a1a]/70 w-full text-left touch-manipulation"
                   >
                     <item.icon className="h-5 w-5 text-brand-gold" />
                     {item.label}
-                  </Link>
+                  </button>
                 </li>
               ))}
 
@@ -349,7 +356,7 @@ export default function MobileMenu({
                   {/* Cars Main Button */}
                   <button
                     onClick={() => setIsCarsExpanded(!isCarsExpanded)}
-                    className="flex items-center justify-between w-full gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-brand-gold dark:hover:text-brand-gold transition-all py-3 px-4 rounded-xl hover:bg-amber-50/60 dark:hover:bg-slate-800/50 hover:scale-[1.02]"
+                    className="flex items-center justify-between w-full gap-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-brand-gold dark:hover:text-brand-gold active:text-brand-gold transition-all py-3 px-4 rounded-xl hover:bg-amber-50/60 dark:hover:bg-slate-800/50 active:bg-amber-100/60 dark:active:bg-slate-800/70 touch-manipulation"
                   >
                     <div className="flex items-center gap-3">
                       <Car className="h-5 w-5 text-brand-gold" />
@@ -372,22 +379,20 @@ export default function MobileMenu({
                   >
                     <div className="pl-8 space-y-2">
                       {/* All Cars Link */}
-                      <Link
-                        href="/cars"
-                        prefetch={true}
-                        className="flex items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-400 hover:text-brand-gold dark:hover:text-brand-gold transition-all py-2 px-3 rounded-lg hover:bg-amber-50/40 dark:hover:bg-slate-800/30"
+                      <button
+                        onClick={() => handleNavigation("/cars")}
+                        className="flex items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-400 hover:text-brand-gold dark:hover:text-brand-gold transition-all py-2 px-3 rounded-lg hover:bg-amber-50/40 dark:hover:bg-slate-800/30 w-full text-left"
                       >
                         <span className="text-sm">🚗</span>
                         Bütün Maşınlar
-                      </Link>
+                      </button>
 
                       {/* Category Links */}
                       {carCategories.map((category) => (
-                        <Link
+                        <button
                           key={category.id}
-                          href={`/cars?category=${category.name}`}
-                          prefetch={false}
-                          className="flex items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-400 hover:text-brand-gold dark:hover:text-brand-gold transition-all py-2 px-3 rounded-lg hover:bg-amber-50/40 dark:hover:bg-slate-800/30"
+                          onClick={() => handleNavigation(`/cars?category=${category.displayName}`)}
+                          className="flex items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-400 hover:text-brand-gold dark:hover:text-brand-gold transition-all py-2 px-3 rounded-lg hover:bg-amber-50/40 dark:hover:bg-slate-800/30 w-full text-left"
                         >
                           <span className="text-sm">{category.icon}</span>
                           <div className="flex-1">
@@ -400,7 +405,7 @@ export default function MobileMenu({
                               )}
                             </div>
                           </div>
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   </div>
@@ -412,9 +417,8 @@ export default function MobileMenu({
           {/* Footer */}
           <div className="p-6 border-t border-gray-200/30 dark:border-gray-700/30">
             <div className="flex items-center justify-between">
-              <Link
-                href="/favorites"
-                prefetch={true}
+              <button
+                onClick={() => handleNavigation("/favorites")}
                 className="relative inline-flex items-center text-gray-700 dark:text-gray-300 hover:text-brand-gold dark:hover:text-brand-gold transition-colors"
               >
                 <Heart className="h-5 w-5 mr-2" />
@@ -423,7 +427,7 @@ export default function MobileMenu({
                     {count}
                   </span>
                 )}
-              </Link>
+              </button>
               <ThemeToggle />
             </div>
           </div>

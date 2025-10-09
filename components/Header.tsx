@@ -152,7 +152,7 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-colors duration-200 ${
+      className={`fixed top-0 w-full z-header transition-colors duration-200 ${
         isScrolled
           ? "bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-[#2a2a2a]/20"
           : "bg-transparent"
@@ -180,10 +180,9 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
               { href: "/about", label: t.about || "Haqqımızda" },
               { href: "/contact", label: t.contact || "Əlaqə" },
             ].map((item) => (
-              <a
+              <button
                 key={item.href}
-                href={item.href}
-                onClick={createNavigationHandler(item.href)}
+                onClick={() => window.location.href = item.href}
                 className={`relative group font-semibold tracking-wide cursor-pointer ${
                   isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white"
                 }`}
@@ -192,7 +191,7 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
                   {item.label}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gradient-to-r from-brand-gold via-yellow-400 to-brand-gold transition-all duration-200 group-hover:w-full rounded-full shadow-[0_0_8px_rgba(245,183,84,0.8)]"></span>
-              </a>
+              </button>
             ))}
 
             {/* Car Category Dropdown */}
@@ -204,9 +203,8 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
 
           {/* Controls */}
           <div className="hidden md:flex items-center ">
-            <a
-              href="/favorites"
-              onClick={createNavigationHandler("/favorites")}
+            <button
+              onClick={() => window.location.href = "/favorites"}
               className={`relative inline-flex items-center cursor-pointer ${
                 isScrolled ? "text-gray-500 dark:text-gray-300" : "text-white"
               } hover:text-brand-gold dark:hover:text-brand-gold`}
@@ -217,7 +215,7 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
                   {count}
                 </span>
               )}
-            </a>
+            </button>
             <LanguageSwitcher
               currentLang={currentLang}
               onLanguageChange={handleLanguageChange}

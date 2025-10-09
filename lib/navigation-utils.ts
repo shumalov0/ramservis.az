@@ -3,20 +3,10 @@
  */
 
 export const navigateTo = (url: string, forceReload = false) => {
-  if (forceReload || typeof window === 'undefined') {
-    // Use window.location for static exports or server-side
-    window.location.href = url;
-  } else {
-    // Try Next.js router first, fallback to window.location
-    try {
-      const { useRouter } = require('next/navigation');
-      const router = useRouter();
-      router.push(url);
-    } catch (error) {
-      console.warn('Next.js router not available, using window.location');
-      window.location.href = url;
-    }
-  }
+  if (typeof window === 'undefined') return;
+  
+  // Always use window.location for reliable navigation
+  window.location.href = url;
 };
 
 export const isStaticExport = () => {
@@ -28,12 +18,12 @@ export const createNavigationHandler = (url: string) => {
   return (e?: React.MouseEvent) => {
     if (e) {
       e.preventDefault();
+      e.stopPropagation();
     }
     
-    if (isStaticExport()) {
+    // Use a small delay to ensure any modal/sheet closes first
+    setTimeout(() => {
       window.location.href = url;
-    } else {
-      navigateTo(url);
-    }
+    }, 100);
   };
 };
