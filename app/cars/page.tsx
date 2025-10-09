@@ -6,6 +6,7 @@ import FixedHeader from '@/components/FixedHeader';
 import Footer from '@/components/Footer';
 import { cars } from '@/lib/data';
 import { useTranslation } from '@/lib/translations';
+import { CarFilters } from '@/lib/types';
 import CarsSection from '@/components/CarsSection';
 // Removed unused import
 import { useDebouncedValue } from '@/hooks/use-debounced-value';
@@ -71,10 +72,10 @@ export default function CarsPage() {
     // if navigated with category from dropdown, preset category filter
     const category = params?.get('category');
     if (category) {
-      setFilters(prevFilters => ({
-        ...prevFilters,
+      setFilters({
+        ...filters,
         category: [category]
-      }));
+      });
     }
   }, [params?.toString(), setCarClass, setFilters]);
 
