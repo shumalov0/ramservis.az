@@ -548,13 +548,15 @@ export const enhancedCars: EnhancedCar[] = [
     popularity: 82,
     availability: true,
     gallery: [
-      "/cars/models/toyotarav4/img1.jpeg",
+      "/cars/models/toyotarav4/img8.jpeg",
       "/cars/models/toyotarav4/img2.jpeg",
       "/cars/models/toyotarav4/img3.jpeg",
       "/cars/models/toyotarav4/img4.jpeg",
       "/cars/models/toyotarav4/img5.jpeg",
       "/cars/models/toyotarav4/img6.jpeg",
       "/cars/models/toyotarav4/img7.jpeg",
+      "/cars/models/toyotarav4/img9.jpeg",
+      "/cars/models/toyotarav4/img10.jpeg",
     ],
     specifications: {
       engine: "2.5L 4-Cylinder",
