@@ -38,7 +38,7 @@ const FixedHeader: FC<FixedHeaderProps> = ({ currentLang, handleLanguageChange, 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
             {[
-              { href: "/", label: "Home" },
+              { href: "/", label: t.home || "Ev" },
               { href: "/services", label: t.services || "Xidmətlər" },
               { href: "/about", label: t.about || "Haqqımızda" },
               { href: "/contact", label: t.contact || "Əlaqə" },
@@ -60,6 +60,7 @@ const FixedHeader: FC<FixedHeaderProps> = ({ currentLang, handleLanguageChange, 
             <CarCategoryDropdown
               currentLang={currentLang}
               isScrolled={true}
+              t={t}
             />
           </nav>
 

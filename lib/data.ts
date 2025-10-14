@@ -1523,6 +1523,13 @@ const baseCategoriesData: Omit<CarCategory, "count">[] = [
     description: "Yüksək və güclü maşınlar",
   },
   {
+    id: "sedan",
+    name: "sedan",
+    displayName: "Sedan",
+    icon: "🚙",
+    description: "Klassik və rahat maşınlar",
+  },
+  {
     id: "hatchback",
     name: "hatchback",
     displayName: "Hatchback",

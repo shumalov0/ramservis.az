@@ -175,7 +175,7 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
             {[
-              { href: "/", label: "Home" },
+              { href: "/", label: t.home || "Ev" },
               { href: "/services", label: t.services || "Xidmətlər" },
               { href: "/about", label: t.about || "Haqqımızda" },
               { href: "/contact", label: t.contact || "Əlaqə" },
@@ -198,6 +198,7 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
             <CarCategoryDropdown
               currentLang={currentLang}
               isScrolled={isScrolled}
+              t={t}
             />
           </nav>
 

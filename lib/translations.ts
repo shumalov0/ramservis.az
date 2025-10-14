@@ -1,9 +1,12 @@
 export interface Translation {
   // Navigation
+  home: string;
   cars: string;
   services?: string;
   about: string;
   contact: string;
+  carCategories: string;
+  viewAllCars: string;
   
   // Hero Section
   heroTitle: string;
@@ -233,10 +236,13 @@ export interface Translation {
 export const translations: Record<string, Translation> = {
   az: {
     // Navigation
+    home: 'Ev',
     cars: 'Maşınlar',
     services: 'Xidmətlər',
     about: 'Haqqımızda',
     contact: 'Əlaqə',
+    carCategories: 'Maşın Kateqoriyaları',
+    viewAllCars: 'Bütün Maşınları Gör',
     
     // Hero Section
     heroTitle: 'Keyfiyyətli Maşın İcarəsi',
@@ -465,10 +471,13 @@ export const translations: Record<string, Translation> = {
   
   en: {
     // Navigation
+    home: 'Home',
     cars: 'Cars',
     services: 'Services',
     about: 'About',
     contact: 'Contact',
+    carCategories: 'Car Categories',
+    viewAllCars: 'View All Cars',
     
     // Hero Section
     heroTitle: 'Quality Car Rental',
@@ -697,10 +706,13 @@ export const translations: Record<string, Translation> = {
   
   ru: {
     // Navigation
+    home: 'Главная',
     cars: 'Автомобили',
     services: 'Услуги',
     about: 'О нас',
     contact: 'Контакты',
+    carCategories: 'Категории Автомобилей',
+    viewAllCars: 'Посмотреть Все Автомобили',
     
     // Hero Section
     heroTitle: 'Качественная Аренда Автомобилей',
@@ -929,10 +941,13 @@ export const translations: Record<string, Translation> = {
   
   ar: {
     // Navigation
+    home: 'الرئيسية',
     cars: 'السيارات',
     services: 'الخدمات',
     about: 'حولنا',
     contact: 'اتصل بنا',
+    carCategories: 'فئات السيارات',
+    viewAllCars: 'عرض جميع السيارات',
     
     // Hero Section
     heroTitle: 'تأجير سيارات عالي الجودة',

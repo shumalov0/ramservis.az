@@ -8,11 +8,13 @@ import { carCategories } from '@/lib/data';
 interface CarCategoryDropdownProps {
   currentLang: string;
   isScrolled?: boolean;
+  t?: any;
 }
 
 const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({ 
   currentLang, 
-  isScrolled = false 
+  isScrolled = false,
+  t
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
@@ -124,7 +126,7 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
         aria-label="Car categories menu"
       >
         <span className="duration-75 group-hover:text-brand-gold dark:group-hover:text-brand-gold">
-          Maşınlar
+          {t?.cars || "Maşınlar"}
         </span>
         <ChevronDown 
           className={`h-4 w-4 transition-transform duration-150 ${
@@ -160,7 +162,7 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
           <div className="flex items-center space-x-2">
             <Car className="h-5 w-5 text-brand-gold" />
             <h3 className="font-semibold text-gray-900 dark:text-white">
-              Maşın Kateqoriyaları
+              {t?.carCategories || "Maşın Kateqoriyaları"}
             </h3>
           </div>
         </div>
@@ -188,15 +190,10 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
                 
                 {/* Category Info */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <h4 className="font-medium text-sm text-gray-900 dark:text-white group-hover:text-brand-gold transition-colors leading-tight">
                       {getLocalizedCategoryName(category)}
                     </h4>
-                    {category.count && (
-                      <span className="text-xs bg-gray-100 dark:bg-slate-600 text-gray-600 dark:text-gray-300 px-1.5 py-0.5 rounded-full ml-1">
-                        {category.count}
-                      </span>
-                    )}
                   </div>
                   {category.description && (
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
@@ -221,7 +218,7 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
             }}
             className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-brand-gold hover:text-brand-gold/80 hover:bg-brand-gold/5 active:bg-brand-gold/10 rounded-md transition-colors duration-150 cursor-pointer touch-manipulation"
           >
-            Bütün Maşınları Gör
+            {t?.viewAllCars || "Bütün Maşınları Gör"}
             <ChevronDown className="h-4 w-4 ml-1 rotate-[-90deg]" />
           </button>
         </div>

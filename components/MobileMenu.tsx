@@ -267,10 +267,10 @@ export default function MobileMenu({
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { href: "/", label: "Home", icon: Home },
-    { href: "/services", label: t?.services || "Services", icon: Info },
-    { href: "/about", label: t?.about || "About", icon: Info },
-    { href: "/contact", label: t?.contact || "Contact", icon: Phone },
+    { href: "/", label: t?.home || "Ev", icon: Home },
+    { href: "/services", label: t?.services || "Xidmətlər", icon: Info },
+    { href: "/about", label: t?.about || "Haqqımızda", icon: Info },
+    { href: "/contact", label: t?.contact || "Əlaqə", icon: Phone },
   ];
 
   const handleNavigation = (href: string) => {

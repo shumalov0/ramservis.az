@@ -122,7 +122,7 @@ export default function Home() {
           {/* Categories */}
           <section className="py-16 bg-white/70 dark:bg-[#1a1a1a]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <CategoriesGrid />
+              <CategoriesGrid currentLang={currentLang} t={t} />
             </div>
           </section>
 
