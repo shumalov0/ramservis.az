@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { BookingFormData, EmailTemplateData } from './types';
+import { BookingFormData, EmailTemplateData } from "./types";
 
 // Enhanced email sender using EmailJS REST API with improved error handling and retry logic
 // Configure these env vars in .env.local:
@@ -53,7 +53,7 @@ export interface EmailConfig {
   timeout: number;
 }
 
-const EMAILJS_ENDPOINT = 'https://api.emailjs.com/api/v1.0/email/send';
+const EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
 
 // Default email configuration
 const DEFAULT_EMAIL_CONFIG: EmailConfig = {
@@ -64,8 +64,9 @@ const DEFAULT_EMAIL_CONFIG: EmailConfig = {
 
 function getEnv(name: string): string | undefined {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (process as any)?.env?.[name] || (globalThis as any)?.process?.env?.[name];
+    return (
+      (process as any)?.env?.[name] || (globalThis as any)?.process?.env?.[name]
+    );
   } catch {
     return undefined;
   }
@@ -79,9 +80,11 @@ export function generateConfirmationNumber(): string {
 }
 
 // Format booking details for email templates
-function formatBookingDetails(payload: EnhancedEmailPayload): EmailTemplateData {
+function formatBookingDetails(
+  payload: EnhancedEmailPayload
+): EmailTemplateData {
   const { bookingData, carDetails, confirmationNumber, paymentLink } = payload;
-  
+
   return {
     customerName: payload.customerName,
     carDetails,
@@ -95,13 +98,13 @@ function formatBookingDetails(payload: EnhancedEmailPayload): EmailTemplateData 
 // Create timeout promise for fetch requests
 function createTimeoutPromise(timeout: number): Promise<never> {
   return new Promise((_, reject) => {
-    setTimeout(() => reject(new Error('Request timeout')), timeout);
+    setTimeout(() => reject(new Error("Request timeout")), timeout);
   });
 }
 
 // Delay function for retry logic
 function delay(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // Enhanced email sending function with retry logic and better error handling
@@ -112,12 +115,16 @@ async function sendEmailWithRetry(
   config: EmailConfig = DEFAULT_EMAIL_CONFIG,
   isBusinessEmail: boolean = false
 ): Promise<EmailResult> {
-  const serviceId = getEnv('NEXT_PUBLIC_EMAILJS_SERVICE_ID');
-  const publicKey = getEnv('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY');
-  
+  const serviceId = getEnv("NEXT_PUBLIC_EMAILJS_SERVICE_ID");
+  const publicKey = getEnv("NEXT_PUBLIC_EMAILJS_PUBLIC_KEY");
+
   if (!serviceId || !publicKey || !templateId) {
-    console.warn('EmailJS configuration missing. Skipping email send.');
-    return { success: false, skipped: true, error: 'EmailJS configuration missing' };
+    console.warn("EmailJS configuration missing. Skipping email send.");
+    return {
+      success: false,
+      skipped: true,
+      error: "EmailJS configuration missing",
+    };
   }
 
   const templateData = formatBookingDetails(payload);
@@ -128,12 +135,12 @@ async function sendEmailWithRetry(
     // Recipient information
     to_email: toEmail,
     to_name: payload.customerName,
-    
+
     // Customer information
     customer_email: payload.customerEmail,
     customer_name: payload.customerName,
     customer_phone: bookingData.phone,
-    
+
     // Car information
     car_brand: carDetails.brand,
     car_model: carDetails.model,
@@ -141,36 +148,36 @@ async function sendEmailWithRetry(
     car_image: carDetails.image,
     car_daily_price: carDetails.dailyPrice,
     car_full_name: `${carDetails.brand} ${carDetails.model} ${carDetails.year}`,
-    
+
     // Booking details
     pickup_date: bookingData.pickupDate,
     dropoff_date: bookingData.dropoffDate,
     pickup_location: bookingData.pickupLocation,
     dropoff_location: bookingData.dropoffLocation,
     total_days: bookingData.totalDays,
-    
+
     // Services and pricing
-    additional_services: bookingData.additionalServices.join(', ') || 'None',
+    additional_services: bookingData.additionalServices.join(", ") || "None",
     payment_method: bookingData.paymentMethod,
     total_price: bookingData.totalPrice,
     deposit: bookingData.deposit,
     service_charges: bookingData.serviceCharges,
-    
+
     // Special information
-    special_requests: bookingData.specialRequests || 'None',
+    special_requests: bookingData.specialRequests || "None",
     confirmation_number: payload.confirmationNumber,
-    payment_link: payload.paymentLink || '',
-    
+    payment_link: payload.paymentLink || "",
+
     // Business information
-    business_email: payload.businessEmail || 'info@ramservis.az',
-    
+    business_email: payload.businessEmail || "info@ramservis.az",
+
     // Formatting helpers
     formatted_dates: `${bookingData.pickupDate} - ${bookingData.dropoffDate}`,
     formatted_locations: `${bookingData.pickupLocation} → ${bookingData.dropoffLocation}`,
     formatted_total: `${bookingData.totalPrice} AZN`,
-    
+
     // Language
-    language: payload.language || 'en',
+    language: payload.language || "en",
   };
 
   const requestBody = {
@@ -181,34 +188,41 @@ async function sendEmailWithRetry(
   };
 
   let lastError: Error | null = null;
-  
+
   for (let attempt = 0; attempt <= config.maxRetries; attempt++) {
     try {
-      console.log(`Sending email attempt ${attempt + 1}/${config.maxRetries + 1} to ${toEmail}`);
-      
+      console.log(
+        `Sending email attempt ${attempt + 1}/${
+          config.maxRetries + 1
+        } to ${toEmail}`
+      );
+
       const fetchPromise = fetch(EMAILJS_ENDPOINT, {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(requestBody),
       });
 
       const timeoutPromise = createTimeoutPromise(config.timeout);
       const response = await Promise.race([fetchPromise, timeoutPromise]);
-      
+
       if (response.ok) {
         console.log(`Email sent successfully to ${toEmail}`);
         return { success: true, retryCount: attempt };
       } else {
-        const errorText = await response.text().catch(() => 'Unknown error');
+        const errorText = await response.text().catch(() => "Unknown error");
         throw new Error(`HTTP ${response.status}: ${errorText}`);
       }
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error));
-      console.warn(`Email send attempt ${attempt + 1} failed:`, lastError.message);
-      
+      console.warn(
+        `Email send attempt ${attempt + 1} failed:`,
+        lastError.message
+      );
+
       // Don't retry on the last attempt
       if (attempt < config.maxRetries) {
         await delay(config.retryDelay * (attempt + 1)); // Exponential backoff
@@ -216,11 +230,16 @@ async function sendEmailWithRetry(
     }
   }
 
-  console.error(`Failed to send email to ${toEmail} after ${config.maxRetries + 1} attempts:`, lastError?.message);
-  return { 
-    success: false, 
-    error: lastError?.message || 'Unknown error',
-    retryCount: config.maxRetries + 1
+  console.error(
+    `Failed to send email to ${toEmail} after ${
+      config.maxRetries + 1
+    } attempts:`,
+    lastError?.message
+  );
+  return {
+    success: false,
+    error: lastError?.message || "Unknown error",
+    retryCount: config.maxRetries + 1,
   };
 }
 
@@ -229,11 +248,11 @@ export async function sendBookingEmails(
   payload: EnhancedEmailPayload,
   config?: EmailConfig
 ): Promise<{ toCustomer: EmailResult; toBusiness: EmailResult }> {
-  const customerTemplate = getEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_CUSTOMER');
-  const businessTemplate = getEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_BUSINESS');
-  const businessEmail = payload.businessEmail || 'info@ramservis.az';
+  const customerTemplate = getEnv("NEXT_PUBLIC_EMAILJS_TEMPLATE_CUSTOMER");
+  const businessTemplate = getEnv("NEXT_PUBLIC_EMAILJS_TEMPLATE_BUSINESS");
+  const businessEmail = payload.businessEmail || "info@ramservis.az";
 
-  console.log('Sending booking confirmation emails...', {
+  console.log("Sending booking confirmation emails...", {
     customer: payload.customerEmail,
     business: businessEmail,
     confirmation: payload.confirmationNumber,
@@ -241,25 +260,44 @@ export async function sendBookingEmails(
 
   // Send emails in parallel for better performance
   const [toCustomer, toBusiness] = await Promise.all([
-    customerTemplate 
-      ? sendEmailWithRetry(customerTemplate, payload.customerEmail, payload, config)
-      : Promise.resolve({ success: false, skipped: true, error: 'Customer template not configured' }),
-    businessTemplate 
+    customerTemplate
+      ? sendEmailWithRetry(
+          customerTemplate,
+          payload.customerEmail,
+          payload,
+          config
+        )
+      : Promise.resolve({
+          success: false,
+          skipped: true,
+          error: "Customer template not configured",
+        }),
+    businessTemplate
       ? sendEmailWithRetry(businessTemplate, businessEmail, payload, config)
-      : Promise.resolve({ success: false, skipped: true, error: 'Business template not configured' }),
+      : Promise.resolve({
+          success: false,
+          skipped: true,
+          error: "Business template not configured",
+        }),
   ]);
 
   // Log results
   if (toCustomer.success) {
-    console.log('Customer confirmation email sent successfully');
+    console.log("Customer confirmation email sent successfully");
   } else {
-    console.error('Failed to send customer confirmation email:', toCustomer.error);
+    console.error(
+      "Failed to send customer confirmation email:",
+      toCustomer.error
+    );
   }
 
   if (toBusiness.success) {
-    console.log('Business notification email sent successfully');
+    console.log("Business notification email sent successfully");
   } else {
-    console.error('Failed to send business notification email:', toBusiness.error);
+    console.error(
+      "Failed to send business notification email:",
+      toBusiness.error
+    );
   }
 
   return { toCustomer, toBusiness };
@@ -267,10 +305,10 @@ export async function sendBookingEmails(
 
 // Legacy function for backward compatibility
 export async function sendBookingEmailsLegacy(payload: BookingEmailPayload) {
-  const customerTemplate = getEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_CUSTOMER');
-  const businessTemplate = getEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_BUSINESS');
+  const customerTemplate = getEnv("NEXT_PUBLIC_EMAILJS_TEMPLATE_CUSTOMER");
+  const businessTemplate = getEnv("NEXT_PUBLIC_EMAILJS_TEMPLATE_BUSINESS");
 
-  const businessEmail = payload.businessEmail || 'info@ramservis.az';
+  const businessEmail = payload.businessEmail || "info@ramservis.az";
 
   // Convert legacy payload to enhanced format
   const enhancedPayload: EnhancedEmailPayload = {
@@ -278,37 +316,35 @@ export async function sendBookingEmailsLegacy(payload: BookingEmailPayload) {
     customerName: payload.customerName,
     businessEmail: payload.businessEmail,
     bookingData: {
-      firstName: payload.customerName.split(' ')[0] || '',
-      lastName: payload.customerName.split(' ').slice(1).join(' ') || '',
+      firstName: payload.customerName.split(" ")[0] || "",
+      lastName: payload.customerName.split(" ").slice(1).join(" ") || "",
       email: payload.customerEmail,
-      phone: '',
-      carId: '',
-      pickupDate: payload.dates.split(' - ')[0] || '',
-      dropoffDate: payload.dates.split(' - ')[1] || '',
-      pickupLocation: payload.locations.split(' → ')[0] || '',
-      dropoffLocation: payload.locations.split(' → ')[1] || '',
-      additionalServices: payload.services ? payload.services.split(', ') : [],
-      paymentMethod: 'cash',
+      phone: "",
+      carId: "",
+      pickupDate: payload.dates.split(" - ")[0] || "",
+      dropoffDate: payload.dates.split(" - ")[1] || "",
+      pickupLocation: payload.locations.split(" → ")[0] || "",
+      dropoffLocation: payload.locations.split(" → ")[1] || "",
+      additionalServices: payload.services ? payload.services.split(", ") : [],
+      paymentMethod: "cash",
       totalDays: 1,
-      totalPrice: parseFloat(payload.total.replace(/[^\d.]/g, '')) || 0,
+      totalPrice: parseFloat(payload.total.replace(/[^\d.]/g, "")) || 0,
       deposit: 0,
       serviceCharges: 0,
     },
     carDetails: {
-      brand: payload.car.split(' ')[0] || '',
-      model: payload.car.split(' ').slice(1).join(' ') || '',
+      brand: payload.car.split(" ")[0] || "",
+      model: payload.car.split(" ").slice(1).join(" ") || "",
       year: new Date().getFullYear(),
-      image: '',
+      image: "",
       dailyPrice: 0,
     },
     confirmationNumber: generateConfirmationNumber(),
-    language: 'en',
+    language: "en",
   };
 
   return sendBookingEmails(enhancedPayload);
 }
-
-
 
 // Click2Pay integration for secure payment links
 export interface Click2PayConfig {
@@ -339,16 +375,22 @@ export function generateClick2PayLink(
 ): string {
   // Default configuration (should be moved to environment variables)
   const defaultConfig: Click2PayConfig = {
-    merchantId: getEnv('NEXT_PUBLIC_CLICK2PAY_MERCHANT_ID') || 'demo_merchant',
-    secretKey: getEnv('CLICK2PAY_SECRET_KEY') || 'demo_secret',
-    baseUrl: getEnv('NEXT_PUBLIC_CLICK2PAY_BASE_URL') || 'https://payment.click2pay.az',
-    currency: 'AZN',
-    returnUrl: getEnv('NEXT_PUBLIC_SITE_URL') + '/booking/success' || 'https://ramservis.az/booking/success',
-    cancelUrl: getEnv('NEXT_PUBLIC_SITE_URL') + '/booking/cancel' || 'https://ramservis.az/booking/cancel',
+    merchantId: getEnv("NEXT_PUBLIC_CLICK2PAY_MERCHANT_ID") || "demo_merchant",
+    secretKey: getEnv("CLICK2PAY_SECRET_KEY") || "demo_secret",
+    baseUrl:
+      getEnv("NEXT_PUBLIC_CLICK2PAY_BASE_URL") ||
+      "https://payment.click2pay.az",
+    currency: "AZN",
+    returnUrl:
+      getEnv("NEXT_PUBLIC_SITE_URL") + "/booking/success" ||
+      "https://ramservis.az/booking/success",
+    cancelUrl:
+      getEnv("NEXT_PUBLIC_SITE_URL") + "/booking/cancel" ||
+      "https://ramservis.az/booking/cancel",
   };
 
   const paymentConfig = config || defaultConfig;
-  
+
   // Create payment parameters
   const params = new URLSearchParams({
     merchant_id: paymentConfig.merchantId,
@@ -360,8 +402,8 @@ export function generateClick2PayLink(
     customer_name: paymentData.customerName,
     return_url: paymentData.returnUrl || paymentConfig.returnUrl,
     cancel_url: paymentData.cancelUrl || paymentConfig.cancelUrl,
-    language: 'az', // Default to Azerbaijani
-    expires_at: paymentData.expiryMinutes 
+    language: "az", // Default to Azerbaijani
+    expires_at: paymentData.expiryMinutes
       ? new Date(Date.now() + paymentData.expiryMinutes * 60000).toISOString()
       : new Date(Date.now() + 24 * 60 * 60000).toISOString(), // 24 hours default
   });
@@ -379,13 +421,17 @@ export function generateBookingPaymentLink(
 ): string {
   const paymentData: PaymentLinkData = {
     amount: bookingData.totalPrice,
-    currency: 'AZN',
+    currency: "AZN",
     orderId: confirmationNumber,
     description: `Car Rental: ${carDetails.brand} ${carDetails.model} ${carDetails.year}`,
     customerEmail: bookingData.email,
     customerName: `${bookingData.firstName} ${bookingData.lastName}`,
-    returnUrl: `${getEnv('NEXT_PUBLIC_SITE_URL')}/booking/success?ref=${confirmationNumber}`,
-    cancelUrl: `${getEnv('NEXT_PUBLIC_SITE_URL')}/booking/cancel?ref=${confirmationNumber}`,
+    returnUrl: `${getEnv(
+      "NEXT_PUBLIC_SITE_URL"
+    )}/booking/success?ref=${confirmationNumber}`,
+    cancelUrl: `${getEnv(
+      "NEXT_PUBLIC_SITE_URL"
+    )}/booking/cancel?ref=${confirmationNumber}`,
     expiryMinutes: 1440, // 24 hours
   };
 
@@ -396,20 +442,25 @@ export function generateBookingPaymentLink(
 export function validatePaymentLink(link: string): boolean {
   try {
     const url = new URL(link);
-    const requiredParams = ['merchant_id', 'amount', 'order_id', 'customer_email'];
-    
+    const requiredParams = [
+      "merchant_id",
+      "amount",
+      "order_id",
+      "customer_email",
+    ];
+
     for (const param of requiredParams) {
       if (!url.searchParams.has(param)) {
         return false;
       }
     }
-    
+
     // Check if link is not expired
-    const expiresAt = url.searchParams.get('expires_at');
+    const expiresAt = url.searchParams.get("expires_at");
     if (expiresAt && new Date(expiresAt) < new Date()) {
       return false;
     }
-    
+
     return true;
   } catch {
     return false;
@@ -421,25 +472,29 @@ export async function sendBookingEmailsWithPayment(
   payload: EnhancedEmailPayload,
   includePaymentLink: boolean = false,
   config?: EmailConfig
-): Promise<{ toCustomer: EmailResult; toBusiness: EmailResult; paymentLink?: string }> {
+): Promise<{
+  toCustomer: EmailResult;
+  toBusiness: EmailResult;
+  paymentLink?: string;
+}> {
   let paymentLink: string | undefined;
-  
+
   // Generate payment link if online payment is selected
-  if (includePaymentLink && payload.bookingData.paymentMethod === 'online') {
+  if (includePaymentLink && payload.bookingData.paymentMethod === "online") {
     paymentLink = generateBookingPaymentLink(
       payload.bookingData,
       payload.confirmationNumber,
       payload.carDetails
     );
-    
+
     // Add payment link to payload
     payload.paymentLink = paymentLink;
-    
-    console.log('Generated payment link:', paymentLink);
+
+    console.log("Generated payment link:", paymentLink);
   }
 
   const emailResults = await sendBookingEmails(payload, config);
-  
+
   return {
     ...emailResults,
     paymentLink,
@@ -447,24 +502,28 @@ export async function sendBookingEmailsWithPayment(
 }
 
 // Import email templates
-import { 
-  generateCustomerEmailTemplate, 
-  generateBusinessEmailTemplate, 
-  generatePlainTextTemplate 
-} from './email-templates';
+import {
+  generateCustomerEmailTemplate,
+  generateBusinessEmailTemplate,
+  generatePlainTextTemplate,
+} from "./email-templates";
 
 // Enhanced email sending with template generation
 export async function sendEnhancedBookingEmails(
   payload: EnhancedEmailPayload,
   config?: EmailConfig
-): Promise<{ toCustomer: EmailResult; toBusiness: EmailResult; paymentLink?: string }> {
-  const customerTemplate = getEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_CUSTOMER');
-  const businessTemplate = getEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_BUSINESS');
-  const businessEmail = payload.businessEmail || 'info@ramservis.az';
+): Promise<{
+  toCustomer: EmailResult;
+  toBusiness: EmailResult;
+  paymentLink?: string;
+}> {
+  const customerTemplate = getEnv("NEXT_PUBLIC_EMAILJS_TEMPLATE_CUSTOMER");
+  const businessTemplate = getEnv("NEXT_PUBLIC_EMAILJS_TEMPLATE_BUSINESS");
+  const businessEmail = payload.businessEmail || "info@ramservis.az";
 
   // Generate payment link if needed
   let paymentLink: string | undefined;
-  if (payload.bookingData.paymentMethod === 'online') {
+  if (payload.bookingData.paymentMethod === "online") {
     paymentLink = generateBookingPaymentLink(
       payload.bookingData,
       payload.confirmationNumber,
@@ -473,7 +532,7 @@ export async function sendEnhancedBookingEmails(
     payload.paymentLink = paymentLink;
   }
 
-  console.log('Sending enhanced booking emails...', {
+  console.log("Sending enhanced booking emails...", {
     customer: payload.customerEmail,
     business: businessEmail,
     confirmation: payload.confirmationNumber,
@@ -483,7 +542,7 @@ export async function sendEnhancedBookingEmails(
   // Generate HTML templates
   const customerHtmlTemplate = generateCustomerEmailTemplate(payload);
   const businessHtmlTemplate = generateBusinessEmailTemplate(payload);
-  
+
   // Generate plain text templates
   const customerTextTemplate = generatePlainTextTemplate(payload, false);
   const businessTextTemplate = generatePlainTextTemplate(payload, true);
@@ -499,25 +558,51 @@ export async function sendEnhancedBookingEmails(
 
   // Send emails in parallel
   const [toCustomer, toBusiness] = await Promise.all([
-    customerTemplate 
-      ? sendEmailWithRetry(customerTemplate, payload.customerEmail, enhancedPayload, config, false)
-      : Promise.resolve({ success: false, skipped: true, error: 'Customer template not configured' }),
-    businessTemplate 
-      ? sendEmailWithRetry(businessTemplate, businessEmail, enhancedPayload, config, true)
-      : Promise.resolve({ success: false, skipped: true, error: 'Business template not configured' }),
+    customerTemplate
+      ? sendEmailWithRetry(
+          customerTemplate,
+          payload.customerEmail,
+          enhancedPayload,
+          config,
+          false
+        )
+      : Promise.resolve({
+          success: false,
+          skipped: true,
+          error: "Customer template not configured",
+        }),
+    businessTemplate
+      ? sendEmailWithRetry(
+          businessTemplate,
+          businessEmail,
+          enhancedPayload,
+          config,
+          true
+        )
+      : Promise.resolve({
+          success: false,
+          skipped: true,
+          error: "Business template not configured",
+        }),
   ]);
 
   // Log results
   if (toCustomer.success) {
-    console.log('✅ Customer confirmation email sent successfully');
+    console.log("✅ Customer confirmation email sent successfully");
   } else {
-    console.error('❌ Failed to send customer confirmation email:', toCustomer.error);
+    console.error(
+      "❌ Failed to send customer confirmation email:",
+      toCustomer.error
+    );
   }
 
   if (toBusiness.success) {
-    console.log('✅ Business notification email sent successfully');
+    console.log("✅ Business notification email sent successfully");
   } else {
-    console.error('❌ Failed to send business notification email:', toBusiness.error);
+    console.error(
+      "❌ Failed to send business notification email:",
+      toBusiness.error
+    );
   }
 
   return { toCustomer, toBusiness, paymentLink };

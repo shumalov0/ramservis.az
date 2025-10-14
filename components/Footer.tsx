@@ -72,7 +72,7 @@ const Footer: FC<FooterProps> = ({ t }) =>{
             <Phone className="text-black h-6 w-6" />
           </div>
           <div>
-            <p className="text-sm font-semibold">Call us</p>
+            <p className="text-sm font-semibold">{t.footerCallUs}</p>
             <p className="text-white">+994 70 700 44 44</p>
           </div>
         </div>
@@ -82,7 +82,7 @@ const Footer: FC<FooterProps> = ({ t }) =>{
             <Mail className="text-black h-6 w-6" />
           </div>
           <div>
-            <p className="text-sm font-semibold">Write to us</p>
+            <p className="text-sm font-semibold">{t.footerWriteToUs}</p>
             <p className="text-white">info@ramservis.az</p>
           </div>
         </div>
@@ -92,7 +92,7 @@ const Footer: FC<FooterProps> = ({ t }) =>{
             <MapPin className="text-black h-6 w-6" />
           </div>
           <div>
-            <p className="text-sm font-semibold">Address</p>
+            <p className="text-sm font-semibold">{t.footerAddress}</p>
             <p className="text-white">27A Ahmed Racabli Baku Narimanov</p>
           </div>
         </div>
@@ -106,8 +106,7 @@ const Footer: FC<FooterProps> = ({ t }) =>{
              <Image src='/icons/logosyellow.png' alt='footerimg' width={200} height={100} style={{ width: '50%', height: 'auto' }} />
           </h2>
           <p className="mt-4 text-gray-400 text-sm">
-            Rent a car imperdiet sapien porttito the bibenum ellentesue the
-            commodo erat nesuen.
+            {t.footerDesc}
           </p>
           <div className="flex space-x-3 mt-6">
             <a
@@ -133,31 +132,31 @@ const Footer: FC<FooterProps> = ({ t }) =>{
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <h3 className="text-xl font-semibold mb-4">{t.quickLinks}</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <a href="/about" className="hover:text-[#f5b754]">
-                 About
+                 {t.aboutLink}
               </a>
             </li>
             <li>
               <a href="/cars" className="hover:text-[#f5b754]">
-                 Cars
+                 {t.carsLink}
               </a>
             </li>
             <li>
               <a href="" className="hover:text-[#f5b754]">
-                 Car Types
+                 {t.carTypesLink}
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-[#f5b754]">
-                 FAQ
+                 {t.faqLink}
               </a>
             </li>
             <li>
               <a href="/contact" className="hover:text-[#f5b754]">
-                Contact
+                {t.contactLink}
               </a>
             </li>
           </ul>
@@ -165,15 +164,14 @@ const Footer: FC<FooterProps> = ({ t }) =>{
 
         {/* Subscribe */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Subscribe</h3>
+          <h3 className="text-xl font-semibold mb-4">{t.subscribe}</h3>
           <p className="text-sm text-gray-400 mb-4">
-            Want to be notified about our services. Just sign up and we&apos;ll
-            send you a notification by email.
+            {t.subscribeDesc}
           </p>
           <form className="flex items-center rounded-full border border-[#f5b754] overflow-hidden">
             <input
               type="email"
-              placeholder="Your email address"
+              placeholder={t.emailPlaceholderFooter}
               className="flex-1 bg-transparent px-4 py-3 text-sm outline-none"
             />
             <button
@@ -189,8 +187,7 @@ const Footer: FC<FooterProps> = ({ t }) =>{
       {/* Bottom */}
       <div className="border-t border-[#2a2a2a] py-6 px-6 max-w-7xl mx-auto flex justify-between items-center text-sm text-gray-400">
         <p>
-          ©2025 <span className="text-[#fbbf24]">webRedox.</span> All rights
-          reserved.
+          ©2025 <span className="text-[#fbbf24]">Ram Servis.</span> {t.allRightsReservedFooter}
         </p>
         <a
           href="#"

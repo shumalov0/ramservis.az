@@ -74,7 +74,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Ekonom","Sedan"],
     popularity: 85,
     availability: true,
     gallery: [
@@ -137,7 +137,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Ekonom","Sedan"],
     popularity: 92,
     availability: true,
     gallery: [
@@ -191,7 +191,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "SUV",
+    category: ["SUV","Business",],
     popularity: 88,
     availability: true,
     gallery: [
@@ -250,7 +250,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Ekonom","Sedan"],
     popularity: 95,
     availability: true,
     gallery: [
@@ -309,7 +309,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Lüks",
+    category: ["Lüks","Sedan"],
     popularity: 78,
     availability: true,
     gallery: [
@@ -365,7 +365,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Ekonom","Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -424,7 +424,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Ekonom","Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -484,7 +484,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Ekonom","Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -544,7 +544,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "SUV",
+    category: ["SUV"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -603,7 +603,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "SUV",
+    category: ["SUV"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -660,7 +660,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Hatchback",
+    category: ["Minivan","Hatchback"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -719,7 +719,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "SUV",
+    category: ["SUV"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -776,7 +776,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "SUV",
+    category: ["SUV"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -834,7 +834,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Luxury",
+    category: ["Lüks", "SUV", "Biznes"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -890,7 +890,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Minivan","Hatchback"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -945,7 +945,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: "Ekonom",
+    category: ["Ekonom","Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -1509,11 +1509,11 @@ const baseCategoriesData: Omit<CarCategory, "count">[] = [
     description: "Sərfəli və praktik seçimlər",
   },
   {
-    id: "sedan",
-    name: "sedan",
-    displayName: "Sedan",
-    icon: "🚙",
-    description: "Rahat və geniş salon",
+    id: "business",
+    name: "business",
+    displayName: "Biznes",
+    icon: "🚘",
+    description: "İş səfərləri üçün ideal",
   },
   {
     id: "suv",
@@ -1523,11 +1523,18 @@ const baseCategoriesData: Omit<CarCategory, "count">[] = [
     description: "Yüksək və güclü maşınlar",
   },
   {
-    id: "business",
-    name: "business",
-    displayName: "Biznes",
-    icon: "🚘",
-    description: "İş səfərləri üçün ideal",
+    id: "hatchback",
+    name: "hatchback",
+    displayName: "Hatchback",
+    icon: "🚗",
+    description: "Kompakt və çevik maşınlar",
+  },
+  {
+    id: "minivan",
+    name: "minivan",
+    displayName: "Minivan",
+    icon: "🚌",
+    description: "Böyük ailələr üçün geniş salon",
   },
   {
     id: "luxury",
@@ -1535,13 +1542,6 @@ const baseCategoriesData: Omit<CarCategory, "count">[] = [
     displayName: "Lüks",
     icon: "🏎️",
     description: "Premium təcrübə",
-  },
-  {
-    id: "comfort",
-    name: "comfort",
-    displayName: "Komfort",
-    icon: "🚗",
-    description: "Rahat və müasir",
   },
 ];
 
@@ -1552,7 +1552,9 @@ function calculateCategoryCounts(): CarCategory[] {
   // Count cars in each category
   enhancedCars.forEach((car) => {
     if (car.category) {
-      categoryCounts[car.category] = (categoryCounts[car.category] || 0) + 1;
+      car.category.forEach(cat => {
+        categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+      });
     }
   });
 

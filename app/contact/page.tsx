@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import FixedHeader from '@/components/FixedHeader';
 import Footer from '@/components/Footer';
 import GoogleMapIframe from '@/components/GoogleMapIframe';
@@ -12,123 +12,27 @@ export default function ContactPage() {
   const [currentLang, setCurrentLang] = useState('az');
   const t = useTranslation(currentLang);
 
-  const handleLanguageChange = (lang: string) => {
-    setCurrentLang(lang);
-  };
+
 
   const contactInfo = {
     address: process.env.NEXT_PUBLIC_COMPANY_ADDRESS || 'Bakı şəhəri, Nəsimi rayonu, Azadlıq prospekti 123',
     phone: process.env.NEXT_PUBLIC_COMPANY_PHONE || '+994707004444',
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+994707004444',
     email: process.env.BUSINESS_EMAIL || 'info@ramservis.az',
-    hours: {
-      az: '24/7 Açıq - Həftənin hər günü',
-      en: '24/7 Open - Every day of the week',
-      ru: '24/7 Открыто - Каждый день недели',
-      ar: '24/7 مفتوح - كل يوم من أيام الأسبوع'
-    }
+    hours: t.workingHours24
   };
 
-  const translations = {
-    az: {
-      title: 'Bizimlə Əlaqə',
-      subtitle: 'Suallarınız var? Bizimlə əlaqə saxlayın!',
-      getInTouch: 'Əlaqə saxlayın',
-      contactInfo: 'Əlaqə məlumatları',
-      address: 'Ünvan',
-      phone: 'Telefon',
-      email: 'Email',
-      hours: 'İş saatları',
-      whatsapp: 'WhatsApp',
-      sendMessage: 'Mesaj göndər',
-      name: 'Ad Soyad',
-      subject: 'Mövzu',
-      message: 'Mesaj',
-      send: 'Göndər',
-      namePlaceholder: 'Adınızı daxil edin',
-      emailPlaceholder: 'Email ünvanınızı daxil edin',
-      subjectPlaceholder: 'Mesajın mövzusunu daxil edin',
-      messagePlaceholder: 'Mesajınızı buraya yazın...',
-      quickContact: 'Sürətli əlaqə',
-      callNow: 'İndi zəng edin',
-      whatsappNow: 'WhatsApp yazın',
-      emailNow: 'Email göndərin'
-    },
-    en: {
-      title: 'Contact Us',
-      subtitle: 'Have questions? Get in touch with us!',
-      getInTouch: 'Get in Touch',
-      contactInfo: 'Contact Information',
-      address: 'Address',
-      phone: 'Phone',
-      email: 'Email',
-      hours: 'Working Hours',
-      whatsapp: 'WhatsApp',
-      sendMessage: 'Send Message',
-      name: 'Full Name',
-      subject: 'Subject',
-      message: 'Message',
-      send: 'Send',
-      namePlaceholder: 'Enter your name',
-      emailPlaceholder: 'Enter your email address',
-      subjectPlaceholder: 'Enter message subject',
-      messagePlaceholder: 'Write your message here...',
-      quickContact: 'Quick Contact',
-      callNow: 'Call Now',
-      whatsappNow: 'WhatsApp Now',
-      emailNow: 'Send Email'
-    },
-    ru: {
-      title: 'Свяжитесь с нами',
-      subtitle: 'Есть вопросы? Свяжитесь с нами!',
-      getInTouch: 'Связаться',
-      contactInfo: 'Контактная информация',
-      address: 'Адрес',
-      phone: 'Телефон',
-      email: 'Email',
-      hours: 'Рабочие часы',
-      whatsapp: 'WhatsApp',
-      sendMessage: 'Отправить сообщение',
-      name: 'Полное имя',
-      subject: 'Тема',
-      message: 'Сообщение',
-      send: 'Отправить',
-      namePlaceholder: 'Введите ваше имя',
-      emailPlaceholder: 'Введите ваш email',
-      subjectPlaceholder: 'Введите тему сообщения',
-      messagePlaceholder: 'Напишите ваше сообщение здесь...',
-      quickContact: 'Быстрая связь',
-      callNow: 'Позвонить сейчас',
-      whatsappNow: 'WhatsApp сейчас',
-      emailNow: 'Отправить Email'
-    },
-    ar: {
-      title: 'اتصل بنا',
-      subtitle: 'لديك أسئلة؟ تواصل معنا!',
-      getInTouch: 'تواصل معنا',
-      contactInfo: 'معلومات الاتصال',
-      address: 'العنوان',
-      phone: 'الهاتف',
-      email: 'البريد الإلكتروني',
-      hours: 'ساعات العمل',
-      whatsapp: 'واتساب',
-      sendMessage: 'إرسال رسالة',
-      name: 'الاسم الكامل',
-      subject: 'الموضوع',
-      message: 'الرسالة',
-      send: 'إرسال',
-      namePlaceholder: 'أدخل اسمك',
-      emailPlaceholder: 'أدخل عنوان بريدك الإلكتروني',
-      subjectPlaceholder: 'أدخل موضوع الرسالة',
-      messagePlaceholder: 'اكتب رسالتك هنا...',
-      quickContact: 'اتصال سريع',
-      callNow: 'اتصل الآن',
-      whatsappNow: 'واتساب الآن',
-      emailNow: 'إرسال بريد إلكتروني'
+  useEffect(() => {
+    const savedLang = localStorage.getItem('ramservis_language');
+    if (savedLang && ['az', 'en', 'ru', 'ar'].includes(savedLang)) {
+      setCurrentLang(savedLang);
     }
-  };
+  }, []);
 
-  const ct = translations[currentLang as keyof typeof translations] || translations.az;
+  const handleLanguageChange = (lang: string) => {
+    setCurrentLang(lang);
+    localStorage.setItem('ramservis_language', lang);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-zinc-50 to-gray-50 dark:from-zinc-800 dark:bg-brand-dark/70 transition-colors duration-300">
@@ -143,10 +47,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {ct.title}
+              {t.contactTitle}
             </h1>
             <p className="text-xl text-yellow-100 max-w-2xl mx-auto">
-              {ct.subtitle}
+              {t.contactSubtitle}
             </p>
           </div>
         </div>
@@ -159,7 +63,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                {ct.contactInfo}
+                {t.contactInfo}
               </h2>
 
               <div className="space-y-6">
@@ -169,7 +73,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {ct.address}
+                      {t.address}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
                       {contactInfo.address}
@@ -183,7 +87,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {ct.phone}
+                      {t.phone}
                     </h3>
                     <a 
                       href={`tel:${contactInfo.phone}`}
@@ -200,7 +104,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {ct.email}
+                      {t.email}
                     </h3>
                     <a 
                       href={`mailto:${contactInfo.email}`}
@@ -217,10 +121,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {ct.hours}
+                      {t.workingHours}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      {contactInfo.hours[currentLang as keyof typeof contactInfo.hours]}
+                      {contactInfo.hours}
                     </p>
                   </div>
                 </div>
@@ -229,7 +133,7 @@ export default function ContactPage() {
               {/* Quick Contact Buttons */}
               <div className="mt-8">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  {ct.quickContact}
+                  {t.quickContact}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <a
@@ -237,7 +141,7 @@ export default function ContactPage() {
                     className="flex items-center justify-center gap-2 px-4 py-3 bg-[#f5b754] text-black rounded-lg hover:bg-yellow-400 transition-colors"
                   >
                     <Phone className="w-4 h-4" />
-                    {ct.callNow}
+                    {t.callNow}
                   </a>
                   <a
                     href={`https://wa.me/${contactInfo.whatsapp.replace('+', '')}`}
@@ -246,14 +150,14 @@ export default function ContactPage() {
                     className="flex items-center justify-center gap-2 px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                   >
                     <Send className="w-4 h-4" />
-                    {ct.whatsappNow}
+                    {t.whatsappNow}
                   </a>
                   <a
                     href={`mailto:${contactInfo.email}`}
                     className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     <Mail className="w-4 h-4" />
-                    {ct.emailNow}
+                    {t.emailNow}
                   </a>
                 </div>
               </div>
@@ -263,50 +167,50 @@ export default function ContactPage() {
             <div>
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  {ct.sendMessage}
+                  {t.sendMessage}
                 </h2>
 
                 <form className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {ct.name}
+                      {t.name}
                     </label>
                     <input
                       type="text"
-                      placeholder={ct.namePlaceholder}
+                      placeholder={t.namePlaceholder}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#f5b754] focus:border-transparent dark:bg-gray-700 dark:text-white"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {ct.email}
+                      {t.email}
                     </label>
                     <input
                       type="email"
-                      placeholder={ct.emailPlaceholder}
+                      placeholder={t.emailPlaceholder}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#f5b754] focus:border-transparent dark:bg-gray-700 dark:text-white"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {ct.subject}
+                      {t.subject}
                     </label>
                     <input
                       type="text"
-                      placeholder={ct.subjectPlaceholder}
+                      placeholder={t.subjectPlaceholder}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#f5b754] focus:border-transparent dark:bg-gray-700 dark:text-white"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      {ct.message}
+                      {t.message}
                     </label>
                     <textarea
                       rows={6}
-                      placeholder={ct.messagePlaceholder}
+                      placeholder={t.messagePlaceholder}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#f5b754] focus:border-transparent dark:bg-gray-700 dark:text-white resize-none"
                     />
                   </div>
@@ -316,7 +220,7 @@ export default function ContactPage() {
                     className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#f5b754] text-black rounded-lg hover:bg-yellow-400 transition-colors font-medium"
                   >
                     <Send className="w-4 h-4" />
-                    {ct.send}
+                    {t.send}
                   </button>
                 </form>
               </div>

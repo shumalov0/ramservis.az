@@ -144,6 +144,90 @@ export interface Translation {
   loading: string;
   errorLoadingImage: string;
   retryLoading: string;
+  
+  // Services Page
+  servicesTitle: string;
+  airportDelivery: string;
+  airportDeliveryDesc: string;
+  driverRental: string;
+  driverRentalDesc: string;
+  fullInsuranceService: string;
+  fullInsuranceServiceDesc: string;
+  corporatePackages: string;
+  corporatePackagesDesc: string;
+  addressDelivery: string;
+  addressDeliveryDesc: string;
+  flexibleRentalPeriod: string;
+  flexibleRentalPeriodDesc: string;
+  onlinePaymentService: string;
+  onlinePaymentServiceDesc: string;
+  wideCarFleet: string;
+  wideCarFleetDesc: string;
+  pricePackages: string;
+  daily: string;
+  weekly: string;
+  monthly: string;
+  affordablePricesAndBonusServices: string;
+  applyNow: string;
+  frequentlyAskedQuestions: string;
+  howDoesDepositWork: string;
+  howDoesDepositWorkAnswer: string;
+  minimumRentalPeriodQuestion: string;
+  minimumRentalPeriodAnswer: string;
+  isDriverRentalPossible: string;
+  isDriverRentalPossibleAnswer: string;
+  
+  // Contact Page
+  contactTitle: string;
+  contactSubtitle: string;
+  getInTouch: string;
+  sendMessage: string;
+  name: string;
+  subject: string;
+  message: string;
+  send: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  subjectPlaceholder: string;
+  messagePlaceholder: string;
+  quickContact: string;
+  callNow: string;
+  whatsappNow: string;
+  emailNow: string;
+  workingHours24: string;
+  
+  // About Page
+  aboutTitle: string;
+  aboutSubtitle: string;
+  mission: string;
+  missionText: string;
+  vision: string;
+  visionText: string;
+  values: string;
+  valuesText: string;
+  experience: string;
+  experienceText: string;
+  fleet: string;
+  fleetText: string;
+  service: string;
+  serviceText: string;
+  certificatesTitle: string;
+  certificatesDesc: string;
+  
+  // Footer
+  footerCallUs: string;
+  footerWriteToUs: string;
+  footerAddress: string;
+  quickLinks: string;
+  aboutLink: string;
+  carsLink: string;
+  carTypesLink: string;
+  faqLink: string;
+  contactLink: string;
+  subscribe: string;
+  subscribeDesc: string;
+  emailPlaceholderFooter: string;
+  allRightsReservedFooter: string;
 }
 
 export const translations: Record<string, Translation> = {
@@ -293,6 +377,90 @@ export const translations: Record<string, Translation> = {
     loading: 'Yüklənir...',
     errorLoadingImage: 'Şəkil yüklənmədi',
     retryLoading: 'Yenidən cəhd et',
+    
+    // Services Page
+    servicesTitle: 'Xidmətlər',
+    airportDelivery: 'Hava limanına çatdırılma',
+    airportDeliveryDesc: 'Heydər Əliyev Hava Limanına 7/24 çatdırılma və təhvil.',
+    driverRental: 'Sürücü ilə icarə',
+    driverRentalDesc: 'Peşəkar sürücü ilə rahat və təhlükəsiz səyahət.',
+    fullInsuranceService: 'Tam sığorta',
+    fullInsuranceServiceDesc: 'Genişləndirilmiş sığorta ilə əlavə rahatlıq.',
+    corporatePackages: 'Korporativ paketlər',
+    corporatePackagesDesc: 'Şirkətlər üçün xüsusi qiymətlər və uzunmüddətli icarə.',
+    addressDelivery: 'Ünvana çatdırılma',
+    addressDeliveryDesc: 'Şəhər daxili istənilən ünvana sürətli çatdırılma.',
+    flexibleRentalPeriod: 'Çevik icarə müddəti',
+    flexibleRentalPeriodDesc: 'Günlük, həftəlik, aylıq sərfəli seçimlər.',
+    onlinePaymentService: 'Onlayn ödəniş',
+    onlinePaymentServiceDesc: 'Kartla onlayn ödəniş və rezervasiya təsdiqi.',
+    wideCarFleet: 'Geniş maşın parkı',
+    wideCarFleetDesc: 'Ekonomdan premiuma qədər müxtəlif seçimlər.',
+    pricePackages: 'Qiymət paketləri',
+    daily: 'Günlük',
+    weekly: 'Həftəlik',
+    monthly: 'Aylıq',
+    affordablePricesAndBonusServices: 'Sərfəli qiymətlər və bonus xidmətlər.',
+    applyNow: 'Müraciət et',
+    frequentlyAskedQuestions: 'Tez-tez verilən suallar',
+    howDoesDepositWork: 'Depozit necə işləyir?',
+    howDoesDepositWorkAnswer: 'Maşından asılı olaraq 200-500$ depozit tələb olunur və qaytarılır.',
+    minimumRentalPeriodQuestion: 'Minimum icarə müddəti?',
+    minimumRentalPeriodAnswer: 'Minimum 2 gün.',
+    isDriverRentalPossible: 'Sürücü ilə icarə mümkündür?',
+    isDriverRentalPossibleAnswer: 'Bəli, təcrübəli sürücülərimiz var.',
+    
+    // Contact Page
+    contactTitle: 'Bizimlə Əlaqə',
+    contactSubtitle: 'Suallarınız var? Bizimlə əlaqə saxlayın!',
+    getInTouch: 'Əlaqə saxlayın',
+    sendMessage: 'Mesaj göndər',
+    name: 'Ad Soyad',
+    subject: 'Mövzu',
+    message: 'Mesaj',
+    send: 'Göndər',
+    namePlaceholder: 'Adınızı daxil edin',
+    emailPlaceholder: 'Email ünvanınızı daxil edin',
+    subjectPlaceholder: 'Mesajın mövzusunu daxil edin',
+    messagePlaceholder: 'Mesajınızı buraya yazın...',
+    quickContact: 'Sürətli əlaqə',
+    callNow: 'İndi zəng edin',
+    whatsappNow: 'WhatsApp yazın',
+    emailNow: 'Email göndərin',
+    workingHours24: '24/7 Açıq - Həftənin hər günü',
+    
+    // About Page
+    aboutTitle: 'Haqqımızda',
+    aboutSubtitle: 'Peşəkar avtomobil icarəsi xidməti ilə sizin səyahətinizi rahat və təhlükəsiz edirik.',
+    mission: 'Missiyamız',
+    missionText: 'Müştərilərimizə yüksək keyfiyyətli avtomobillər və xüsusi dəstək təqdim etməklə, hər səyahəti unudulmaz bir təcrübəyə çevirməkdir.',
+    vision: 'Vizyonumuz',
+    visionText: 'Avtomobil icarəsi sahəsində ən yaxşı şirkət olmaq və müştərilərimizə ən yaxşı xidməti təqdim etmək.',
+    values: 'Dəyərlərimiz',
+    valuesText: 'Müştəri məmnuniyyəti, etibarlılıq, keyfiyyət və innovasiya bizim əsas dəyərlərimizdir.',
+    experience: 'Təcrübə',
+    experienceText: '10+ il ərzində minlərlə müştəriyə xidmət etdik və onların etibarını qazandıq.',
+    fleet: 'Avtomobil Parkı',
+    fleetText: 'Ən müasir avtomobillərdən ibarət geniş flotumuzla hər zaman xidmətinizdəyik.',
+    service: 'Xidmət',
+    serviceText: '7/24 dəstək və çatdırılma xidməti ilə sizin rahatlığınızı təmin edirik.',
+    certificatesTitle: 'Sertifikatlarımız və Lisenziyalarımız',
+    certificatesDesc: 'Peşəkarlığımızı və keyfiyyətimizi təsdiq edən rəsmi sənədlər',
+    
+    // Footer
+    footerCallUs: 'Bizə zəng edin',
+    footerWriteToUs: 'Bizə yazın',
+    footerAddress: 'Ünvan',
+    quickLinks: 'Sürətli Keçidlər',
+    aboutLink: 'Haqqımızda',
+    carsLink: 'Maşınlar',
+    carTypesLink: 'Maşın Növləri',
+    faqLink: 'Tez-tez Verilən Suallar',
+    contactLink: 'Əlaqə',
+    subscribe: 'Abunə Olun',
+    subscribeDesc: 'Xidmətlərimiz haqqında məlumat almaq istəyirsiniz? Qeydiyyatdan keçin və biz sizə email vasitəsilə bildiriş göndərəcəyik.',
+    emailPlaceholderFooter: 'Email ünvanınız',
+    allRightsReservedFooter: 'Bütün hüquqlar qorunur.',
   },
   
   en: {
@@ -441,6 +609,90 @@ export const translations: Record<string, Translation> = {
     loading: 'Loading...',
     errorLoadingImage: 'Failed to load image',
     retryLoading: 'Retry loading',
+    
+    // Services Page
+    servicesTitle: 'Services',
+    airportDelivery: 'Airport delivery',
+    airportDeliveryDesc: '24/7 delivery and pickup to Heydar Aliyev Airport.',
+    driverRental: 'Rental with driver',
+    driverRentalDesc: 'Comfortable and safe travel with professional driver.',
+    fullInsuranceService: 'Full insurance',
+    fullInsuranceServiceDesc: 'Additional peace of mind with extended insurance.',
+    corporatePackages: 'Corporate packages',
+    corporatePackagesDesc: 'Special prices and long-term rental for companies.',
+    addressDelivery: 'Address delivery',
+    addressDeliveryDesc: 'Fast delivery to any address within the city.',
+    flexibleRentalPeriod: 'Flexible rental period',
+    flexibleRentalPeriodDesc: 'Daily, weekly, monthly affordable options.',
+    onlinePaymentService: 'Online payment',
+    onlinePaymentServiceDesc: 'Online card payment and reservation confirmation.',
+    wideCarFleet: 'Wide car fleet',
+    wideCarFleetDesc: 'Various options from economy to premium.',
+    pricePackages: 'Price packages',
+    daily: 'Daily',
+    weekly: 'Weekly',
+    monthly: 'Monthly',
+    affordablePricesAndBonusServices: 'Affordable prices and bonus services.',
+    applyNow: 'Apply now',
+    frequentlyAskedQuestions: 'Frequently asked questions',
+    howDoesDepositWork: 'How does the deposit work?',
+    howDoesDepositWorkAnswer: 'A deposit of $200-500 is required depending on the car and is refunded.',
+    minimumRentalPeriodQuestion: 'Minimum rental period?',
+    minimumRentalPeriodAnswer: 'Minimum 2 days.',
+    isDriverRentalPossible: 'Is rental with driver possible?',
+    isDriverRentalPossibleAnswer: 'Yes, we have experienced drivers.',
+    
+    // Contact Page
+    contactTitle: 'Contact Us',
+    contactSubtitle: 'Have questions? Get in touch with us!',
+    getInTouch: 'Get in Touch',
+    sendMessage: 'Send Message',
+    name: 'Full Name',
+    subject: 'Subject',
+    message: 'Message',
+    send: 'Send',
+    namePlaceholder: 'Enter your name',
+    emailPlaceholder: 'Enter your email address',
+    subjectPlaceholder: 'Enter message subject',
+    messagePlaceholder: 'Write your message here...',
+    quickContact: 'Quick Contact',
+    callNow: 'Call Now',
+    whatsappNow: 'WhatsApp Now',
+    emailNow: 'Send Email',
+    workingHours24: '24/7 Open - Every day of the week',
+    
+    // About Page
+    aboutTitle: 'About Us',
+    aboutSubtitle: 'We make your travel comfortable and safe with professional car rental service.',
+    mission: 'Our Mission',
+    missionText: 'To make every journey an unforgettable experience by providing our customers with high-quality vehicles and special support.',
+    vision: 'Our Vision',
+    visionText: 'To be the best company in the car rental industry and provide the best service to our customers.',
+    values: 'Our Values',
+    valuesText: 'Customer satisfaction, reliability, quality and innovation are our core values.',
+    experience: 'Experience',
+    experienceText: 'We have served thousands of customers and gained their trust over 10+ years.',
+    fleet: 'Car Fleet',
+    fleetText: 'With our extensive fleet of modern vehicles, we are always at your service.',
+    service: 'Service',
+    serviceText: 'We ensure your comfort with 24/7 support and delivery service.',
+    certificatesTitle: 'Our Certificates and Licenses',
+    certificatesDesc: 'Official documents confirming our professionalism and quality',
+    
+    // Footer
+    footerCallUs: 'Call us',
+    footerWriteToUs: 'Write to us',
+    footerAddress: 'Address',
+    quickLinks: 'Quick Links',
+    aboutLink: 'About',
+    carsLink: 'Cars',
+    carTypesLink: 'Car Types',
+    faqLink: 'FAQ',
+    contactLink: 'Contact',
+    subscribe: 'Subscribe',
+    subscribeDesc: 'Want to be notified about our services. Just sign up and we\'ll send you a notification by email.',
+    emailPlaceholderFooter: 'Your email address',
+    allRightsReservedFooter: 'All rights reserved.',
   },
   
   ru: {
@@ -589,6 +841,90 @@ export const translations: Record<string, Translation> = {
     loading: 'Загрузка...',
     errorLoadingImage: 'Не удалось загрузить изображение',
     retryLoading: 'Повторить загрузку',
+    
+    // Services Page
+    servicesTitle: 'Услуги',
+    airportDelivery: 'Доставка в аэропорт',
+    airportDeliveryDesc: 'Доставка и получение в аэропорту Гейдара Алиева 24/7.',
+    driverRental: 'Аренда с водителем',
+    driverRentalDesc: 'Комфортное и безопасное путешествие с профессиональным водителем.',
+    fullInsuranceService: 'Полная страховка',
+    fullInsuranceServiceDesc: 'Дополнительное спокойствие с расширенной страховкой.',
+    corporatePackages: 'Корпоративные пакеты',
+    corporatePackagesDesc: 'Специальные цены и долгосрочная аренда для компаний.',
+    addressDelivery: 'Доставка по адресу',
+    addressDeliveryDesc: 'Быстрая доставка по любому адресу в городе.',
+    flexibleRentalPeriod: 'Гибкий период аренды',
+    flexibleRentalPeriodDesc: 'Ежедневные, еженедельные, ежемесячные доступные варианты.',
+    onlinePaymentService: 'Онлайн оплата',
+    onlinePaymentServiceDesc: 'Онлайн оплата картой и подтверждение бронирования.',
+    wideCarFleet: 'Широкий автопарк',
+    wideCarFleetDesc: 'Различные варианты от эконом до премиум.',
+    pricePackages: 'Ценовые пакеты',
+    daily: 'Ежедневно',
+    weekly: 'Еженедельно',
+    monthly: 'Ежемесячно',
+    affordablePricesAndBonusServices: 'Доступные цены и бонусные услуги.',
+    applyNow: 'Подать заявку',
+    frequentlyAskedQuestions: 'Часто задаваемые вопросы',
+    howDoesDepositWork: 'Как работает депозит?',
+    howDoesDepositWorkAnswer: 'В зависимости от автомобиля требуется депозит $200-500, который возвращается.',
+    minimumRentalPeriodQuestion: 'Минимальный период аренды?',
+    minimumRentalPeriodAnswer: 'Минимум 2 дня.',
+    isDriverRentalPossible: 'Возможна ли аренда с водителем?',
+    isDriverRentalPossibleAnswer: 'Да, у нас есть опытные водители.',
+    
+    // Contact Page
+    contactTitle: 'Свяжитесь с нами',
+    contactSubtitle: 'Есть вопросы? Свяжитесь с нами!',
+    getInTouch: 'Связаться',
+    sendMessage: 'Отправить сообщение',
+    name: 'Полное имя',
+    subject: 'Тема',
+    message: 'Сообщение',
+    send: 'Отправить',
+    namePlaceholder: 'Введите ваше имя',
+    emailPlaceholder: 'Введите ваш email',
+    subjectPlaceholder: 'Введите тему сообщения',
+    messagePlaceholder: 'Напишите ваше сообщение здесь...',
+    quickContact: 'Быстрая связь',
+    callNow: 'Позвонить сейчас',
+    whatsappNow: 'WhatsApp сейчас',
+    emailNow: 'Отправить Email',
+    workingHours24: '24/7 Открыто - Каждый день недели',
+    
+    // About Page
+    aboutTitle: 'О нас',
+    aboutSubtitle: 'Делаем ваше путешествие комфортным и безопасным с профессиональным сервисом аренды автомобилей.',
+    mission: 'Наша миссия',
+    missionText: 'Сделать каждое путешествие незабываемым опытом, предоставляя нашим клиентам высококачественные автомобили и специальную поддержку.',
+    vision: 'Наше видение',
+    visionText: 'Стать лучшей компанией в индустрии проката автомобилей и предоставлять лучший сервис нашим клиентам.',
+    values: 'Наши ценности',
+    valuesText: 'Удовлетворенность клиентов, надежность, качество и инновации - это наши основные ценности.',
+    experience: 'Опыт',
+    experienceText: 'За 10+ лет мы обслужили тысячи клиентов и заслужили их доверие.',
+    fleet: 'Автопарк',
+    fleetText: 'С нашим обширным парком современных автомобилей мы всегда к вашим услугам.',
+    service: 'Сервис',
+    serviceText: 'Обеспечиваем ваш комфорт с круглосуточной поддержкой и службой доставки.',
+    certificatesTitle: 'Наши сертификаты и лицензии',
+    certificatesDesc: 'Официальные документы, подтверждающие наш профессионализм и качество',
+    
+    // Footer
+    footerCallUs: 'Позвоните нам',
+    footerWriteToUs: 'Напишите нам',
+    footerAddress: 'Адрес',
+    quickLinks: 'Быстрые ссылки',
+    aboutLink: 'О нас',
+    carsLink: 'Автомобили',
+    carTypesLink: 'Типы автомобилей',
+    faqLink: 'Часто задаваемые вопросы',
+    contactLink: 'Контакты',
+    subscribe: 'Подписаться',
+    subscribeDesc: 'Хотите получать уведомления о наших услугах? Просто зарегистрируйтесь, и мы будем присылать вам уведомления по электронной почте.',
+    emailPlaceholderFooter: 'Ваш адрес электронной почты',
+    allRightsReservedFooter: 'Все права защищены.',
   },
   
   ar: {
@@ -737,6 +1073,90 @@ export const translations: Record<string, Translation> = {
     loading: 'جاري التحميل...',
     errorLoadingImage: 'فشل في تحميل الصورة',
     retryLoading: 'إعادة المحاولة',
+    
+    // Services Page
+    servicesTitle: 'الخدمات',
+    airportDelivery: 'التوصيل للمطار',
+    airportDeliveryDesc: 'التوصيل والاستلام من مطار حيدر علييف على مدار 24/7.',
+    driverRental: 'الإيجار مع سائق',
+    driverRentalDesc: 'سفر مريح وآمن مع سائق محترف.',
+    fullInsuranceService: 'تأمين شامل',
+    fullInsuranceServiceDesc: 'راحة بال إضافية مع تأمين موسع.',
+    corporatePackages: 'الحزم المؤسسية',
+    corporatePackagesDesc: 'أسعار خاصة وإيجار طويل الأمد للشركات.',
+    addressDelivery: 'التوصيل للعنوان',
+    addressDeliveryDesc: 'توصيل سريع لأي عنوان داخل المدينة.',
+    flexibleRentalPeriod: 'فترة إيجار مرنة',
+    flexibleRentalPeriodDesc: 'خيارات يومية وأسبوعية وشهرية بأسعار معقولة.',
+    onlinePaymentService: 'الدفع عبر الإنترنت',
+    onlinePaymentServiceDesc: 'الدفع عبر الإنترنت بالبطاقة وتأكيد الحجز.',
+    wideCarFleet: 'أسطول سيارات واسع',
+    wideCarFleetDesc: 'خيارات متنوعة من الاقتصادي إلى المميز.',
+    pricePackages: 'حزم الأسعار',
+    daily: 'يومي',
+    weekly: 'أسبوعي',
+    monthly: 'شهري',
+    affordablePricesAndBonusServices: 'أسعار معقولة وخدمات إضافية.',
+    applyNow: 'تقدم الآن',
+    frequentlyAskedQuestions: 'الأسئلة الشائعة',
+    howDoesDepositWork: 'كيف يعمل العربون؟',
+    howDoesDepositWorkAnswer: 'يتطلب عربون 200-500$ حسب السيارة ويتم إرجاعه.',
+    minimumRentalPeriodQuestion: 'الحد الأدنى لفترة الإيجار؟',
+    minimumRentalPeriodAnswer: 'الحد الأدنى يومان.',
+    isDriverRentalPossible: 'هل الإيجار مع سائق ممكن؟',
+    isDriverRentalPossibleAnswer: 'نعم، لدينا سائقون ذوو خبرة.',
+    
+    // Contact Page
+    contactTitle: 'اتصل بنا',
+    contactSubtitle: 'لديك أسئلة؟ تواصل معنا!',
+    getInTouch: 'تواصل معنا',
+    sendMessage: 'إرسال رسالة',
+    name: 'الاسم الكامل',
+    subject: 'الموضوع',
+    message: 'الرسالة',
+    send: 'إرسال',
+    namePlaceholder: 'أدخل اسمك',
+    emailPlaceholder: 'أدخل عنوان بريدك الإلكتروني',
+    subjectPlaceholder: 'أدخل موضوع الرسالة',
+    messagePlaceholder: 'اكتب رسالتك هنا...',
+    quickContact: 'اتصال سريع',
+    callNow: 'اتصل الآن',
+    whatsappNow: 'واتساب الآن',
+    emailNow: 'إرسال بريد إلكتروني',
+    workingHours24: '24/7 مفتوح - كل يوم من أيام الأسبوع',
+    
+    // About Page
+    aboutTitle: 'حولنا',
+    aboutSubtitle: 'نجعل سفرك مريحًا وآمنًا مع خدمة تأجير السيارات المهنية.',
+    mission: 'مهمتنا',
+    missionText: 'تحويل كل رحلة إلى تجربة لا تُنسى من خلال توفير مركبات عالية الجودة ودعم خاص لعملائنا.',
+    vision: 'رؤيتنا',
+    visionText: 'أن نكون أفضل شركة في مجال تأجير السيارات وتقديم أفضل خدمة لعملائنا.',
+    values: 'قيمنا',
+    valuesText: 'رضا العملاء والموثوقية والجودة والابتكار هي قيمنا الأساسية.',
+    experience: 'الخبرة',
+    experienceText: 'لقد خدمنا آلاف العملاء وكسبنا ثقتهم على مدى 10+ سنوات.',
+    fleet: 'أسطول السيارات',
+    fleetText: 'مع أسطولنا الواسع من المركبات الحديثة، نكون دائمًا في خدمتكم.',
+    service: 'الخدمة',
+    serviceText: 'نضمن راحتك مع دعم 24/7 وخدمة التوصيل.',
+    certificatesTitle: 'شهاداتنا وتراخيصنا',
+    certificatesDesc: 'الوثائق الرسمية التي تؤكد احترافيتنا وجودتنا',
+    
+    // Footer
+    footerCallUs: 'اتصل بنا',
+    footerWriteToUs: 'اكتب لنا',
+    footerAddress: 'العنوان',
+    quickLinks: 'روابط سريعة',
+    aboutLink: 'حولنا',
+    carsLink: 'السيارات',
+    carTypesLink: 'أنواع السيارات',
+    faqLink: 'الأسئلة الشائعة',
+    contactLink: 'اتصل بنا',
+    subscribe: 'اشترك',
+    subscribeDesc: 'تريد أن تكون على علم بخدماتنا؟ فقط سجل وسنرسل لك إشعارًا عبر البريد الإلكتروني.',
+    emailPlaceholderFooter: 'عنوان بريدك الإلكتروني',
+    allRightsReservedFooter: 'جميع الحقوق محفوظة.',
   },
 };
 

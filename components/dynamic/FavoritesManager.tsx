@@ -81,8 +81,8 @@ export default function FavoritesManager({
     let filtered = cars;
     if (filterBy !== 'all') {
       filtered = cars.filter(car => 
-        car.category.toLowerCase() === filterBy ||
-        (filterBy === 'economy' && car.category.toLowerCase().includes('ekonom'))
+        car.category.some(cat => cat.toLowerCase() === filterBy) ||
+        (filterBy === 'economy' && car.category.some(cat => cat.toLowerCase().includes('ekonom')))
       );
     }
 
@@ -100,7 +100,7 @@ export default function FavoritesManager({
         case 'year-old':
           return a.year - b.year;
         case 'category':
-          return a.category.localeCompare(b.category);
+          return a.category[0].localeCompare(b.category[0]);
         default:
           return 0;
       }

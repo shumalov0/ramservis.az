@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { MapPin, Phone, Clock, Navigation, ExternalLink } from 'lucide-react';
 
 // Leaflet type declaration
@@ -21,7 +21,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ currentLang, className = '' }) =>
   const mapRef = useRef<HTMLDivElement>(null);
 
   // Ram Servis məlumatları
-  const companyInfo = {
+  const companyInfo = useMemo(() => ({
     name: 'Ram Servis Car Rental',
     address: process.env.NEXT_PUBLIC_COMPANY_ADDRESS || 'Bakı şəhəri, Nəsimi rayonu, Azadlıq prospekti 123',
     lat: parseFloat(process.env.NEXT_PUBLIC_COMPANY_LAT || '40.4093'),
@@ -33,7 +33,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ currentLang, className = '' }) =>
       ru: '24/7 Открыто',
       ar: '24/7 مفتوح'
     }
-  };
+  }), []);
 
   const translations = {
     az: {
@@ -278,7 +278,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({ currentLang, className = '' }) =>
     };
 
     loadLeafletMap();
-  }, [currentLang]);
+  }, [currentLang, companyInfo]);
 
   const handleGetDirections = () => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${companyInfo.lat},${companyInfo.lng}`;

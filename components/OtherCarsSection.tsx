@@ -36,13 +36,8 @@ const OtherCarsSection: FC<OtherCarsSectionProps> = memo(function OtherCarsSecti
   // Filter cars based on excludeIds and category
   const filteredCars = cars
     .filter(car => !excludeIds.includes(car.id))
-    .filter(car => !category || car.category.toLowerCase() === category.toLowerCase())
+    .filter(car => !category || car.category.some(cat => cat.toLowerCase() === category.toLowerCase()))
     .slice(0, maxCars);
-
-  // Don't render if no cars to show
-  if (filteredCars.length === 0) {
-    return null;
-  }
 
   useEffect(() => {
     // Simulate loading time
@@ -52,6 +47,11 @@ const OtherCarsSection: FC<OtherCarsSectionProps> = memo(function OtherCarsSecti
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Don't render if no cars to show
+  if (filteredCars.length === 0) {
+    return null;
+  }
 
   return (
     <section className="py-16 bg-gray-50/50 dark:bg-brand-dark/30">

@@ -60,7 +60,7 @@ const CarsFilters = memo(function CarsFilters({
     const classes = Array.from(new Set(cars.map((c) => c.class)));
     
     // Get enhanced data for additional filters
-    const categories = Array.from(new Set(enhancedCars.map((c) => c.category)));
+    const categories = Array.from(new Set(enhancedCars.flatMap((c) => c.category)));
     const fuelTypes = Array.from(new Set(cars.map((c) => c.fuelType)));
     const transmissions = Array.from(new Set(cars.map((c) => c.transmission)));
     const features = Array.from(new Set(cars.flatMap((c) => c.features)));

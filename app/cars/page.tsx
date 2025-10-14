@@ -77,7 +77,7 @@ export default function CarsPage() {
         category: [category]
       });
     }
-  }, [params?.toString(), setCarClass, setFilters]);
+  }, [params, filters, setCarClass, setFilters]);
 
   const handleLanguageChange = (lang: string) => {
     setCurrentLang(lang);

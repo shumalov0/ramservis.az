@@ -52,7 +52,7 @@ export interface EnhancedCar {
   };
   
   // New enhanced fields
-  category: 'SUV' | 'Sedan' | 'Hatchback' | 'Premium' | 'Luxury' | 'Economy' | 'Business' | 'Comfort' | 'Ekonom' | 'Biznes' | 'Lüks';
+  category: ('SUV' | 'Sedan' | 'Hatchback' | 'Minivan' | 'Luxury' | 'Economy' | 'Business' | 'Ekonom' | 'Biznes' | 'Lüks')[];
   popularity: number; // For sorting by popularity (0-100)
   availability: boolean;
   gallery: string[]; // Multiple images for enhanced gallery

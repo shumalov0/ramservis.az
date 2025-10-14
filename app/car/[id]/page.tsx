@@ -25,7 +25,7 @@ export default function CarDetail({ params }: CarDetailProps) {
   // Use enhanced car data if available, otherwise convert basic car to enhanced format
   const carData: EnhancedCar = enhancedCar || {
     ...car,
-    category: 'Economy' as const,
+    category: ['Economy'],
     popularity: 75,
     availability: true,
     gallery: car.images || [car.image],

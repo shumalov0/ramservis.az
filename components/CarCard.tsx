@@ -44,11 +44,12 @@ const CarCard: FC<CarCardProps> = ({
   // Get car category from enhanced data
   const getCarCategory = () => {
     if ("category" in car && car.category) {
-      return car.category;
+      return Array.isArray(car.category) ? car.category[0] : car.category;
     }
     // Fallback to enhanced cars data
     const enhancedCar = enhancedCars.find((ec) => ec.id === car.id);
-    return enhancedCar?.category || car.class;
+    const category = Array.isArray(enhancedCar?.category) ? enhancedCar?.category[0] : enhancedCar?.category;
+    return category || car.class;
   };
 
   return (

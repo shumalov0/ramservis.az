@@ -37,7 +37,7 @@ export function filterCars(cars: Car[], filters: CarFilters, search: string = ''
     // Class filter (deprecated - use category instead)
     if (filters.class && filters.class.length > 0) {
       const enhancedCar = enhancedCars.find(ec => ec.id === car.id);
-      if (!enhancedCar || !filters.class.includes(enhancedCar.category)) {
+      if (!enhancedCar || !enhancedCar.category.some(cat => filters.class!.includes(cat))) {
         return false;
       }
     }
@@ -73,9 +73,9 @@ export function filterCars(cars: Car[], filters: CarFilters, search: string = ''
         return false;
       }
       
-      // Check if car's category matches any of the selected categories
-      const carCategory = enhancedCar.category;
-      if (!carCategory || !filters.category.includes(carCategory)) {
+      // Check if car's categories match any of the selected categories
+      const carCategories = enhancedCar.category;
+      if (!carCategories || !carCategories.some(cat => filters.category!.includes(cat))) {
         return false;
       }
     }
@@ -188,7 +188,9 @@ export function getPopularFilters(cars: Car[]) {
     // Count categories
     const enhanced = enhancedCars.find(ec => ec.id === car.id);
     if (enhanced?.category) {
-      categoryCount[enhanced.category] = (categoryCount[enhanced.category] || 0) + 1;
+      enhanced.category.forEach(cat => {
+        categoryCount[cat] = (categoryCount[cat] || 0) + 1;
+      });
     }
 
     // Count fuel types
