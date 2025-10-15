@@ -76,14 +76,12 @@ export interface Translation {
   pickupLocation: string;
   dropoffLocation: string;
   selectLocation: string;
-  additionalServices: string;
   personalDriver: string;
   personalDriverDesc: string;
   childSeat: string;
   childSeatDesc: string;
   gpsNavigation: string;
   gpsNavigationDesc: string;
-  fullInsurance: string;
   fullInsuranceDesc: string;
   paymentMethod: string;
   cashPayment: string;
@@ -150,22 +148,127 @@ export interface Translation {
   
   // Services Page
   servicesTitle: string;
+  ourServices: string;
+  servicesDescription: string;
+  ourMainServices: string;
+  servicesIntro: string;
+  additionalServices: string;
+  
+  // Service Hero Stats
+  carsInFleet: string;
+  insured: string;
+  support: string;
+  locations: string;
+  
+  // Main Services
   airportDelivery: string;
   airportDeliveryDesc: string;
+  freeAirportDelivery: string;
+  meetAndGreet: string;
+  flightTracking: string;
+  
   driverRental: string;
   driverRentalDesc: string;
+  professionalDrivers: string;
+  cityKnowledge: string;
+  safetyFirst: string;
+  
   fullInsuranceService: string;
   fullInsuranceServiceDesc: string;
+  comprehensiveCoverage: string;
+  zeroDeductible: string;
+  roadAssistance: string;
+  
   corporatePackages: string;
   corporatePackagesDesc: string;
+  bulkDiscounts: string;
+  flexibleBilling: string;
+  dedicatedSupport: string;
+  
   addressDelivery: string;
   addressDeliveryDesc: string;
+  doorToDoor: string;
+  flexibleTiming: string;
+  citywideCoverage: string;
+  
   flexibleRentalPeriod: string;
   flexibleRentalPeriodDesc: string;
+  hourlyRental: string;
+  longTermDiscounts: string;
+  easyExtension: string;
+  
   onlinePaymentService: string;
   onlinePaymentServiceDesc: string;
+  securePayments: string;
+  multipleOptions: string;
+  instantConfirmation: string;
+  
   wideCarFleet: string;
   wideCarFleetDesc: string;
+  latestModels: string;
+  regularMaintenance: string;
+  cleanVehicles: string;
+  
+  customerSupport: string;
+  customerSupportDesc: string;
+  support24: string;
+  multiLanguage: string;
+  quickResponse: string;
+  
+  emergencyAssistance: string;
+  emergencyAssistanceDesc: string;
+  roadside: string;
+  replacement: string;
+  towing: string;
+  
+  // Process Steps
+  howItWorks: string;
+  processDescription: string;
+  selectCar: string;
+  selectCarDesc: string;
+  chooseDate: string;
+  chooseDateDesc: string;
+  makePayment: string;
+  makePaymentDesc: string;
+  enjoyRide: string;
+  enjoyRideDesc: string;
+  
+  // Pricing
+  pricingPlans: string;
+  pricingDescription: string;
+  perWeek: string;
+  perMonth: string;
+  unlimitedKm: string;
+  basicInsurance: string;
+  freeDelivery: string;
+  fullInsurance: string;
+  freeDriver: string;
+  carWash: string;
+  premiumInsurance: string;
+  maintenance: string;
+  mostPopular: string;
+  selectPlan: string;
+  
+  // FAQ
+  faqDescription: string;
+  insuranceQuestion: string;
+  insuranceAnswer: string;
+  fuelPolicyQuestion: string;
+  fuelPolicyAnswer: string;
+  cancellationQuestion: string;
+  cancellationAnswer: string;
+  
+  // Contact CTA
+  readyToStart: string;
+  contactDescription: string;
+  callUs: string;
+  whatsapp: string;
+  visitUs: string;
+  bakuCenter: string;
+  bookNow: string;
+  viewCars: string;
+  
+  // Legacy Services
   pricePackages: string;
   daily: string;
   weekly: string;
@@ -312,14 +415,12 @@ export const translations: Record<string, Translation> = {
     pickupLocation: 'Götürülmə Yeri',
     dropoffLocation: 'Qaytarılma Yeri',
     selectLocation: 'Yer seçin',
-    additionalServices: 'Əlavə Xidmətlər',
     personalDriver: 'Şəxsi Sürücü',
     personalDriverDesc: 'Təcrübəli sürücü ilə rahat səyahət',
     childSeat: 'Uşaq Oturacağı',
     childSeatDesc: '0-12 yaş arası uşaqlar üçün təhlükəsiz oturacaq',
     gpsNavigation: 'GPS Naviqasiya',
     gpsNavigationDesc: 'Peşəkar GPS cihazı',
-    fullInsurance: 'Tam Sığorta',
     fullInsuranceDesc: 'Genişləndirilmiş sığorta təminatı',
     paymentMethod: 'Ödəniş Üsulu',
     cashPayment: 'Nağd Ödəniş',
@@ -386,22 +487,127 @@ export const translations: Record<string, Translation> = {
     
     // Services Page
     servicesTitle: 'Xidmətlər',
-    airportDelivery: 'Hava limanına çatdırılma',
-    airportDeliveryDesc: 'Heydər Əliyev Hava Limanına 7/24 çatdırılma və təhvil.',
-    driverRental: 'Sürücü ilə icarə',
-    driverRentalDesc: 'Peşəkar sürücü ilə rahat və təhlükəsiz səyahət.',
-    fullInsuranceService: 'Tam sığorta',
-    fullInsuranceServiceDesc: 'Genişləndirilmiş sığorta ilə əlavə rahatlıq.',
-    corporatePackages: 'Korporativ paketlər',
-    corporatePackagesDesc: 'Şirkətlər üçün xüsusi qiymətlər və uzunmüddətli icarə.',
-    addressDelivery: 'Ünvana çatdırılma',
-    addressDeliveryDesc: 'Şəhər daxili istənilən ünvana sürətli çatdırılma.',
-    flexibleRentalPeriod: 'Çevik icarə müddəti',
-    flexibleRentalPeriodDesc: 'Günlük, həftəlik, aylıq sərfəli seçimlər.',
-    onlinePaymentService: 'Onlayn ödəniş',
-    onlinePaymentServiceDesc: 'Kartla onlayn ödəniş və rezervasiya təsdiqi.',
-    wideCarFleet: 'Geniş maşın parkı',
-    wideCarFleetDesc: 'Ekonomdan premiuma qədər müxtəlif seçimlər.',
+    ourServices: 'Xidmətlərimiz',
+    servicesDescription: 'Avtomobil icarəsi sahəsində ən yaxşı xidmətləri təqdim edirik',
+    ourMainServices: 'Əsas Xidmətlərimiz',
+    servicesIntro: 'Avtomobil icarəsi sahəsində ən keyfiyyətli və etibarlı xidmətləri təqdim edirik',
+    additionalServices: 'Əlavə Xidmətlər',
+    
+    // Service Hero Stats
+    carsInFleet: 'Avtomobil',
+    insured: 'Sığortalı',
+    support: 'Dəstək',
+    locations: 'Məkan',
+    
+    // Main Services
+    airportDelivery: 'Hava Limanı Çatdırılması',
+    airportDeliveryDesc: 'Hava limanından birbaşa avtomobil təhvil alma xidməti',
+    freeAirportDelivery: 'Pulsuz hava limanı çatdırılması',
+    meetAndGreet: 'Qarşılama xidməti',
+    flightTracking: 'Uçuş izləmə',
+    
+    driverRental: 'Sürücü ilə İcarə',
+    driverRentalDesc: 'Təcrübəli sürücülərimizlə rahat səyahət',
+    professionalDrivers: 'Peşəkar sürücülər',
+    cityKnowledge: 'Şəhər bilgisi',
+    safetyFirst: 'Təhlükəsizlik prioriteti',
+    
+    fullInsuranceService: 'Tam Sığorta Xidməti',
+    fullInsuranceServiceDesc: 'Hərtərəfli sığorta təminatı',
+    comprehensiveCoverage: 'Hərtərəfli təminat',
+    zeroDeductible: 'Sıfır muafilik',
+    roadAssistance: 'Yol yardımı',
+    
+    corporatePackages: 'Korporativ Paketlər',
+    corporatePackagesDesc: 'Şirkətlər üçün xüsusi həllər',
+    bulkDiscounts: 'Toplu endirimlər',
+    flexibleBilling: 'Çevik fakturalama',
+    dedicatedSupport: 'Xüsusi dəstək',
+    
+    addressDelivery: 'Ünvana Çatdırılma',
+    addressDeliveryDesc: 'İstədiyiniz ünvana avtomobil çatdırılması',
+    doorToDoor: 'Qapıdan qapıya',
+    flexibleTiming: 'Çevik vaxt',
+    citywideCoverage: 'Şəhər əhatəsi',
+    
+    flexibleRentalPeriod: 'Çevik İcarə Müddəti',
+    flexibleRentalPeriodDesc: 'Saatlıqdan aylığa qədər icarə seçimləri',
+    hourlyRental: 'Saatlıq icarə',
+    longTermDiscounts: 'Uzunmüddətli endirimlər',
+    easyExtension: 'Asan uzatma',
+    
+    onlinePaymentService: 'Onlayn Ödəniş',
+    onlinePaymentServiceDesc: 'Təhlükəsiz və sürətli ödəniş sistemi',
+    securePayments: 'Təhlükəsiz ödənişlər',
+    multipleOptions: 'Çoxlu seçimlər',
+    instantConfirmation: 'Ani təsdiq',
+    
+    wideCarFleet: 'Geniş Avtomobil Parkı',
+    wideCarFleetDesc: 'Müxtəlif kateqoriyalarda 500+ avtomobil',
+    latestModels: 'Ən yeni modellər',
+    regularMaintenance: 'Müntəzəm texniki xidmət',
+    cleanVehicles: 'Təmiz avtomobillər',
+    
+    customerSupport: 'Müştəri Dəstəyi',
+    customerSupportDesc: '24/7 peşəkar müştəri xidməti',
+    support24: '24/7 dəstək',
+    multiLanguage: 'Çoxdilli xidmət',
+    quickResponse: 'Sürətli cavab',
+    
+    emergencyAssistance: 'Təcili Yardım',
+    emergencyAssistanceDesc: 'Hər an əlçatan təcili yardım xidməti',
+    roadside: 'Yol kənarı yardım',
+    replacement: 'Ehtiyat avtomobil',
+    towing: 'Yedəkləmə xidməti',
+    
+    // Process Steps
+    howItWorks: 'Necə İşləyir?',
+    processDescription: 'Sadə 4 addımda avtomobilinizi icarəyə götürün',
+    selectCar: 'Avtomobil Seçin',
+    selectCarDesc: 'Geniş avtomobil parkımızdan sizə uyğun olanı seçin',
+    chooseDate: 'Tarix Seçin',
+    chooseDateDesc: 'İcarə müddətini və çatdırılma vaxtını təyin edin',
+    makePayment: 'Ödəniş Edin',
+    makePaymentDesc: 'Təhlükəsiz ödəniş sistemimizlə ödənişi tamamlayın',
+    enjoyRide: 'Səyahətdən Həzz Alın',
+    enjoyRideDesc: 'Avtomobilinizi təhvil alın və səyahətə başlayın',
+    
+    // Pricing
+    pricingPlans: 'Qiymət Paketləri',
+    pricingDescription: 'Ehtiyacınıza uyğun ən yaxşı paketi seçin',
+    perWeek: 'həftə',
+    perMonth: 'ay',
+    unlimitedKm: 'Limitsiz kilometr',
+    basicInsurance: 'Əsas sığorta',
+    freeDelivery: 'Pulsuz çatdırılma',
+    fullInsurance: 'Tam sığorta',
+    freeDriver: 'Pulsuz sürücü (8 saat)',
+    carWash: 'Avtomobil yuyulması',
+    premiumInsurance: 'Premium sığorta',
+    maintenance: 'Texniki xidmət',
+    mostPopular: 'Ən Populyar',
+    selectPlan: 'Paketi Seç',
+    
+    // FAQ
+    faqDescription: 'Ən çox soruşulan suallara cavablar',
+    insuranceQuestion: 'Sığorta daxildirmi?',
+    insuranceAnswer: 'Bütün avtomobillərimiz tam sığorta ilə təmin edilir. Əlavə sığorta seçimləri də mövcuddur.',
+    fuelPolicyQuestion: 'Yanacaq siyasəti necədir?',
+    fuelPolicyAnswer: 'Avtomobil dolu çənlə təhvil verilir və dolu çənlə geri qaytarılmalıdır.',
+    cancellationQuestion: 'Ləğvetmə siyasəti necədir?',
+    cancellationAnswer: '24 saat əvvəl ləğv etdiyiniz halda heç bir ödəniş tələb olunmur.',
+    
+    // Contact CTA
+    readyToStart: 'Başlamağa Hazırsınız?',
+    contactDescription: 'Bizimlə əlaqə saxlayın və ən yaxşı avtomobil icarəsi xidmətindən yararlanın',
+    callUs: 'Zəng Edin',
+    whatsapp: 'WhatsApp',
+    visitUs: 'Ofisimizə Gəlin',
+    bakuCenter: 'Bakı Mərkəz',
+    bookNow: 'İndi Sifariş Et',
+    viewCars: 'Avtomobilləri Gör',
+    
+    // Legacy Services
     pricePackages: 'Qiymət paketləri',
     daily: 'Günlük',
     weekly: 'Həftəlik',
@@ -547,14 +753,12 @@ export const translations: Record<string, Translation> = {
     pickupLocation: 'Pickup Location',
     dropoffLocation: 'Drop-off Location',
     selectLocation: 'Select location',
-    additionalServices: 'Additional Services',
     personalDriver: 'Personal Driver',
     personalDriverDesc: 'Comfortable travel with experienced driver',
     childSeat: 'Child Seat',
     childSeatDesc: 'Safe seat for children aged 0-12',
     gpsNavigation: 'GPS Navigation',
     gpsNavigationDesc: 'Professional GPS device',
-    fullInsurance: 'Full Insurance',
     fullInsuranceDesc: 'Extended insurance coverage',
     paymentMethod: 'Payment Method',
     cashPayment: 'Cash Payment',
@@ -621,22 +825,127 @@ export const translations: Record<string, Translation> = {
     
     // Services Page
     servicesTitle: 'Services',
-    airportDelivery: 'Airport delivery',
-    airportDeliveryDesc: '24/7 delivery and pickup to Heydar Aliyev Airport.',
-    driverRental: 'Rental with driver',
-    driverRentalDesc: 'Comfortable and safe travel with professional driver.',
-    fullInsuranceService: 'Full insurance',
-    fullInsuranceServiceDesc: 'Additional peace of mind with extended insurance.',
-    corporatePackages: 'Corporate packages',
-    corporatePackagesDesc: 'Special prices and long-term rental for companies.',
-    addressDelivery: 'Address delivery',
-    addressDeliveryDesc: 'Fast delivery to any address within the city.',
-    flexibleRentalPeriod: 'Flexible rental period',
-    flexibleRentalPeriodDesc: 'Daily, weekly, monthly affordable options.',
-    onlinePaymentService: 'Online payment',
-    onlinePaymentServiceDesc: 'Online card payment and reservation confirmation.',
-    wideCarFleet: 'Wide car fleet',
-    wideCarFleetDesc: 'Various options from economy to premium.',
+    ourServices: 'Our Services',
+    servicesDescription: 'We provide the best services in the car rental industry',
+    ourMainServices: 'Our Main Services',
+    servicesIntro: 'We provide the highest quality and reliable services in the car rental industry',
+    additionalServices: 'Additional Services',
+    
+    // Service Hero Stats
+    carsInFleet: 'Cars',
+    insured: 'Insured',
+    support: 'Support',
+    locations: 'Locations',
+    
+    // Main Services
+    airportDelivery: 'Airport Delivery',
+    airportDeliveryDesc: 'Direct car pickup service from the airport',
+    freeAirportDelivery: 'Free airport delivery',
+    meetAndGreet: 'Meet and greet service',
+    flightTracking: 'Flight tracking',
+    
+    driverRental: 'Rental with Driver',
+    driverRentalDesc: 'Comfortable travel with our experienced drivers',
+    professionalDrivers: 'Professional drivers',
+    cityKnowledge: 'City knowledge',
+    safetyFirst: 'Safety priority',
+    
+    fullInsuranceService: 'Full Insurance Service',
+    fullInsuranceServiceDesc: 'Comprehensive insurance coverage',
+    comprehensiveCoverage: 'Comprehensive coverage',
+    zeroDeductible: 'Zero deductible',
+    roadAssistance: 'Road assistance',
+    
+    corporatePackages: 'Corporate Packages',
+    corporatePackagesDesc: 'Special solutions for companies',
+    bulkDiscounts: 'Bulk discounts',
+    flexibleBilling: 'Flexible billing',
+    dedicatedSupport: 'Dedicated support',
+    
+    addressDelivery: 'Address Delivery',
+    addressDeliveryDesc: 'Car delivery to your desired address',
+    doorToDoor: 'Door to door',
+    flexibleTiming: 'Flexible timing',
+    citywideCoverage: 'Citywide coverage',
+    
+    flexibleRentalPeriod: 'Flexible Rental Period',
+    flexibleRentalPeriodDesc: 'Rental options from hourly to monthly',
+    hourlyRental: 'Hourly rental',
+    longTermDiscounts: 'Long-term discounts',
+    easyExtension: 'Easy extension',
+    
+    onlinePaymentService: 'Online Payment',
+    onlinePaymentServiceDesc: 'Secure and fast payment system',
+    securePayments: 'Secure payments',
+    multipleOptions: 'Multiple options',
+    instantConfirmation: 'Instant confirmation',
+    
+    wideCarFleet: 'Wide Car Fleet',
+    wideCarFleetDesc: '500+ cars in various categories',
+    latestModels: 'Latest models',
+    regularMaintenance: 'Regular maintenance',
+    cleanVehicles: 'Clean vehicles',
+    
+    customerSupport: 'Customer Support',
+    customerSupportDesc: '24/7 professional customer service',
+    support24: '24/7 support',
+    multiLanguage: 'Multi-language service',
+    quickResponse: 'Quick response',
+    
+    emergencyAssistance: 'Emergency Assistance',
+    emergencyAssistanceDesc: 'Emergency assistance service available anytime',
+    roadside: 'Roadside assistance',
+    replacement: 'Replacement vehicle',
+    towing: 'Towing service',
+    
+    // Process Steps
+    howItWorks: 'How It Works?',
+    processDescription: 'Rent your car in 4 simple steps',
+    selectCar: 'Select Car',
+    selectCarDesc: 'Choose the right one from our extensive car fleet',
+    chooseDate: 'Choose Date',
+    chooseDateDesc: 'Set rental period and delivery time',
+    makePayment: 'Make Payment',
+    makePaymentDesc: 'Complete payment with our secure payment system',
+    enjoyRide: 'Enjoy Your Ride',
+    enjoyRideDesc: 'Pick up your car and start your journey',
+    
+    // Pricing
+    pricingPlans: 'Pricing Plans',
+    pricingDescription: 'Choose the best package for your needs',
+    perWeek: 'week',
+    perMonth: 'month',
+    unlimitedKm: 'Unlimited kilometers',
+    basicInsurance: 'Basic insurance',
+    freeDelivery: 'Free delivery',
+    fullInsurance: 'Full insurance',
+    freeDriver: 'Free driver (8 hours)',
+    carWash: 'Car wash',
+    premiumInsurance: 'Premium insurance',
+    maintenance: 'Maintenance',
+    mostPopular: 'Most Popular',
+    selectPlan: 'Select Plan',
+    
+    // FAQ
+    faqDescription: 'Answers to the most frequently asked questions',
+    insuranceQuestion: 'Is insurance included?',
+    insuranceAnswer: 'All our cars are provided with full insurance. Additional insurance options are also available.',
+    fuelPolicyQuestion: 'What is the fuel policy?',
+    fuelPolicyAnswer: 'The car is delivered with a full tank and must be returned with a full tank.',
+    cancellationQuestion: 'What is the cancellation policy?',
+    cancellationAnswer: 'No payment is required if you cancel 24 hours in advance.',
+    
+    // Contact CTA
+    readyToStart: 'Ready to Start?',
+    contactDescription: 'Contact us and benefit from the best car rental service',
+    callUs: 'Call Us',
+    whatsapp: 'WhatsApp',
+    visitUs: 'Visit Us',
+    bakuCenter: 'Baku Center',
+    bookNow: 'Book Now',
+    viewCars: 'View Cars',
+    
+    // Legacy Services
     pricePackages: 'Price packages',
     daily: 'Daily',
     weekly: 'Weekly',
@@ -782,14 +1091,12 @@ export const translations: Record<string, Translation> = {
     pickupLocation: 'Место Получения',
     dropoffLocation: 'Место Возврата',
     selectLocation: 'Выберите место',
-    additionalServices: 'Дополнительные Услуги',
     personalDriver: 'Личный Водитель',
     personalDriverDesc: 'Комфортное путешествие с опытным водителем',
     childSeat: 'Детское Кресло',
     childSeatDesc: 'Безопасное кресло для детей 0-12 лет',
     gpsNavigation: 'GPS Навигация',
     gpsNavigationDesc: 'Профессиональное GPS устройство',
-    fullInsurance: 'Полная Страховка',
     fullInsuranceDesc: 'Расширенное страховое покрытие',
     paymentMethod: 'Способ Оплаты',
     cashPayment: 'Наличная Оплата',
@@ -856,22 +1163,127 @@ export const translations: Record<string, Translation> = {
     
     // Services Page
     servicesTitle: 'Услуги',
-    airportDelivery: 'Доставка в аэропорт',
-    airportDeliveryDesc: 'Доставка и получение в аэропорту Гейдара Алиева 24/7.',
-    driverRental: 'Аренда с водителем',
-    driverRentalDesc: 'Комфортное и безопасное путешествие с профессиональным водителем.',
-    fullInsuranceService: 'Полная страховка',
-    fullInsuranceServiceDesc: 'Дополнительное спокойствие с расширенной страховкой.',
-    corporatePackages: 'Корпоративные пакеты',
-    corporatePackagesDesc: 'Специальные цены и долгосрочная аренда для компаний.',
-    addressDelivery: 'Доставка по адресу',
-    addressDeliveryDesc: 'Быстрая доставка по любому адресу в городе.',
-    flexibleRentalPeriod: 'Гибкий период аренды',
-    flexibleRentalPeriodDesc: 'Ежедневные, еженедельные, ежемесячные доступные варианты.',
-    onlinePaymentService: 'Онлайн оплата',
-    onlinePaymentServiceDesc: 'Онлайн оплата картой и подтверждение бронирования.',
-    wideCarFleet: 'Широкий автопарк',
-    wideCarFleetDesc: 'Различные варианты от эконом до премиум.',
+    ourServices: 'Наши Услуги',
+    servicesDescription: 'Мы предоставляем лучшие услуги в сфере аренды автомобилей',
+    ourMainServices: 'Наши Основные Услуги',
+    servicesIntro: 'Мы предоставляем самые качественные и надежные услуги в сфере аренды автомобилей',
+    additionalServices: 'Дополнительные Услуги',
+    
+    // Service Hero Stats
+    carsInFleet: 'Автомобилей',
+    insured: 'Застрахованы',
+    support: 'Поддержка',
+    locations: 'Локаций',
+    
+    // Main Services
+    airportDelivery: 'Доставка в Аэропорт',
+    airportDeliveryDesc: 'Прямая услуга получения автомобиля из аэропорта',
+    freeAirportDelivery: 'Бесплатная доставка в аэропорт',
+    meetAndGreet: 'Услуга встречи',
+    flightTracking: 'Отслеживание рейсов',
+    
+    driverRental: 'Аренда с Водителем',
+    driverRentalDesc: 'Комфортное путешествие с нашими опытными водителями',
+    professionalDrivers: 'Профессиональные водители',
+    cityKnowledge: 'Знание города',
+    safetyFirst: 'Приоритет безопасности',
+    
+    fullInsuranceService: 'Полная Страховка',
+    fullInsuranceServiceDesc: 'Комплексное страховое покрытие',
+    comprehensiveCoverage: 'Комплексное покрытие',
+    zeroDeductible: 'Нулевая франшиза',
+    roadAssistance: 'Помощь на дороге',
+    
+    corporatePackages: 'Корпоративные Пакеты',
+    corporatePackagesDesc: 'Специальные решения для компаний',
+    bulkDiscounts: 'Оптовые скидки',
+    flexibleBilling: 'Гибкое выставление счетов',
+    dedicatedSupport: 'Выделенная поддержка',
+    
+    addressDelivery: 'Доставка по Адресу',
+    addressDeliveryDesc: 'Доставка автомобиля по желаемому адресу',
+    doorToDoor: 'От двери до двери',
+    flexibleTiming: 'Гибкое время',
+    citywideCoverage: 'Покрытие по всему городу',
+    
+    flexibleRentalPeriod: 'Гибкий Период Аренды',
+    flexibleRentalPeriodDesc: 'Варианты аренды от почасовой до месячной',
+    hourlyRental: 'Почасовая аренда',
+    longTermDiscounts: 'Скидки на долгосрочную аренду',
+    easyExtension: 'Легкое продление',
+    
+    onlinePaymentService: 'Онлайн Оплата',
+    onlinePaymentServiceDesc: 'Безопасная и быстрая система оплаты',
+    securePayments: 'Безопасные платежи',
+    multipleOptions: 'Множество вариантов',
+    instantConfirmation: 'Мгновенное подтверждение',
+    
+    wideCarFleet: 'Широкий Автопарк',
+    wideCarFleetDesc: '500+ автомобилей в различных категориях',
+    latestModels: 'Новейшие модели',
+    regularMaintenance: 'Регулярное обслуживание',
+    cleanVehicles: 'Чистые автомобили',
+    
+    customerSupport: 'Поддержка Клиентов',
+    customerSupportDesc: '24/7 профессиональное обслуживание клиентов',
+    support24: '24/7 поддержка',
+    multiLanguage: 'Многоязычный сервис',
+    quickResponse: 'Быстрый ответ',
+    
+    emergencyAssistance: 'Экстренная Помощь',
+    emergencyAssistanceDesc: 'Служба экстренной помощи доступна в любое время',
+    roadside: 'Помощь на дороге',
+    replacement: 'Замещающий автомобиль',
+    towing: 'Услуга эвакуации',
+    
+    // Process Steps
+    howItWorks: 'Как Это Работает?',
+    processDescription: 'Арендуйте автомобиль в 4 простых шага',
+    selectCar: 'Выберите Автомобиль',
+    selectCarDesc: 'Выберите подходящий из нашего обширного автопарка',
+    chooseDate: 'Выберите Дату',
+    chooseDateDesc: 'Установите период аренды и время доставки',
+    makePayment: 'Произведите Оплату',
+    makePaymentDesc: 'Завершите оплату с помощью нашей безопасной системы',
+    enjoyRide: 'Наслаждайтесь Поездкой',
+    enjoyRideDesc: 'Получите автомобиль и начните путешествие',
+    
+    // Pricing
+    pricingPlans: 'Тарифные Планы',
+    pricingDescription: 'Выберите лучший пакет для ваших потребностей',
+    perWeek: 'неделя',
+    perMonth: 'месяц',
+    unlimitedKm: 'Неограниченные километры',
+    basicInsurance: 'Базовая страховка',
+    freeDelivery: 'Бесплатная доставка',
+    fullInsurance: 'Полная страховка',
+    freeDriver: 'Бесплатный водитель (8 часов)',
+    carWash: 'Мойка автомобиля',
+    premiumInsurance: 'Премиум страховка',
+    maintenance: 'Обслуживание',
+    mostPopular: 'Самый Популярный',
+    selectPlan: 'Выбрать План',
+    
+    // FAQ
+    faqDescription: 'Ответы на наиболее часто задаваемые вопросы',
+    insuranceQuestion: 'Включена ли страховка?',
+    insuranceAnswer: 'Все наши автомобили предоставляются с полной страховкой. Также доступны дополнительные варианты страхования.',
+    fuelPolicyQuestion: 'Какая политика по топливу?',
+    fuelPolicyAnswer: 'Автомобиль доставляется с полным баком и должен быть возвращен с полным баком.',
+    cancellationQuestion: 'Какая политика отмены?',
+    cancellationAnswer: 'Никакой оплаты не требуется, если вы отменяете за 24 часа.',
+    
+    // Contact CTA
+    readyToStart: 'Готовы Начать?',
+    contactDescription: 'Свяжитесь с нами и воспользуйтесь лучшим сервисом аренды автомобилей',
+    callUs: 'Позвоните Нам',
+    whatsapp: 'WhatsApp',
+    visitUs: 'Посетите Нас',
+    bakuCenter: 'Центр Баку',
+    bookNow: 'Забронировать Сейчас',
+    viewCars: 'Посмотреть Автомобили',
+    
+    // Legacy Services
     pricePackages: 'Ценовые пакеты',
     daily: 'Ежедневно',
     weekly: 'Еженедельно',
@@ -1017,14 +1429,12 @@ export const translations: Record<string, Translation> = {
     pickupLocation: 'مكان الاستلام',
     dropoffLocation: 'مكان الإرجاع',
     selectLocation: 'اختر الموقع',
-    additionalServices: 'الخدمات الإضافية',
     personalDriver: 'سائق شخصي',
     personalDriverDesc: 'سفر مريح مع سائق ذو خبرة',
     childSeat: 'مقعد الأطفال',
     childSeatDesc: 'مقعد آمن للأطفال من عمر 0-12',
     gpsNavigation: 'نظام تحديد المواقع',
     gpsNavigationDesc: 'جهاز GPS احترافي',
-    fullInsurance: 'تأمين شامل',
     fullInsuranceDesc: 'تغطية تأمينية موسعة',
     paymentMethod: 'طريقة الدفع',
     cashPayment: 'الدفع نقداً',
@@ -1091,22 +1501,127 @@ export const translations: Record<string, Translation> = {
     
     // Services Page
     servicesTitle: 'الخدمات',
+    ourServices: 'خدماتنا',
+    servicesDescription: 'نقدم أفضل الخدمات في مجال تأجير السيارات',
+    ourMainServices: 'خدماتنا الرئيسية',
+    servicesIntro: 'نقدم أعلى جودة وأكثر الخدمات موثوقية في مجال تأجير السيارات',
+    additionalServices: 'الخدمات الإضافية',
+    
+    // Service Hero Stats
+    carsInFleet: 'سيارة',
+    insured: 'مؤمن',
+    support: 'الدعم',
+    locations: 'الموقع',
+    
+    // Main Services
     airportDelivery: 'التوصيل للمطار',
-    airportDeliveryDesc: 'التوصيل والاستلام من مطار حيدر علييف على مدار 24/7.',
+    airportDeliveryDesc: 'خدمة استلام السيارة مباشرة من المطار',
+    freeAirportDelivery: 'توصيل مجاني للمطار',
+    meetAndGreet: 'خدمة الاستقبال',
+    flightTracking: 'تتبع الرحلات',
+    
     driverRental: 'الإيجار مع سائق',
-    driverRentalDesc: 'سفر مريح وآمن مع سائق محترف.',
-    fullInsuranceService: 'تأمين شامل',
-    fullInsuranceServiceDesc: 'راحة بال إضافية مع تأمين موسع.',
+    driverRentalDesc: 'سفر مريح مع سائقينا ذوي الخبرة',
+    professionalDrivers: 'سائقون محترفون',
+    cityKnowledge: 'معرفة المدينة',
+    safetyFirst: 'أولوية السلامة',
+    
+    fullInsuranceService: 'خدمة التأمين الشامل',
+    fullInsuranceServiceDesc: 'تغطية تأمينية شاملة',
+    comprehensiveCoverage: 'تغطية شاملة',
+    zeroDeductible: 'صفر خصم',
+    roadAssistance: 'المساعدة على الطريق',
+    
     corporatePackages: 'الحزم المؤسسية',
-    corporatePackagesDesc: 'أسعار خاصة وإيجار طويل الأمد للشركات.',
+    corporatePackagesDesc: 'حلول خاصة للشركات',
+    bulkDiscounts: 'خصومات الكمية',
+    flexibleBilling: 'فوترة مرنة',
+    dedicatedSupport: 'دعم مخصص',
+    
     addressDelivery: 'التوصيل للعنوان',
-    addressDeliveryDesc: 'توصيل سريع لأي عنوان داخل المدينة.',
+    addressDeliveryDesc: 'توصيل السيارة للعنوان المطلوب',
+    doorToDoor: 'من الباب للباب',
+    flexibleTiming: 'توقيت مرن',
+    citywideCoverage: 'تغطية على مستوى المدينة',
+    
     flexibleRentalPeriod: 'فترة إيجار مرنة',
-    flexibleRentalPeriodDesc: 'خيارات يومية وأسبوعية وشهرية بأسعار معقولة.',
+    flexibleRentalPeriodDesc: 'خيارات الإيجار من الساعة إلى الشهر',
+    hourlyRental: 'إيجار بالساعة',
+    longTermDiscounts: 'خصومات طويلة الأمد',
+    easyExtension: 'تمديد سهل',
+    
     onlinePaymentService: 'الدفع عبر الإنترنت',
-    onlinePaymentServiceDesc: 'الدفع عبر الإنترنت بالبطاقة وتأكيد الحجز.',
+    onlinePaymentServiceDesc: 'نظام دفع آمن وسريع',
+    securePayments: 'مدفوعات آمنة',
+    multipleOptions: 'خيارات متعددة',
+    instantConfirmation: 'تأكيد فوري',
+    
     wideCarFleet: 'أسطول سيارات واسع',
-    wideCarFleetDesc: 'خيارات متنوعة من الاقتصادي إلى المميز.',
+    wideCarFleetDesc: '500+ سيارة في فئات مختلفة',
+    latestModels: 'أحدث الموديلات',
+    regularMaintenance: 'صيانة منتظمة',
+    cleanVehicles: 'مركبات نظيفة',
+    
+    customerSupport: 'دعم العملاء',
+    customerSupportDesc: 'خدمة عملاء احترافية 24/7',
+    support24: 'دعم 24/7',
+    multiLanguage: 'خدمة متعددة اللغات',
+    quickResponse: 'استجابة سريعة',
+    
+    emergencyAssistance: 'المساعدة الطارئة',
+    emergencyAssistanceDesc: 'خدمة المساعدة الطارئة متاحة في أي وقت',
+    roadside: 'المساعدة على الطريق',
+    replacement: 'مركبة بديلة',
+    towing: 'خدمة السحب',
+    
+    // Process Steps
+    howItWorks: 'كيف يعمل؟',
+    processDescription: 'استأجر سيارتك في 4 خطوات بسيطة',
+    selectCar: 'اختر السيارة',
+    selectCarDesc: 'اختر المناسب من أسطول سياراتنا الواسع',
+    chooseDate: 'اختر التاريخ',
+    chooseDateDesc: 'حدد فترة الإيجار ووقت التسليم',
+    makePayment: 'قم بالدفع',
+    makePaymentDesc: 'أكمل الدفع بنظام الدفع الآمن لدينا',
+    enjoyRide: 'استمتع بالرحلة',
+    enjoyRideDesc: 'استلم سيارتك وابدأ رحلتك',
+    
+    // Pricing
+    pricingPlans: 'خطط الأسعار',
+    pricingDescription: 'اختر أفضل حزمة لاحتياجاتك',
+    perWeek: 'أسبوع',
+    perMonth: 'شهر',
+    unlimitedKm: 'كيلومترات غير محدودة',
+    basicInsurance: 'تأمين أساسي',
+    freeDelivery: 'توصيل مجاني',
+    fullInsurance: 'تأمين شامل',
+    freeDriver: 'سائق مجاني (8 ساعات)',
+    carWash: 'غسيل السيارة',
+    premiumInsurance: 'تأمين مميز',
+    maintenance: 'الصيانة',
+    mostPopular: 'الأكثر شعبية',
+    selectPlan: 'اختر الخطة',
+    
+    // FAQ
+    faqDescription: 'إجابات على الأسئلة الأكثر شيوعاً',
+    insuranceQuestion: 'هل التأمين مشمول؟',
+    insuranceAnswer: 'جميع سياراتنا مزودة بتأمين شامل. كما تتوفر خيارات تأمين إضافية.',
+    fuelPolicyQuestion: 'ما هي سياسة الوقود؟',
+    fuelPolicyAnswer: 'يتم تسليم السيارة بخزان ممتلئ ويجب إرجاعها بخزان ممتلئ.',
+    cancellationQuestion: 'ما هي سياسة الإلغاء؟',
+    cancellationAnswer: 'لا يتطلب أي دفع إذا ألغيت قبل 24 ساعة.',
+    
+    // Contact CTA
+    readyToStart: 'مستعد للبدء؟',
+    contactDescription: 'تواصل معنا واستفد من أفضل خدمة تأجير سيارات',
+    callUs: 'اتصل بنا',
+    whatsapp: 'واتساب',
+    visitUs: 'زرنا',
+    bakuCenter: 'مركز باكو',
+    bookNow: 'احجز الآن',
+    viewCars: 'عرض السيارات',
+    
+    // Legacy Services
     pricePackages: 'حزم الأسعار',
     daily: 'يومي',
     weekly: 'أسبوعي',

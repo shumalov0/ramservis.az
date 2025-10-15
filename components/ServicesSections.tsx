@@ -1,73 +1,204 @@
-'use client';
+"use client";
 
-import { Car, ShieldCheck, MapPin, CreditCard, Clock, Building2, CarFront, Plane } from 'lucide-react';
-import { useTranslation } from '@/lib/translations';
+import {
+  Car,
+  ShieldCheck,
+  MapPin,
+  CreditCard,
+  Clock,
+  Building2,
+  CarFront,
+  Plane,
+  Users,
+  Headphones,
+} from "lucide-react";
+import ServiceCard from "./services/ServiceCard";
+import PricingSection from "./services/PricingSection";
+import ProcessSteps from "./services/ProcessSteps";
+import FAQ from "./services/FAQ";
+import ContactCTA from "./services/ContactCTA";
 
 interface ServicesSectionsProps {
-  t: ReturnType<typeof useTranslation>;
+  t: any;
 }
 
 export default function ServicesSections({ t }: ServicesSectionsProps) {
   const services = [
-    { icon: Plane, titleKey: 'airportDelivery', descKey: 'airportDeliveryDesc' },
-    { icon: CarFront, titleKey: 'driverRental', descKey: 'driverRentalDesc' },
-    { icon: ShieldCheck, titleKey: 'fullInsuranceService', descKey: 'fullInsuranceServiceDesc' },
-    { icon: Building2, titleKey: 'corporatePackages', descKey: 'corporatePackagesDesc' },
-    { icon: MapPin, titleKey: 'addressDelivery', descKey: 'addressDeliveryDesc' },
-    { icon: Clock, titleKey: 'flexibleRentalPeriod', descKey: 'flexibleRentalPeriodDesc' },
-    { icon: CreditCard, titleKey: 'onlinePaymentService', descKey: 'onlinePaymentServiceDesc' },
-    { icon: Car, titleKey: 'wideCarFleet', descKey: 'wideCarFleetDesc' },
+    {
+      icon: Plane,
+      title: t.airportDelivery || "Hava Limanı Çatdırılması",
+      description:
+        t.airportDeliveryDesc ||
+        "Hava limanından birbaşa avtomobil təhvil alma xidməti",
+      features: [
+        t.freeAirportDelivery || "Pulsuz hava limanı çatdırılması",
+        t.meetAndGreet || "Qarşılama xidməti",
+        t.flightTracking || "Uçuş izləmə",
+      ],
+    },
+    {
+      icon: CarFront,
+      title: t.driverRental || "Sürücü ilə İcarə",
+      description:
+        t.driverRentalDesc || "Təcrübəli sürücülərimizlə rahat səyahət",
+      features: [
+        t.professionalDrivers || "Peşəkar sürücülər",
+        t.cityKnowledge || "Şəhər bilgisi",
+        t.safetyFirst || "Təhlükəsizlik prioriteti",
+      ],
+    },
+    {
+      icon: ShieldCheck,
+      title: t.fullInsuranceService || "Tam Sığorta Xidməti",
+      description: t.fullInsuranceServiceDesc || "Hərtərəfli sığorta təminatı",
+      features: [
+        t.comprehensiveCoverage || "Hərtərəfli təminat",
+        t.zeroDeductible || "Sıfır muafilik",
+        t.roadAssistance || "Yol yardımı",
+      ],
+    },
+    {
+      icon: Building2,
+      title: t.corporatePackages || "Korporativ Paketlər",
+      description: t.corporatePackagesDesc || "Şirkətlər üçün xüsusi həllər",
+      features: [
+        t.bulkDiscounts || "Toplu endirimlər",
+        t.flexibleBilling || "Çevik fakturalama",
+        t.dedicatedSupport || "Xüsusi dəstək",
+      ],
+    },
+    {
+      icon: MapPin,
+      title: t.addressDelivery || "Ünvana Çatdırılma",
+      description:
+        t.addressDeliveryDesc || "İstədiyiniz ünvana avtomobil çatdırılması",
+      features: [
+        t.doorToDoor || "Qapıdan qapıya",
+        t.flexibleTiming || "Çevik vaxt",
+        t.citywideCoverage || "Şəhər əhatəsi",
+      ],
+    },
+    {
+      icon: Clock,
+      title: t.flexibleRentalPeriod || "Çevik İcarə Müddəti",
+      description:
+        t.flexibleRentalPeriodDesc || "Saatlıqdan aylığa qədər icarə seçimləri",
+      features: [
+        t.hourlyRental || "Saatlıq icarə",
+        t.longTermDiscounts || "Uzunmüddətli endirimlər",
+        t.easyExtension || "Asan uzatma",
+      ],
+    },
+    {
+      icon: CreditCard,
+      title: t.onlinePaymentService || "Onlayn Ödəniş",
+      description:
+        t.onlinePaymentServiceDesc || "Təhlükəsiz və sürətli ödəniş sistemi",
+      features: [
+        t.securePayments || "Təhlükəsiz ödənişlər",
+        t.multipleOptions || "Çoxlu seçimlər",
+        t.instantConfirmation || "Ani təsdiq",
+      ],
+    },
+    {
+      icon: Car,
+      title: t.wideCarFleet || "Geniş Avtomobil Parkı",
+      description:
+        t.wideCarFleetDesc || "Müxtəlif kateqoriyalarda 500+ avtomobil",
+      features: [
+        t.latestModels || "Ən yeni modellər",
+        t.regularMaintenance || "Müntəzəm texniki xidmət",
+        t.cleanVehicles || "Təmiz avtomobillər",
+      ],
+    },
+    {
+      icon: Users,
+      title: t.customerSupport || "Müştəri Dəstəyi",
+      description: t.customerSupportDesc || "24/7 peşəkar müştəri xidməti",
+      features: [
+        t.support24 || "24/7 dəstək",
+        t.multiLanguage || "Çoxdilli xidmət",
+        t.quickResponse || "Sürətli cavab",
+      ],
+    },
+    {
+      icon: Headphones,
+      title: t.emergencyAssistance || "Təcili Yardım",
+      description:
+        t.emergencyAssistanceDesc || "Hər an əlçatan təcili yardım xidməti",
+      features: [
+        t.roadside || "Yol kənarı yardım",
+        t.replacement || "Ehtiyat avtomobil",
+        t.towing || "Yedəkləmə xidməti",
+      ],
+    },
   ];
+
   return (
-    <div className="space-y-16">
-      <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map(({ icon: Icon, titleKey, descKey }) => {
-            const IconComp = (Icon as unknown as React.ComponentType<{ className?: string }>) || Car;
-            return (
-            <div key={titleKey} className="rounded-2xl border bg-white/70 dark:bg-brand-dark/70 backdrop-blur p-6">
-              <IconComp className="h-8 w-8 text-brand-gold" />
-              <h3 className="mt-4 text-lg font-semibold">{t[titleKey as keyof typeof t] || titleKey}</h3>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{t[descKey as keyof typeof t] || descKey}</p>
-            </div>
-          );})}
-        </div>
-      </section>
+    <div className="space-y-0">
+      {/* Main Services Grid */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              {t.ourMainServices || "Əsas Xidmətlərimiz"}
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              {t.servicesIntro ||
+                "Avtomobil icarəsi sahəsində ən keyfiyyətli və etibarlı xidmətləri təqdim edirik"}
+            </p>
+          </div>
 
-      <section>
-        <div className="rounded-2xl border bg-white/70 dark:bg-brand-dark/70 backdrop-blur p-6">
-          <h2 className="text-2xl font-bold mb-6">{t.pricePackages}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[t.daily, t.weekly, t.monthly].map((tier, i) => (
-              <div key={tier} className="rounded-xl border p-6">
-                <h3 className="font-semibold">{tier}</h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{t.affordablePricesAndBonusServices}</p>
-                <button className="mt-4 inline-flex items-center justify-center rounded-md bg-brand-gold px-4 py-2 text-white">{t.applyNow}</button>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.slice(0, 6).map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                index={index}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section>
-        <div className="rounded-2xl border bg-white/70 dark:bg-brand-dark/70 backdrop-blur p-6">
-          <h2 className="text-2xl font-bold mb-6">{t.frequentlyAskedQuestions}</h2>
-          <div className="space-y-4">
-            {[
-              {q: t.howDoesDepositWork, a: t.howDoesDepositWorkAnswer},
-              {q: t.minimumRentalPeriodQuestion, a: t.minimumRentalPeriodAnswer},
-              {q: t.isDriverRentalPossible, a: t.isDriverRentalPossibleAnswer}
-            ].map(({q,a})=> (
-              <div key={q} className="rounded-lg border p-4">
-                <p className="font-semibold">{q}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{a}</p>
-              </div>
+      {/* Additional Services */}
+      <section className="py-20 bg-gray-50 dark:bg-zinc-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              {t.additionalServices || "Əlavə Xidmətlər"}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.slice(6).map((service, index) => (
+              <ServiceCard
+                key={index + 6}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                index={index}
+              />
             ))}
           </div>
         </div>
       </section>
+
+      {/* Process Steps */}
+      <ProcessSteps t={t} />
+
+      {/* Pricing Section */}
+      {/* <PricingSection t={t} /> */}
+
+      {/* FAQ Section */}
+      <FAQ t={t} />
+
+      {/* Contact CTA */}
+      <ContactCTA t={t} />
     </div>
   );
 }
-
-

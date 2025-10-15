@@ -396,14 +396,7 @@ export default function MobileMenu({
                         >
                           <span className="text-sm">{category.icon}</span>
                           <div className="flex-1">
-                            <div className="flex items-center justify-between">
-                              <span>{category.displayName}</span>
-                              {category.count && (
-                                <span className="text-xs bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full">
-                                  {category.count}
-                                </span>
-                              )}
-                            </div>
+                            <span>{category.displayName}</span>
                           </div>
                         </button>
                       ))}

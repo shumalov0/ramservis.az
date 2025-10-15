@@ -5,6 +5,7 @@ import FixedHeader from '@/components/FixedHeader';
 import Footer from '@/components/Footer';
 import { useTranslation } from '@/lib/translations';
 import ServicesSections from '@/components/ServicesSections';
+import ServiceHero from '@/components/services/ServiceHero';
 
 export default function ServicesPage() {
   const [currentLang, setCurrentLang] = useState('az');
@@ -23,15 +24,11 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br  from-zinc-50 to-gray-50 dark:from-zinc-800 dark:bg-brand-dark/70  transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-300">
       <FixedHeader currentLang={currentLang} handleLanguageChange={handleLanguageChange} t={t} />
-      <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            {t.servicesTitle || 'Xidmətlər'}
-          </h1>
-          <ServicesSections t={t} />
-        </div>
+      <div className="pt-20">
+        <ServiceHero t={t} />
+        <ServicesSections t={t} />
       </div>
       <Footer t={t} />
     </div>
