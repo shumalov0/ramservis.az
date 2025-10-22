@@ -14,15 +14,9 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 
 // Lazy load heavy components to improve initial page load
 const GoogleReviews = lazy(() => import("@/components/GoogleReviews"));
-const CertificatesCarousel = lazy(() =>
-  import("@/components/CertificatesCarousel").then((module) => ({
-    default: module.CertificatesCarousel,
-  }))
-);
+const AboutCertificates = lazy(() => import("@/components/about/AboutCertificates"));
 const OtherCarsSection = lazy(() => import("@/components/OtherCarsSection"));
 const GoogleMapIframe = lazy(() => import("@/components/GoogleMapIframe"));
-
-import { certificates } from "@/lib/data";
 
 export default function Home() {
   const [currentLang, setCurrentLang] = useState("az");
@@ -110,9 +104,9 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/40"></div>
             <div className="relative z-10 max-w-6xl w-full px-4 ">
               <div className="text flex flex-col text-center  justify-center items-center ">
-                <p className="text-[10px] sari">Rent Now</p>
+                <p className="text-[10px] sari">{t.rentNow}</p>
                 <h2 className="bookau text-4xl md:text-6xl font-bold text-white mb-8">
-                  Book Auto Rental
+                  {t.bookAutoRental}
                 </h2>
               </div>
               <BookingBar />
@@ -177,45 +171,16 @@ export default function Home() {
             />
           </Suspense>
 
-          {/* Certificates Carousel */}
-          <section className="py-16 bg-white/70 dark:bg-brand-dark/70">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                  {currentLang === "az"
-                    ? "Sertifikatlarımız"
-                    : currentLang === "en"
-                    ? "Our Certificates"
-                    : currentLang === "ru"
-                    ? "Наши сертификаты"
-                    : "شهاداتنا"}
-                </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                  {currentLang === "az"
-                    ? "Keyfiyyət və etibarlılığımızı təsdiq edən rəsmi sertifikatlar"
-                    : currentLang === "en"
-                    ? "Official certificates confirming our quality and reliability"
-                    : currentLang === "ru"
-                    ? "Официальные сертификаты, подтверждающие наше качество и надежность"
-                    : "الشهادات الرسمية التي تؤكد جودتنا وموثوقيتنا"}
-                </p>
+          {/* Certificates Section */}
+          <Suspense
+            fallback={
+              <div className="py-16">
+                <LoadingSpinner />
               </div>
-              <Suspense
-                fallback={
-                  <div className="py-8">
-                    <LoadingSpinner />
-                  </div>
-                }
-              >
-                <CertificatesCarousel
-                  certificates={certificates}
-                  autoPlay={false}
-                  showDots={true}
-                  currentLang={currentLang}
-                />
-              </Suspense>
-            </div>
-          </section>
+            }
+          >
+            <AboutCertificates t={t} />
+          </Suspense>
         </>
       )}
       {/* Location Map */}

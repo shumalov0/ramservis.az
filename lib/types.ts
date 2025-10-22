@@ -201,3 +201,89 @@ export interface LanguageConfig {
   flag: string;
   rtl: boolean;
 }
+
+// Bus interface similar to Car interface
+export interface Bus {
+  id: string;
+  brand: string;
+  model: string;
+  year: number;
+  type: string; // Minibus, Coach, Tour Bus, etc.
+  fuelType: string;
+  transmission: string;
+  engineSize: string;
+  capacity: number; // passenger capacity
+  dailyPrice: number;
+  weeklyPrice: number;
+  monthlyPrice: number;
+  deposit: number;
+  image: string; // primary image
+  images?: string[]; // gallery images
+  features: string[];
+  rules: {
+    minimumAge: number;
+    drivingExperience: number;
+    passportRequired: boolean;
+    licenseRequired: boolean;
+    commercialLicense?: boolean;
+  };
+}
+
+// Enhanced Bus interface with additional fields
+export interface EnhancedBus {
+  // Existing fields from Bus interface
+  id: string;
+  brand: string;
+  model: string;
+  year: number;
+  type: string;
+  fuelType: string;
+  transmission: string;
+  engineSize: string;
+  capacity: number;
+  dailyPrice: number;
+  weeklyPrice: number;
+  monthlyPrice: number;
+  deposit: number;
+  image: string;
+  images?: string[];
+  features: string[];
+  rules: {
+    minimumAge: number;
+    drivingExperience: number;
+    passportRequired: boolean;
+    licenseRequired: boolean;
+    commercialLicense?: boolean;
+  };
+  
+  // Enhanced fields
+  category: ('Minibus' | 'Coach' | 'Tour Bus' | 'City Bus' | 'Luxury Bus' | 'School Bus')[];
+  popularity: number;
+  availability: boolean;
+  gallery: string[];
+  specifications: {
+    engine: string;
+    horsepower: number;
+    acceleration: string;
+    topSpeed: number;
+    fuelConsumption: string;
+  };
+  amenities?: string[]; // WiFi, AC, Toilet, Kitchen, etc.
+  routes?: string[]; // Available routes for this bus
+}
+
+// Bus filters interface
+export interface BusFilters {
+  category?: string[];
+  priceRange?: [number, number];
+  year?: [number, number];
+  fuelType?: string[];
+  transmission?: string[];
+  features?: string[];
+  capacity?: [number, number]; // [min, max] capacity
+  type?: string[];
+  availability?: boolean;
+}
+
+// Bus sort options
+export type BusSortOption = 'price-asc' | 'price-desc' | 'year-asc' | 'year-desc' | 'capacity-asc' | 'capacity-desc' | 'popularity' | 'name';

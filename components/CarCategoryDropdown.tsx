@@ -98,11 +98,19 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
     }
   };
 
-  // Get localized category names
-  const getLocalizedCategoryName = (category: CarCategory) => {
-    // For now, return the displayName. In a full implementation,
-    // this would use the translation system
-    return category.displayName;
+  // Get localized category names and descriptions
+  const getLocalizedCategory = (category: CarCategory) => {
+    const categoryMap: Record<string, { name: string; desc: string }> = {
+      'economy': { name: t?.categoryEconomy || 'Ekonom', desc: t?.categoryEconomyDesc || 'Sərfəli və praktik seçimlər' },
+      'business': { name: t?.categoryBusiness || 'Biznes', desc: t?.categoryBusinessDesc || 'İş səfərləri üçün ideal' },
+      'suv': { name: t?.categorySuv || 'SUV', desc: t?.categorySuvDesc || 'Yüksək və güclü maşınlar' },
+      'sedan': { name: t?.categorySedan || 'Sedan', desc: t?.categorySedanDesc || 'Klassik və rahat maşınlar' },
+      'hatchback': { name: t?.categoryHatchback || 'Hatchback', desc: t?.categoryHatchbackDesc || 'Kompakt və çevik maşınlar' },
+      'minivan': { name: t?.categoryMinivan || 'Minivan', desc: t?.categoryMinivanDesc || 'Böyük ailələr üçün geniş salon' },
+      'luxury': { name: t?.categoryLuxury || 'Lüks', desc: t?.categoryLuxuryDesc || 'Premium təcrübə' }
+    };
+    
+    return categoryMap[category.id] || { name: category.displayName, desc: category.description };
   };
 
   return (
@@ -170,39 +178,40 @@ const CarCategoryDropdown: React.FC<CarCategoryDropdownProps> = ({
         {/* Categories List - Responsive Grid */}
         <div className="py-2 px-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
-            {carCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => {
-                  setIsOpen(false);
-                  setIsHovering(false);
-                  setTimeout(() => {
-                    window.location.href = `/cars?category=${category.displayName}`;
-                  }, 100);
-                }}
-                className="flex items-center px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 dark:active:bg-gray-600 transition-colors duration-150 group cursor-pointer rounded-md w-full text-left touch-manipulation"
-                role="menuitem"
-              >
-                {/* Category Icon */}
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-brand-gold/20 to-yellow-400/20 rounded-lg flex items-center justify-center mr-2.5 group-hover:from-brand-gold/30 group-hover:to-yellow-400/30 transition-colors">
-                  <span className="text-sm">{category.icon}</span>
-                </div>
-                
-                {/* Category Info */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center">
-                    <h4 className="font-medium text-sm text-gray-900 dark:text-white group-hover:text-brand-gold transition-colors leading-tight">
-                      {getLocalizedCategoryName(category)}
-                    </h4>
+            {carCategories.map((category) => {
+              const localizedCategory = getLocalizedCategory(category);
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsHovering(false);
+                    setTimeout(() => {
+                      window.location.href = `/cars?category=${category.displayName}`;
+                    }, 100);
+                  }}
+                  className="flex items-center px-3 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-700 active:bg-gray-100 dark:active:bg-gray-600 transition-colors duration-150 group cursor-pointer rounded-md w-full text-left touch-manipulation"
+                  role="menuitem"
+                >
+                  {/* Category Icon */}
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-brand-gold/20 to-yellow-400/20 rounded-lg flex items-center justify-center mr-2.5 group-hover:from-brand-gold/30 group-hover:to-yellow-400/30 transition-colors">
+                    <span className="text-sm">{category.icon}</span>
                   </div>
-                  {category.description && (
+                  
+                  {/* Category Info */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center">
+                      <h4 className="font-medium text-sm text-gray-900 dark:text-white group-hover:text-brand-gold transition-colors leading-tight">
+                        {localizedCategory.name}
+                      </h4>
+                    </div>
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
-                      {category.description}
+                      {localizedCategory.desc}
                     </p>
-                  )}
-                </div>
-              </button>
-            ))}
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
 

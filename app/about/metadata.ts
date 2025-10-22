@@ -10,11 +10,3 @@ export const metadata: Metadata = {
     url: "https://www.ramservis.az/about",
   },
 };
-
-export default function AboutLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return children;
-}

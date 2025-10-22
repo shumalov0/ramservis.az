@@ -320,13 +320,169 @@ export interface Translation {
   certificatesTitle: string;
   certificatesDesc: string;
   
+  // About Story
+  ourStory: string;
+  storyDescription: string;
+  storyBeginning: string;
+  storyBeginningDesc: string;
+  storyExpansion: string;
+  storyExpansionDesc: string;
+  storyLeadership: string;
+  storyLeadershipDesc: string;
+  ourMission: string;
+  missionDescription: string;
+  
+  // About Stats
+  statsTitle: string;
+  statsDescription: string;
+  whyRamServis: string;
+  whyRamServisDesc: string;
+  
+  // About Values
+  valuesTitle: string;
+  valuesDescription: string;
+  reliability: string;
+  reliabilityDesc: string;
+  customerSatisfaction: string;
+  customerSatisfactionDesc: string;
+  fastService: string;
+  fastServiceDesc: string;
+  teamwork: string;
+  teamworkDesc: string;
+  quality: string;
+  qualityDesc: string;
+  support24_7: string;
+  support24_7Desc: string;
+  joinOurTeam: string;
+  joinOurTeamDesc: string;
+  careerOpportunities: string;
+  
+  // About Certificates
+  certificatesAndAwards: string;
+  certificatesAndAwardsDesc: string;
+  licensesAndCertificates: string;
+  awardsAndAchievements: string;
+  bestRentACarCompany: string;
+  customerSatisfactionAward: string;
+  safetyStandardsCertificate: string;
+  ecoCertificate: string;
+  tourismAssociation: string;
+  businessExcellenceCenter: string;
+  roadSafetyAgency: string;
+  environmentMinistry: string;
+  fullyLicensedAndInsured: string;
+  fullyLicensedDesc: string;
+  
+  // Certificate Titles and Descriptions
+  cert1Title: string;
+  cert1Desc: string;
+  cert2Title: string;
+  cert2Desc: string;
+  cert3Title: string;
+  cert3Desc: string;
+  cert4Title: string;
+  cert4Desc: string;
+  cert5Title: string;
+  cert5Desc: string;
+  cert6Title: string;
+  cert6Desc: string;
+  cert7Title: string;
+  cert7Desc: string;
+  cert8Title: string;
+  cert8Desc: string;
+  cert9Title: string;
+  cert9Desc: string;
+  cert10Title: string;
+  cert10Desc: string;
+  cert11Title: string;
+  cert11Desc: string;
+  cert12Title: string;
+  cert12Desc: string;
+  
+  // Car Categories
+  categoryEconomy: string;
+  categoryEconomyDesc: string;
+  categoryBusiness: string;
+  categoryBusinessDesc: string;
+  categorySuv: string;
+  categorySuvDesc: string;
+  categorySedan: string;
+  categorySedanDesc: string;
+  categoryHatchback: string;
+  categoryHatchbackDesc: string;
+  categoryMinivan: string;
+  categoryMinivanDesc: string;
+  categoryLuxury: string;
+  categoryLuxuryDesc: string;
+  
+  // Team Section
+  ourTeam: string;
+  teamDescription: string;
+  teamContact: string;
+  teamContactDescription: string;
+  teamCallUs: string;
+  sendEmail: string;
+  
+  // Team Members
+  director: string;
+  corporateRelationsManager: string;
+  customerServiceSpecialist: string;
+  chiefAccountant: string;
+  technicalServiceSpecialist: string;
+  itSpecialist: string;
+  
+  // Team Descriptions
+  directorDesc: string;
+  corporateRelationsDesc: string;
+  customerServiceDesc: string;
+  chiefAccountantDesc: string;
+  technicalServiceDesc: string;
+  itSpecialistDesc: string;
+  
+  // Book Auto Rental Section
+  bookAutoRental: string;
+  rentNow: string;
+
   // Footer
   footerCallUs: string;
   footerWriteToUs: string;
   footerAddress: string;
+  
+  // Bus Services
+  buses: string;
+  busServices: string;
+  busServicesSubtitle: string;
+  ourBusServices: string;
+  busServicesDescription: string;
+  passengerTransport: string;
+  passengerTransportDesc: string;
+  tourServices: string;
+  tourServicesDesc: string;
+  corporateTransport: string;
+  corporateTransportDesc: string;
+  airportTransfer: string;
+  airportTransferDesc: string;
+  ourBusFleet: string;
+  busFleetDescription: string;
+  whyChooseOurBuses: string;
+  safetyFirstDesc: string;
+  experiencedDrivers: string;
+  experiencedDriversDesc: string;
+  punctuality: string;
+  punctualityDesc: string;
+  getQuote: string;
+  passengerCount: string;
+  tripType: string;
+  tripDate: string;
+  getQuoteButton: string;
+  contactForBusService: string;
+  contactForBusServiceDesc: string;
+  busCallUs: string;
+  busWhatsappUs: string;
   quickLinks: string;
   aboutLink: string;
   carsLink: string;
+  busesLink: string;
   carTypesLink: string;
   faqLink: string;
   contactLink: string;
@@ -659,13 +815,169 @@ export const translations: Record<string, Translation> = {
     certificatesTitle: 'Sertifikatlarımız və Lisenziyalarımız',
     certificatesDesc: 'Peşəkarlığımızı və keyfiyyətimizi təsdiq edən rəsmi sənədlər',
     
+    // About Story
+    ourStory: 'Bizim Hekayəmiz',
+    storyDescription: '2003-cü ildən başlayaraq Azərbaycanda nəqliyyat sahəsində etibarlı xidmət göstəririk',
+    storyBeginning: '2003 - Başlanğıc',
+    storyBeginningDesc: 'Kiçik bir komanda ilə Bakıda nəqliyyat xidmətinə başladıq. Məqsədimiz müştərilərimizə keyfiyyətli və etibarlı xidmət göstərmək idi.',
+    storyExpansion: '2010 - Genişlənmə',
+    storyExpansionDesc: 'Transfer xidmətləri və avtobuslarla sərnişin daşıma xidmətini əlavə etdik. Avtomobil parkımızı artırdıq və Azərbaycanın digər şəhərlərinə genişləndik.',
+    storyLeadership: '2024 - Liderlik',
+    storyLeadershipDesc: 'Bu gün Azərbaycanda nəqliyyat sahəsində lider şirkətlərdən biriyik. 100+ avtomobil, avtobuslar və 15,000+ məmnun müştərimiz var.',
+    ourMission: 'Missiyamız',
+    missionDescription: 'Müştərilərimizə ən yüksək keyfiyyətdə nəqliyyat xidməti göstərmək - maşın icarəsi, transfer və avtobusla sərnişin daşıma xidmətləri ilə onların bütün nəqliyyat ehtiyaclarını qarşılamaq.',
+    
+    // About Stats
+    statsTitle: 'Rəqəmlərlə Ram Servis',
+    statsDescription: '21 illik təcrübəmiz və müştəri məmnuniyyətimiz rəqəmlərlə',
+    whyRamServis: 'Niyə Ram Servis?',
+    whyRamServisDesc: '21 illik təcrübəmiz, geniş avtomobil parkımız, avtobuslarımız və 24/7 müştəri dəstəyimizlə Azərbaycanda nəqliyyat sahəsində lider mövqedəyik. Hər il minlərlə müştərimizə keyfiyyətli xidmət göstərir və onların etibarını qazanırıq.',
+    
+    // About Values
+    valuesTitle: 'Bizim Dəyərlərimiz',
+    valuesDescription: 'Hər gün işimizdə rəhbər tutduğumuz əsas prinsiplər və dəyərlər',
+    reliability: 'Etibarlılıq',
+    reliabilityDesc: 'Müştərilərimizə həmişə etibarlı və keyfiyyətli nəqliyyat xidməti göstəririk. Sözümüzün arxasında dururuq.',
+    customerSatisfaction: 'Müştəri Məmnuniyyəti',
+    customerSatisfactionDesc: 'Müştərilərimizin məmnuniyyəti bizim əsas prioritetimizdir. Onların ehtiyaclarını ön planda tuturuq.',
+    fastService: 'Sürətli Xidmət',
+    fastServiceDesc: 'Vaxtınıza hörmət edirik. Maşın icarəsi, transfer və avtobusla daşımada sürətli xidmət göstəririk.',
+    teamwork: 'Komanda İşi',
+    teamworkDesc: 'Güclü komandamızla birlikdə ən yaxşı nəticələri əldə etməyə çalışırıq.',
+    quality: 'Keyfiyyət',
+    qualityDesc: 'Avtomobil icarəsi, transfer və avtobusla daşıma xidmətlərində yüksək keyfiyyət standartları.',
+    support24_7: '24/7 Dəstək',
+    support24_7Desc: 'Müştərilərimiz üçün həmişə əlçatan olmağa çalışırıq. 24 saat dəstək təqdim edirik.',
+    joinOurTeam: 'Bizim Komandaya Qoşulun',
+    joinOurTeamDesc: 'Bu dəyərləri paylaşırsınızsa və nəqliyyat sahəsində işləmək istəyirsinizsə, bizim komandaya qoşulmaq üçün bizimlə əlaqə saxlayın.',
+    careerOpportunities: 'Karyera İmkanları',
+    
+    // About Certificates
+    certificatesAndAwards: 'Sertifikatlar və Mükafatlar',
+    certificatesAndAwardsDesc: 'Keyfiyyətli xidmətimiz və peşəkarlığımız rəsmi olaraq təsdiqlənib',
+    licensesAndCertificates: 'Lisenziya və Sertifikatlar',
+    awardsAndAchievements: 'Mükafat və Nailiyyətlər',
+    bestRentACarCompany: 'İlin Ən Yaxşı Rent a Car Şirkəti',
+    customerSatisfactionAward: 'Müştəri Məmnuniyyəti Mükafatı',
+    safetyStandardsCertificate: 'Təhlükəsizlik Standartları Sertifikatı',
+    ecoCertificate: 'Ekoloji Sertifikat',
+    tourismAssociation: 'Azərbaycan Turizm Assosiasiyası',
+    businessExcellenceCenter: 'Biznes Mükəmməllik Mərkəzi',
+    roadSafetyAgency: 'Yol Hərəkəti Təhlükəsizliyi Agentliyi',
+    environmentMinistry: 'Ətraf Mühit Nazirliyi',
+    fullyLicensedAndInsured: 'Tam Lisenziyalı və Sığortalı',
+    fullyLicensedDesc: 'Bütün fəaliyyətlərimiz dövlət orqanları tərəfindən lisenziyalaşdırılıb və tam sığorta təminatı altındadır. Sizin təhlükəsizliyiniz bizim prioritetimizdir.',
+    
+    // Certificate Titles and Descriptions
+    cert1Title: 'ISO 9001:2015 Keyfiyyət İdarəetmə Sistemi',
+    cert1Desc: 'Beynəlxalq keyfiyyət standartlarına uyğunluq sertifikatı',
+    cert2Title: 'Avtomobil İcarəsi Lisenziyası',
+    cert2Desc: 'Azərbaycan Respublikası Nəqliyyat Nazirliyi tərəfindən verilmiş rəsmi lisenziya',
+    cert3Title: 'Sığorta Sertifikatı',
+    cert3Desc: 'Tam sığorta təminatı sertifikatı',
+    cert4Title: 'Müştəri Məmnuniyyəti Mükafatı',
+    cert4Desc: '2023-cü il üçün ən yaxşı müştəri xidməti mükafatı',
+    cert5Title: 'Yol Hərəkəti Təhlükəsizliyi Sertifikatı',
+    cert5Desc: 'Yol hərəkəti təhlükəsizliyi standartlarına uyğunluq sertifikatı',
+    cert6Title: 'Turizm Xidmətləri Lisenziyası',
+    cert6Desc: 'Turizm və səyahət xidmətləri göstərmək üçün rəsmi lisenziya',
+    cert7Title: 'Texniki Baxış Sertifikatı',
+    cert7Desc: 'Avtomobil parkının texniki vəziyyətinin təsdiqi sertifikatı',
+    cert8Title: 'Peşəkar Sürücü Təlimi Sertifikatı',
+    cert8Desc: 'Peşəkar sürücü təlimi və sertifikatlaşdırma proqramı',
+    cert9Title: 'Yanacaq Səmərəliliyi Sertifikatı',
+    cert9Desc: 'Yanacaq səmərəliliyi və ekoloji standartlar sertifikatı',
+    cert10Title: 'Müştəri Xidmətləri Keyfiyyət Sertifikatı',
+    cert10Desc: 'Müştəri xidmətləri keyfiyyət standartları sertifikatı',
+    cert11Title: 'Rəqəmsal Xidmətlər Sertifikatı',
+    cert11Desc: 'Rəqəmsal platformalar və onlayn xidmətlər sertifikatı',
+    cert12Title: 'Beynəlxalq Xidmət Standartları Sertifikatı',
+    cert12Desc: 'Beynəlxalq səviyyədə xidmət keyfiyyəti standartları',
+    
+    // Car Categories
+    categoryEconomy: 'Ekonom',
+    categoryEconomyDesc: 'Sərfəli və praktik seçimlər',
+    categoryBusiness: 'Biznes',
+    categoryBusinessDesc: 'İş səfərləri üçün ideal',
+    categorySuv: 'SUV',
+    categorySuvDesc: 'Yüksək və güclü maşınlar',
+    categorySedan: 'Sedan',
+    categorySedanDesc: 'Klassik və rahat maşınlar',
+    categoryHatchback: 'Hatchback',
+    categoryHatchbackDesc: 'Kompakt və çevik maşınlar',
+    categoryMinivan: 'Minivan',
+    categoryMinivanDesc: 'Böyük ailələr üçün geniş salon',
+    categoryLuxury: 'Lüks',
+    categoryLuxuryDesc: 'Premium təcrübə',
+    
+    // Team Section
+    ourTeam: 'Bizim Komanda',
+    teamDescription: 'Peşəkar və təcrübəli komandamız sizə ən yaxşı xidməti təqdim etmək üçün çalışır',
+    teamContact: 'Bizimlə Əlaqə',
+    teamContactDescription: 'Komandamız sizə kömək etməyə həmişə hazırdır. Hər hansı sualınız varsa, bizimlə əlaqə saxlayın.',
+    teamCallUs: 'Zəng edin',
+    sendEmail: 'Email göndərin',
+    
+    // Team Members
+    director: 'Direktor',
+    corporateRelationsManager: 'Korporativ Əlaqələr Meneceri',
+    customerServiceSpecialist: 'Müştəri Xidmətləri Mütəxəssisi',
+    chiefAccountant: 'Baş Mühasib',
+    technicalServiceSpecialist: 'Texniki Xidmət Mütəxəssisi',
+    itSpecialist: 'IT Mütəxəssisi',
+    
+    // Team Descriptions
+    directorDesc: 'Şirkətin ümumi rəhbərliyi və strateji qərarların qəbulu',
+    corporateRelationsDesc: 'Korporativ müştərilərlə əlaqələrin idarə edilməsi və tərəfdaşlıq münasibətləri',
+    customerServiceDesc: 'Müştərilərə avtomobil təhvil vermə sənədlərinin hazırlanması və təsdiqi',
+    chiefAccountantDesc: 'Maliyyə uçotu, hesabatlar və büdcə planlaması',
+    technicalServiceDesc: 'Avtomobillərin texniki vəziyyətinin yoxlanması və texniki dəstək',
+    itSpecialistDesc: 'İnformasiya texnologiyaları infrastrukturu və rəqəmsal həllər',
+    
+    // Book Auto Rental Section
+    bookAutoRental: 'Avtomobil İcarəsi',
+    rentNow: 'İndi İcarəyə Götür',
+
     // Footer
     footerCallUs: 'Bizə zəng edin',
     footerWriteToUs: 'Bizə yazın',
     footerAddress: 'Ünvan',
+    
+    // Bus Services
+    buses: 'Avtobuslar',
+    busServices: 'Avtobus Xidmətləri',
+    busServicesSubtitle: 'Komfortlu və təhlükəsiz avtobus xidmətləri ilə qrup səyahətlərinizi təşkil edin',
+    ourBusServices: 'Avtobus Xidmətlərimiz',
+    busServicesDescription: 'Müxtəlif ehtiyaclarınız üçün geniş avtobus xidmətləri təklif edirik',
+    passengerTransport: 'Sərnişin Daşıma',
+    passengerTransportDesc: 'Komfortlu avtobuslarımızla şəhərdaxili və şəhərlərarası sərnişin daşıma xidməti',
+    tourServices: 'Tur Xidmətləri',
+    tourServicesDesc: 'Turist qrupları üçün xüsusi tur avtobusları və bələdçi xidməti',
+    corporateTransport: 'Korporativ Nəqliyyat',
+    corporateTransportDesc: 'Şirkətlər üçün işçi daşıma və korporativ tədbir avtobusları',
+    airportTransfer: 'Hava Limanı Transferi',
+    airportTransferDesc: 'Hava limanına və hava limanından qrup transferi xidməti',
+    ourBusFleet: 'Avtobus Parkımız',
+    busFleetDescription: 'Müxtəlif ölçülərdə və komfort səviyyələrində avtobuslarımız',
+    whyChooseOurBuses: 'Niyə Bizim Avtobusları Seçməlisiniz?',
+    safetyFirstDesc: 'Bütün avtobuslarımız müntəzəm texniki yoxlamadan keçir və təhlükəsizlik standartlarına uyğundur',
+    experiencedDrivers: 'Təcrübəli Sürücülər',
+    experiencedDriversDesc: 'Peşəkar və təcrübəli sürücülərimiz sizin səyahətinizi təhlükəsiz edir',
+    punctuality: 'Vaxtında Xidmət',
+    punctualityDesc: 'Vaxtınıza hörmət edirik və həmişə vaxtında xidmət göstəririk',
+    getQuote: 'Qiymət Təklifi Alın',
+    passengerCount: 'Sərnişin Sayı',
+    tripType: 'Səyahət Növü',
+    tripDate: 'Səyahət Tarixi',
+    getQuoteButton: 'Qiymət Təklifi Al',
+    contactForBusService: 'Avtobus Xidməti üçün Əlaqə',
+    contactForBusServiceDesc: 'Avtobus sifarişi vermək və ya ətraflı məlumat almaq üçün bizimlə əlaqə saxlayın',
+    busCallUs: 'Bizə Zəng Edin',
+    busWhatsappUs: 'WhatsApp Yazın',
     quickLinks: 'Sürətli Keçidlər',
     aboutLink: 'Haqqımızda',
     carsLink: 'Maşınlar',
+    busesLink: 'Avtobuslar',
     carTypesLink: 'Maşın Növləri',
     faqLink: 'Tez-tez Verilən Suallar',
     contactLink: 'Əlaqə',
@@ -997,13 +1309,169 @@ export const translations: Record<string, Translation> = {
     certificatesTitle: 'Our Certificates and Licenses',
     certificatesDesc: 'Official documents confirming our professionalism and quality',
     
+    // About Story
+    ourStory: 'Our Story',
+    storyDescription: 'Providing reliable transportation services in Azerbaijan since 2003',
+    storyBeginning: '2003 - Beginning',
+    storyBeginningDesc: 'We started transportation services in Baku with a small team. Our goal was to provide quality and reliable service to our customers.',
+    storyExpansion: '2010 - Expansion',
+    storyExpansionDesc: 'We added transfer services and passenger transportation with buses. We increased our vehicle fleet and expanded to other cities of Azerbaijan.',
+    storyLeadership: '2024 - Leadership',
+    storyLeadershipDesc: 'Today we are one of the leading companies in the transportation sector in Azerbaijan. We have 100+ cars, buses and 15,000+ satisfied customers.',
+    ourMission: 'Our Mission',
+    missionDescription: 'To provide the highest quality transportation service to our customers - meeting all their transportation needs with car rental, transfer and bus passenger transportation services.',
+    
+    // About Stats
+    statsTitle: 'Ram Service in Numbers',
+    statsDescription: 'Our 21 years of experience and customer satisfaction in numbers',
+    whyRamServis: 'Why Ram Service?',
+    whyRamServisDesc: 'With our 21 years of experience, extensive car fleet, buses and 24/7 customer support, we are in a leading position in the transportation sector in Azerbaijan. Every year we provide quality service to thousands of customers and gain their trust.',
+    
+    // About Values
+    valuesTitle: 'Our Values',
+    valuesDescription: 'The main principles and values that guide us in our daily work',
+    reliability: 'Reliability',
+    reliabilityDesc: 'We always provide reliable and quality transportation service to our customers. We stand behind our word.',
+    customerSatisfaction: 'Customer Satisfaction',
+    customerSatisfactionDesc: 'Customer satisfaction is our main priority. We put their needs first.',
+    fastService: 'Fast Service',
+    fastServiceDesc: 'We respect your time. We provide fast service in car rental, transfer and bus transportation.',
+    teamwork: 'Teamwork',
+    teamworkDesc: 'We strive to achieve the best results together with our strong team.',
+    quality: 'Quality',
+    qualityDesc: 'High quality standards in car rental, transfer and bus transportation services.',
+    support24_7: '24/7 Support',
+    support24_7Desc: 'We strive to be always available for our customers. We provide 24-hour support.',
+    joinOurTeam: 'Join Our Team',
+    joinOurTeamDesc: 'If you share these values and want to work in the transportation sector, contact us to join our team.',
+    careerOpportunities: 'Career Opportunities',
+    
+    // About Certificates
+    certificatesAndAwards: 'Certificates and Awards',
+    certificatesAndAwardsDesc: 'Our quality service and professionalism are officially confirmed',
+    licensesAndCertificates: 'Licenses and Certificates',
+    awardsAndAchievements: 'Awards and Achievements',
+    bestRentACarCompany: 'Best Rent a Car Company of the Year',
+    customerSatisfactionAward: 'Customer Satisfaction Award',
+    safetyStandardsCertificate: 'Safety Standards Certificate',
+    ecoCertificate: 'Eco Certificate',
+    tourismAssociation: 'Azerbaijan Tourism Association',
+    businessExcellenceCenter: 'Business Excellence Center',
+    roadSafetyAgency: 'Road Traffic Safety Agency',
+    environmentMinistry: 'Ministry of Environment',
+    fullyLicensedAndInsured: 'Fully Licensed and Insured',
+    fullyLicensedDesc: 'All our activities are licensed by government agencies and are under full insurance coverage. Your safety is our priority.',
+    
+    // Certificate Titles and Descriptions
+    cert1Title: 'ISO 9001:2015 Quality Management System',
+    cert1Desc: 'International quality standards compliance certificate',
+    cert2Title: 'Car Rental License',
+    cert2Desc: 'Official license issued by the Ministry of Transport of the Republic of Azerbaijan',
+    cert3Title: 'Insurance Certificate',
+    cert3Desc: 'Full insurance coverage certificate',
+    cert4Title: 'Customer Satisfaction Award',
+    cert4Desc: 'Best customer service award for 2023',
+    cert5Title: 'Road Traffic Safety Certificate',
+    cert5Desc: 'Road traffic safety standards compliance certificate',
+    cert6Title: 'Tourism Services License',
+    cert6Desc: 'Official license to provide tourism and travel services',
+    cert7Title: 'Technical Inspection Certificate',
+    cert7Desc: 'Certificate confirming the technical condition of the vehicle fleet',
+    cert8Title: 'Professional Driver Training Certificate',
+    cert8Desc: 'Professional driver training and certification program',
+    cert9Title: 'Fuel Efficiency Certificate',
+    cert9Desc: 'Fuel efficiency and environmental standards certificate',
+    cert10Title: 'Customer Service Quality Certificate',
+    cert10Desc: 'Customer service quality standards certificate',
+    cert11Title: 'Digital Services Certificate',
+    cert11Desc: 'Digital platforms and online services certificate',
+    cert12Title: 'International Service Standards Certificate',
+    cert12Desc: 'International level service quality standards',
+    
+    // Car Categories
+    categoryEconomy: 'Economy',
+    categoryEconomyDesc: 'Affordable and practical choices',
+    categoryBusiness: 'Business',
+    categoryBusinessDesc: 'Ideal for business trips',
+    categorySuv: 'SUV',
+    categorySuvDesc: 'High and powerful vehicles',
+    categorySedan: 'Sedan',
+    categorySedanDesc: 'Classic and comfortable cars',
+    categoryHatchback: 'Hatchback',
+    categoryHatchbackDesc: 'Compact and agile cars',
+    categoryMinivan: 'Minivan',
+    categoryMinivanDesc: 'Spacious interior for large families',
+    categoryLuxury: 'Luxury',
+    categoryLuxuryDesc: 'Premium experience',
+    
+    // Team Section
+    ourTeam: 'Our Team',
+    teamDescription: 'Our professional and experienced team works to provide you with the best service',
+    teamContact: 'Contact Us',
+    teamContactDescription: 'Our team is always ready to help you. If you have any questions, please contact us.',
+    teamCallUs: 'Call Us',
+    sendEmail: 'Send Email',
+    
+    // Team Members
+    director: 'Director',
+    corporateRelationsManager: 'Corporate Relations Manager',
+    customerServiceSpecialist: 'Customer Service Specialist',
+    chiefAccountant: 'Chief Accountant',
+    technicalServiceSpecialist: 'Technical Service Specialist',
+    itSpecialist: 'IT Specialist',
+    
+    // Team Descriptions
+    directorDesc: 'Overall management of the company and strategic decision making',
+    corporateRelationsDesc: 'Managing relationships with corporate clients and partnerships',
+    customerServiceDesc: 'Preparation and approval of car delivery documents to customers',
+    chiefAccountantDesc: 'Financial accounting, reporting and budget planning',
+    technicalServiceDesc: 'Checking the technical condition of cars and technical support',
+    itSpecialistDesc: 'Information technology infrastructure and digital solutions',
+    
+    // Book Auto Rental Section
+    bookAutoRental: 'Book Auto Rental',
+    rentNow: 'Rent Now',
+
     // Footer
     footerCallUs: 'Call us',
     footerWriteToUs: 'Write to us',
     footerAddress: 'Address',
+    
+    // Bus Services
+    buses: 'Buses',
+    busServices: 'Bus Services',
+    busServicesSubtitle: 'Organize your group travels with comfortable and safe bus services',
+    ourBusServices: 'Our Bus Services',
+    busServicesDescription: 'We offer comprehensive bus services for your various needs',
+    passengerTransport: 'Passenger Transport',
+    passengerTransportDesc: 'Intracity and intercity passenger transport service with comfortable buses',
+    tourServices: 'Tour Services',
+    tourServicesDesc: 'Special tour buses and guide services for tourist groups',
+    corporateTransport: 'Corporate Transport',
+    corporateTransportDesc: 'Employee transport and corporate event buses for companies',
+    airportTransfer: 'Airport Transfer',
+    airportTransferDesc: 'Group transfer service to and from the airport',
+    ourBusFleet: 'Our Bus Fleet',
+    busFleetDescription: 'Our buses in various sizes and comfort levels',
+    whyChooseOurBuses: 'Why Choose Our Buses?',
+    safetyFirstDesc: 'All our buses undergo regular technical inspections and comply with safety standards',
+    experiencedDrivers: 'Experienced Drivers',
+    experiencedDriversDesc: 'Our professional and experienced drivers make your journey safe',
+    punctuality: 'On-Time Service',
+    punctualityDesc: 'We respect your time and always provide service on time',
+    getQuote: 'Get a Quote',
+    passengerCount: 'Passenger Count',
+    tripType: 'Trip Type',
+    tripDate: 'Trip Date',
+    getQuoteButton: 'Get Quote',
+    contactForBusService: 'Contact for Bus Service',
+    contactForBusServiceDesc: 'Contact us to place a bus order or get detailed information',
+    busCallUs: 'Call Us',
+    busWhatsappUs: 'WhatsApp Us',
     quickLinks: 'Quick Links',
     aboutLink: 'About',
     carsLink: 'Cars',
+    busesLink: 'Buses',
     carTypesLink: 'Car Types',
     faqLink: 'FAQ',
     contactLink: 'Contact',
@@ -1335,13 +1803,169 @@ export const translations: Record<string, Translation> = {
     certificatesTitle: 'Наши сертификаты и лицензии',
     certificatesDesc: 'Официальные документы, подтверждающие наш профессионализм и качество',
     
+    // About Story
+    ourStory: 'Наша история',
+    storyDescription: 'Предоставляем надежные транспортные услуги в Азербайджане с 2003 года',
+    storyBeginning: '2003 - Начало',
+    storyBeginningDesc: 'Мы начали транспортные услуги в Баку с небольшой командой. Наша цель была предоставлять качественные и надежные услуги нашим клиентам.',
+    storyExpansion: '2010 - Расширение',
+    storyExpansionDesc: 'Мы добавили трансферные услуги и пассажирские перевозки автобусами. Увеличили наш автопарк и расширились в другие города Азербайджана.',
+    storyLeadership: '2024 - Лидерство',
+    storyLeadershipDesc: 'Сегодня мы одна из ведущих компаний в транспортном секторе Азербайджана. У нас 100+ автомобилей, автобусы и 15,000+ довольных клиентов.',
+    ourMission: 'Наша миссия',
+    missionDescription: 'Предоставлять нашим клиентам транспортные услуги высочайшего качества - удовлетворяя все их транспортные потребности услугами аренды автомобилей, трансфера и автобусных пассажирских перевозок.',
+    
+    // About Stats
+    statsTitle: 'Ram Service в цифрах',
+    statsDescription: 'Наш 21-летний опыт и удовлетворенность клиентов в цифрах',
+    whyRamServis: 'Почему Ram Service?',
+    whyRamServisDesc: 'С нашим 21-летним опытом, обширным автопарком, автобусами и круглосуточной поддержкой клиентов мы занимаем лидирующие позиции в транспортном секторе Азербайджана. Каждый год мы предоставляем качественные услуги тысячам клиентов и завоевываем их доверие.',
+    
+    // About Values
+    valuesTitle: 'Наши ценности',
+    valuesDescription: 'Основные принципы и ценности, которыми мы руководствуемся в нашей ежедневной работе',
+    reliability: 'Надежность',
+    reliabilityDesc: 'Мы всегда предоставляем надежные и качественные транспортные услуги нашим клиентам. Мы стоим за своим словом.',
+    customerSatisfaction: 'Удовлетворенность клиентов',
+    customerSatisfactionDesc: 'Удовлетворенность клиентов - наш главный приоритет. Мы ставим их потребности на первое место.',
+    fastService: 'Быстрый сервис',
+    fastServiceDesc: 'Мы уважаем ваше время. Предоставляем быстрый сервис в аренде автомобилей, трансфере и автобусных перевозках.',
+    teamwork: 'Командная работа',
+    teamworkDesc: 'Мы стремимся достичь лучших результатов вместе с нашей сильной командой.',
+    quality: 'Качество',
+    qualityDesc: 'Высокие стандарты качества в услугах аренды автомобилей, трансфера и автобусных перевозок.',
+    support24_7: 'Поддержка 24/7',
+    support24_7Desc: 'Мы стремимся быть всегда доступными для наших клиентов. Предоставляем круглосуточную поддержку.',
+    joinOurTeam: 'Присоединяйтесь к нашей команде',
+    joinOurTeamDesc: 'Если вы разделяете эти ценности и хотите работать в транспортном секторе, свяжитесь с нами, чтобы присоединиться к нашей команде.',
+    careerOpportunities: 'Карьерные возможности',
+    
+    // About Certificates
+    certificatesAndAwards: 'Сертификаты и награды',
+    certificatesAndAwardsDesc: 'Наши качественные услуги и профессионализм официально подтверждены',
+    licensesAndCertificates: 'Лицензии и сертификаты',
+    awardsAndAchievements: 'Награды и достижения',
+    bestRentACarCompany: 'Лучшая компания по аренде автомобилей года',
+    customerSatisfactionAward: 'Награда за удовлетворенность клиентов',
+    safetyStandardsCertificate: 'Сертификат стандартов безопасности',
+    ecoCertificate: 'Эко-сертификат',
+    tourismAssociation: 'Азербайджанская туристическая ассоциация',
+    businessExcellenceCenter: 'Центр делового совершенства',
+    roadSafetyAgency: 'Агентство безопасности дорожного движения',
+    environmentMinistry: 'Министерство окружающей среды',
+    fullyLicensedAndInsured: 'Полностью лицензированы и застрахованы',
+    fullyLicensedDesc: 'Вся наша деятельность лицензирована государственными органами и находится под полным страховым покрытием. Ваша безопасность - наш приоритет.',
+    
+    // Certificate Titles and Descriptions
+    cert1Title: 'ISO 9001:2015 Система менеджмента качества',
+    cert1Desc: 'Сертификат соответствия международным стандартам качества',
+    cert2Title: 'Лицензия на аренду автомобилей',
+    cert2Desc: 'Официальная лицензия, выданная Министерством транспорта Азербайджанской Республики',
+    cert3Title: 'Страховой сертификат',
+    cert3Desc: 'Сертификат полного страхового покрытия',
+    cert4Title: 'Награда за удовлетворенность клиентов',
+    cert4Desc: 'Награда за лучшее обслуживание клиентов за 2023 год',
+    cert5Title: 'Сертификат безопасности дорожного движения',
+    cert5Desc: 'Сертификат соответствия стандартам безопасности дорожного движения',
+    cert6Title: 'Лицензия на туристические услуги',
+    cert6Desc: 'Официальная лицензия на предоставление туристических и транспортных услуг',
+    cert7Title: 'Сертификат технического осмотра',
+    cert7Desc: 'Сертификат, подтверждающий техническое состояние автопарка',
+    cert8Title: 'Сертификат профессиональной подготовки водителей',
+    cert8Desc: 'Программа профессиональной подготовки и сертификации водителей',
+    cert9Title: 'Сертификат топливной эффективности',
+    cert9Desc: 'Сертификат топливной эффективности и экологических стандартов',
+    cert10Title: 'Сертификат качества обслуживания клиентов',
+    cert10Desc: 'Сертификат стандартов качества обслуживания клиентов',
+    cert11Title: 'Сертификат цифровых услуг',
+    cert11Desc: 'Сертификат цифровых платформ и онлайн-услуг',
+    cert12Title: 'Сертификат международных стандартов обслуживания',
+    cert12Desc: 'Стандарты качества обслуживания международного уровня',
+    
+    // Car Categories
+    categoryEconomy: 'Эконом',
+    categoryEconomyDesc: 'Доступные и практичные варианты',
+    categoryBusiness: 'Бизнес',
+    categoryBusinessDesc: 'Идеально для деловых поездок',
+    categorySuv: 'Внедорожник',
+    categorySuvDesc: 'Высокие и мощные автомобили',
+    categorySedan: 'Седан',
+    categorySedanDesc: 'Классические и комфортные автомобили',
+    categoryHatchback: 'Хэтчбек',
+    categoryHatchbackDesc: 'Компактные и маневренные автомобили',
+    categoryMinivan: 'Минивэн',
+    categoryMinivanDesc: 'Просторный салон для больших семей',
+    categoryLuxury: 'Люкс',
+    categoryLuxuryDesc: 'Премиум опыт',
+    
+    // Team Section
+    ourTeam: 'Наша команда',
+    teamDescription: 'Наша профессиональная и опытная команда работает, чтобы предоставить вам лучший сервис',
+    teamContact: 'Свяжитесь с нами',
+    teamContactDescription: 'Наша команда всегда готова помочь вам. Если у вас есть вопросы, свяжитесь с нами.',
+    teamCallUs: 'Позвоните нам',
+    sendEmail: 'Отправить Email',
+    
+    // Team Members
+    director: 'Директор',
+    corporateRelationsManager: 'Менеджер по корпоративным связям',
+    customerServiceSpecialist: 'Специалист по обслуживанию клиентов',
+    chiefAccountant: 'Главный бухгалтер',
+    technicalServiceSpecialist: 'Специалист технического обслуживания',
+    itSpecialist: 'IT-специалист',
+    
+    // Team Descriptions
+    directorDesc: 'Общее управление компанией и принятие стратегических решений',
+    corporateRelationsDesc: 'Управление отношениями с корпоративными клиентами и партнерство',
+    customerServiceDesc: 'Подготовка и утверждение документов по передаче автомобилей клиентам',
+    chiefAccountantDesc: 'Финансовый учет, отчетность и планирование бюджета',
+    technicalServiceDesc: 'Проверка технического состояния автомобилей и техническая поддержка',
+    itSpecialistDesc: 'ИТ-инфраструктура и цифровые решения',
+    
+    // Book Auto Rental Section
+    bookAutoRental: 'Забронировать Аренду Авто',
+    rentNow: 'Арендовать Сейчас',
+
     // Footer
     footerCallUs: 'Позвоните нам',
     footerWriteToUs: 'Напишите нам',
     footerAddress: 'Адрес',
+    
+    // Bus Services
+    buses: 'Автобусы',
+    busServices: 'Автобусные услуги',
+    busServicesSubtitle: 'Организуйте групповые поездки с комфортными и безопасными автобусными услугами',
+    ourBusServices: 'Наши автобусные услуги',
+    busServicesDescription: 'Мы предлагаем широкий спектр автобусных услуг для ваших различных потребностей',
+    passengerTransport: 'Пассажирские перевозки',
+    passengerTransportDesc: 'Внутригородские и междугородние пассажирские перевозки на комфортабельных автобусах',
+    tourServices: 'Туристические услуги',
+    tourServicesDesc: 'Специальные туристические автобусы и услуги гида для туристических групп',
+    corporateTransport: 'Корпоративный транспорт',
+    corporateTransportDesc: 'Перевозка сотрудников и корпоративные мероприятия для компаний',
+    airportTransfer: 'Трансфер в аэропорт',
+    airportTransferDesc: 'Групповой трансфер в аэропорт и из аэропорта',
+    ourBusFleet: 'Наш автобусный парк',
+    busFleetDescription: 'Наши автобусы различных размеров и уровней комфорта',
+    whyChooseOurBuses: 'Почему выбрать наши автобусы?',
+    safetyFirstDesc: 'Все наши автобусы проходят регулярные технические осмотры и соответствуют стандартам безопасности',
+    experiencedDrivers: 'Опытные водители',
+    experiencedDriversDesc: 'Наши профессиональные и опытные водители делают ваше путешествие безопасным',
+    punctuality: 'Своевременное обслуживание',
+    punctualityDesc: 'Мы уважаем ваше время и всегда предоставляем услуги вовремя',
+    getQuote: 'Получить предложение',
+    passengerCount: 'Количество пассажиров',
+    tripType: 'Тип поездки',
+    tripDate: 'Дата поездки',
+    getQuoteButton: 'Получить предложение',
+    contactForBusService: 'Контакт для автобусных услуг',
+    contactForBusServiceDesc: 'Свяжитесь с нами, чтобы заказать автобус или получить подробную информацию',
+    busCallUs: 'Позвоните нам',
+    busWhatsappUs: 'Напишите в WhatsApp',
     quickLinks: 'Быстрые ссылки',
     aboutLink: 'О нас',
     carsLink: 'Автомобили',
+    busesLink: 'Автобусы',
     carTypesLink: 'Типы автомобилей',
     faqLink: 'Часто задаваемые вопросы',
     contactLink: 'Контакты',
@@ -1673,13 +2297,169 @@ export const translations: Record<string, Translation> = {
     certificatesTitle: 'شهاداتنا وتراخيصنا',
     certificatesDesc: 'الوثائق الرسمية التي تؤكد احترافيتنا وجودتنا',
     
+    // About Story
+    ourStory: 'قصتنا',
+    storyDescription: 'نقدم خدمات النقل الموثوقة في أذربيجان منذ عام 2003',
+    storyBeginning: '2003 - البداية',
+    storyBeginningDesc: 'بدأنا خدمات النقل في باكو مع فريق صغير. كان هدفنا تقديم خدمات عالية الجودة وموثوقة لعملائنا.',
+    storyExpansion: '2010 - التوسع',
+    storyExpansionDesc: 'أضفنا خدمات النقل ونقل الركاب بالحافلات. زدنا أسطول مركباتنا وتوسعنا إلى مدن أخرى في أذربيجان.',
+    storyLeadership: '2024 - القيادة',
+    storyLeadershipDesc: 'اليوم نحن إحدى الشركات الرائدة في قطاع النقل في أذربيجان. لدينا 100+ سيارة وحافلات و15,000+ عميل راضٍ.',
+    ourMission: 'مهمتنا',
+    missionDescription: 'تقديم خدمات النقل عالية الجودة لعملائنا - تلبية جميع احتياجاتهم في النقل بخدمات تأجير السيارات والنقل ونقل الركاب بالحافلات.',
+    
+    // About Stats
+    statsTitle: 'رام سيرفيس بالأرقام',
+    statsDescription: 'خبرتنا البالغة 21 عامًا ورضا العملاء بالأرقام',
+    whyRamServis: 'لماذا رام سيرفيس؟',
+    whyRamServisDesc: 'بخبرتنا البالغة 21 عامًا وأسطول السيارات الواسع والحافلات ودعم العملاء على مدار الساعة، نحن في موقع قيادي في قطاع النقل في أذربيجان. كل عام نقدم خدمات عالية الجودة لآلاف العملاء ونكسب ثقتهم.',
+    
+    // About Values
+    valuesTitle: 'قيمنا',
+    valuesDescription: 'المبادئ والقيم الأساسية التي توجهنا في عملنا اليومي',
+    reliability: 'الموثوقية',
+    reliabilityDesc: 'نقدم دائمًا خدمات نقل موثوقة وعالية الجودة لعملائنا. نقف وراء كلمتنا.',
+    customerSatisfaction: 'رضا العملاء',
+    customerSatisfactionDesc: 'رضا العملاء هو أولويتنا الرئيسية. نضع احتياجاتهم في المقدمة.',
+    fastService: 'خدمة سريعة',
+    fastServiceDesc: 'نحترم وقتك. نقدم خدمة سريعة في تأجير السيارات والنقل ونقل الحافلات.',
+    teamwork: 'العمل الجماعي',
+    teamworkDesc: 'نسعى لتحقيق أفضل النتائج مع فريقنا القوي.',
+    quality: 'الجودة',
+    qualityDesc: 'معايير جودة عالية في خدمات تأجير السيارات والنقل ونقل الحافلات.',
+    support24_7: 'دعم 24/7',
+    support24_7Desc: 'نسعى لأن نكون متاحين دائمًا لعملائنا. نقدم دعمًا على مدار الساعة.',
+    joinOurTeam: 'انضم إلى فريقنا',
+    joinOurTeamDesc: 'إذا كنت تشارك هذه القيم وتريد العمل في قطاع النقل، اتصل بنا للانضمام إلى فريقنا.',
+    careerOpportunities: 'الفرص المهنية',
+    
+    // About Certificates
+    certificatesAndAwards: 'الشهادات والجوائز',
+    certificatesAndAwardsDesc: 'خدماتنا عالية الجودة واحترافيتنا مؤكدة رسميًا',
+    licensesAndCertificates: 'التراخيص والشهادات',
+    awardsAndAchievements: 'الجوائز والإنجازات',
+    bestRentACarCompany: 'أفضل شركة تأجير سيارات للعام',
+    customerSatisfactionAward: 'جائزة رضا العملاء',
+    safetyStandardsCertificate: 'شهادة معايير السلامة',
+    ecoCertificate: 'الشهادة البيئية',
+    tourismAssociation: 'جمعية السياحة الأذربيجانية',
+    businessExcellenceCenter: 'مركز التميز التجاري',
+    roadSafetyAgency: 'وكالة سلامة المرور',
+    environmentMinistry: 'وزارة البيئة',
+    fullyLicensedAndInsured: 'مرخص ومؤمن بالكامل',
+    fullyLicensedDesc: 'جميع أنشطتنا مرخصة من قبل الهيئات الحكومية وتحت تغطية تأمينية كاملة. سلامتك هي أولويتنا.',
+    
+    // Certificate Titles and Descriptions
+    cert1Title: 'ISO 9001:2015 نظام إدارة الجودة',
+    cert1Desc: 'شهادة الامتثال لمعايير الجودة الدولية',
+    cert2Title: 'رخصة تأجير السيارات',
+    cert2Desc: 'رخصة رسمية صادرة عن وزارة النقل في جمهورية أذربيجان',
+    cert3Title: 'شهادة التأمين',
+    cert3Desc: 'شهادة التغطية التأمينية الكاملة',
+    cert4Title: 'جائزة رضا العملاء',
+    cert4Desc: 'جائزة أفضل خدمة عملاء لعام 2023',
+    cert5Title: 'شهادة سلامة المرور',
+    cert5Desc: 'شهادة الامتثال لمعايير سلامة المرور',
+    cert6Title: 'رخصة الخدمات السياحية',
+    cert6Desc: 'رخصة رسمية لتقديم الخدمات السياحية والسفر',
+    cert7Title: 'شهادة الفحص الفني',
+    cert7Desc: 'شهادة تؤكد الحالة الفنية لأسطول المركبات',
+    cert8Title: 'شهادة تدريب السائقين المحترفين',
+    cert8Desc: 'برنامج تدريب وشهادة السائقين المحترفين',
+    cert9Title: 'شهادة كفاءة الوقود',
+    cert9Desc: 'شهادة كفاءة الوقود والمعايير البيئية',
+    cert10Title: 'شهادة جودة خدمة العملاء',
+    cert10Desc: 'شهادة معايير جودة خدمة العملاء',
+    cert11Title: 'شهادة الخدمات الرقمية',
+    cert11Desc: 'شهادة المنصات الرقمية والخدمات عبر الإنترنت',
+    cert12Title: 'شهادة معايير الخدمة الدولية',
+    cert12Desc: 'معايير جودة الخدمة على المستوى الدولي',
+    
+    // Car Categories
+    categoryEconomy: 'اقتصادي',
+    categoryEconomyDesc: 'خيارات ميسورة التكلفة وعملية',
+    categoryBusiness: 'بزنس',
+    categoryBusinessDesc: 'مثالي للرحلات التجارية',
+    categorySuv: 'دفع رباعي',
+    categorySuvDesc: 'مركبات عالية وقوية',
+    categorySedan: 'سيدان',
+    categorySedanDesc: 'سيارات كلاسيكية ومريحة',
+    categoryHatchback: 'هاتشباك',
+    categoryHatchbackDesc: 'سيارات مدمجة ورشيقة',
+    categoryMinivan: 'ميني فان',
+    categoryMinivanDesc: 'مقصورة واسعة للعائلات الكبيرة',
+    categoryLuxury: 'فاخر',
+    categoryLuxuryDesc: 'تجربة مميزة',
+    
+    // Team Section
+    ourTeam: 'فريقنا',
+    teamDescription: 'يعمل فريقنا المحترف وذو الخبرة لتقديم أفضل خدمة لك',
+    teamContact: 'اتصل بنا',
+    teamContactDescription: 'فريقنا مستعد دائماً لمساعدتك. إذا كان لديك أي أسئلة، يرجى الاتصال بنا.',
+    teamCallUs: 'اتصل بنا',
+    sendEmail: 'أرسل بريد إلكتروني',
+    
+    // Team Members
+    director: 'المدير',
+    corporateRelationsManager: 'مدير العلاقات المؤسسية',
+    customerServiceSpecialist: 'أخصائي خدمة العملاء',
+    chiefAccountant: 'كبير المحاسبين',
+    technicalServiceSpecialist: 'أخصائي الخدمة التقنية',
+    itSpecialist: 'أخصائي تكنولوجيا المعلومات',
+    
+    // Team Descriptions
+    directorDesc: 'الإدارة العامة للشركة واتخاذ القرارات الاستراتيجية',
+    corporateRelationsDesc: 'إدارة العلاقات مع العملاء المؤسسيين والشراكات',
+    customerServiceDesc: 'إعداد وموافقة وثائق تسليم السيارات للعملاء',
+    chiefAccountantDesc: 'المحاسبة المالية والتقارير وتخطيط الميزانية',
+    technicalServiceDesc: 'فحص الحالة التقنية للسيارات والدعم التقني',
+    itSpecialistDesc: 'البنية التحتية لتكنولوجيا المعلومات والحلول الرقمية',
+    
+    // Book Auto Rental Section
+    bookAutoRental: 'احجز تأجير السيارات',
+    rentNow: 'استأجر الآن',
+
     // Footer
     footerCallUs: 'اتصل بنا',
     footerWriteToUs: 'اكتب لنا',
     footerAddress: 'العنوان',
+    
+    // Bus Services
+    buses: 'الحافلات',
+    busServices: 'خدمات الحافلات',
+    busServicesSubtitle: 'نظم رحلاتك الجماعية بخدمات حافلات مريحة وآمنة',
+    ourBusServices: 'خدمات الحافلات لدينا',
+    busServicesDescription: 'نقدم خدمات حافلات شاملة لاحتياجاتك المختلفة',
+    passengerTransport: 'نقل الركاب',
+    passengerTransportDesc: 'خدمة نقل الركاب داخل المدينة وبين المدن بحافلات مريحة',
+    tourServices: 'خدمات الجولات السياحية',
+    tourServicesDesc: 'حافلات سياحية خاصة وخدمات دليل للمجموعات السياحية',
+    corporateTransport: 'النقل المؤسسي',
+    corporateTransportDesc: 'نقل الموظفين وحافلات الفعاليات المؤسسية للشركات',
+    airportTransfer: 'نقل المطار',
+    airportTransferDesc: 'خدمة النقل الجماعي من وإلى المطار',
+    ourBusFleet: 'أسطول الحافلات لدينا',
+    busFleetDescription: 'حافلاتنا بأحجام ومستويات راحة مختلفة',
+    whyChooseOurBuses: 'لماذا تختار حافلاتنا؟',
+    safetyFirstDesc: 'جميع حافلاتنا تخضع لفحوصات تقنية منتظمة وتتوافق مع معايير السلامة',
+    experiencedDrivers: 'سائقون ذوو خبرة',
+    experiencedDriversDesc: 'سائقونا المحترفون وذوو الخبرة يجعلون رحلتك آمنة',
+    punctuality: 'خدمة في الوقت المحدد',
+    punctualityDesc: 'نحترم وقتك ونقدم الخدمة دائماً في الوقت المحدد',
+    getQuote: 'احصل على عرض سعر',
+    passengerCount: 'عدد الركاب',
+    tripType: 'نوع الرحلة',
+    tripDate: 'تاريخ الرحلة',
+    getQuoteButton: 'احصل على عرض سعر',
+    contactForBusService: 'اتصل لخدمة الحافلات',
+    contactForBusServiceDesc: 'اتصل بنا لطلب حافلة أو للحصول على معلومات مفصلة',
+    busCallUs: 'اتصل بنا',
+    busWhatsappUs: 'راسلنا على واتساب',
     quickLinks: 'روابط سريعة',
     aboutLink: 'حولنا',
     carsLink: 'السيارات',
+    busesLink: 'الحافلات',
     carTypesLink: 'أنواع السيارات',
     faqLink: 'الأسئلة الشائعة',
     contactLink: 'اتصل بنا',

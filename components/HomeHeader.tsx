@@ -64,6 +64,7 @@ const HomeHeader: FC<HomeHeaderProps> = ({ currentLang, handleLanguageChange, t 
               { href: "/services", label: t.services || "Xidmətlər" },
               { href: "/about", label: t.about || "Haqqımızda" },
               { href: "/contact", label: t.contact || "Əlaqə" },
+              { href: "/bus", label: t.buses || "Avtobuslar" },
             ].map((item) => (
               <a
                 key={item.href}

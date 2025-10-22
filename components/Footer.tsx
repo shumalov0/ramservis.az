@@ -145,6 +145,11 @@ const Footer: FC<FooterProps> = ({ t }) =>{
               </a>
             </li>
             <li>
+              <a href="/bus" className="hover:text-[#f5b754]">
+                 {t.busesLink}
+              </a>
+            </li>
+            <li>
               <a href="" className="hover:text-[#f5b754]">
                  {t.carTypesLink}
               </a>

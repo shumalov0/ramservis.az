@@ -234,6 +234,7 @@ import {
   Home,
   X,
   ChevronDown,
+  Bus,
 } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
@@ -266,11 +267,27 @@ export default function MobileMenu({
   const [isCarsExpanded, setIsCarsExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Get localized category names
+  const getLocalizedCategoryName = (categoryId: string) => {
+    const categoryMap: Record<string, string> = {
+      'economy': t?.categoryEconomy || 'Ekonom',
+      'business': t?.categoryBusiness || 'Biznes',
+      'suv': t?.categorySuv || 'SUV',
+      'sedan': t?.categorySedan || 'Sedan',
+      'hatchback': t?.categoryHatchback || 'Hatchback',
+      'minivan': t?.categoryMinivan || 'Minivan',
+      'luxury': t?.categoryLuxury || 'Lüks'
+    };
+    
+    return categoryMap[categoryId] || categoryId;
+  };
+
   const menuItems = [
     { href: "/", label: t?.home || "Ev", icon: Home },
     { href: "/services", label: t?.services || "Xidmətlər", icon: Info },
     { href: "/about", label: t?.about || "Haqqımızda", icon: Info },
     { href: "/contact", label: t?.contact || "Əlaqə", icon: Phone },
+    { href: "/bus", label: t?.buses || "Avtobuslar", icon: Bus },
   ];
 
   const handleNavigation = (href: string) => {
@@ -384,7 +401,7 @@ export default function MobileMenu({
                         className="flex items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-400 hover:text-brand-gold dark:hover:text-brand-gold transition-all py-2 px-3 rounded-lg hover:bg-amber-50/40 dark:hover:bg-slate-800/30 w-full text-left"
                       >
                         <span className="text-sm">🚗</span>
-                        Bütün Maşınlar
+                        {t?.viewAllCars || "Bütün Maşınlar"}
                       </button>
 
                       {/* Category Links */}
@@ -396,7 +413,7 @@ export default function MobileMenu({
                         >
                           <span className="text-sm">{category.icon}</span>
                           <div className="flex-1">
-                            <span>{category.displayName}</span>
+                            <span>{getLocalizedCategoryName(category.id)}</span>
                           </div>
                         </button>
                       ))}
