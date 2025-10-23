@@ -19,7 +19,7 @@ const getTeamMembers = (t: any) => [
     description: t.corporateRelationsDesc,
     icon: Phone,
     color: "from-purple-500 to-purple-600",
-    image: "/team/lamiyamensimova.jpeg",
+    image: "",
   },
   {
     name: "Taleh Həmidov",
