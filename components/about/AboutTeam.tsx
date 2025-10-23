@@ -14,7 +14,7 @@ const getTeamMembers = (t: any) => [
     image: "/team/ramilismayilov.jpeg",
   },
   {
-    name: "Lamiya Mənsimova",
+    name: "Lamiya Məsimova",
     position: t.corporateRelationsManager,
     description: t.corporateRelationsDesc,
     icon: Phone,
