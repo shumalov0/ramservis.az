@@ -95,8 +95,7 @@ export default function AdvancedBusSearch({
       onSearchChange(suggestion.value);
     }
     setIsOpen(false);
-  };
-
+  }; 
   const clearSearch = () => {
     onSearchChange('');
     inputRef.current?.focus();
