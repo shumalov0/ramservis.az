@@ -283,14 +283,16 @@ export default function FullscreenLightbox({
                 transform: `scale(${zoomLevel}) rotate(${rotation}deg)`
               }}
             >
-              <img
+              <Image
                 src={images[currentIndex]}
                 alt={`${carInfo.brand} ${carInfo.model} ${carInfo.year} - Image ${currentIndex + 1} of ${images.length}. Zoom level: ${Math.round(zoomLevel * 100)}%. Rotation: ${rotation} degrees.`}
+                width={1920}
+                height={1080}
                 className="max-w-full max-h-full object-contain"
-                onLoadStart={() => setIsLoading(true)}
                 onLoad={() => setIsLoading(false)}
                 onError={() => setIsLoading(false)}
-                crossOrigin="anonymous"
+                quality={90}
+                priority
               />
 
               {isLoading && (

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import UploadImage from "@/components/UploadImage";
 import { useState } from "react";
 
@@ -29,11 +30,16 @@ export default function UploadPage() {
 
             <div>
               <label className="block text-sm font-medium mb-2">Önizləmə:</label>
-              <img
-                src={imageURL}
-                alt="Yüklənmiş şəkil"
-                className="w-full max-w-md rounded-lg shadow-lg"
-              />
+              <div className="relative w-full max-w-md aspect-video">
+                <Image
+                  src={imageURL}
+                  alt="Yüklənmiş şəkil"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 448px"
+                  className="rounded-lg shadow-lg object-cover"
+                  quality={75}
+                />
+              </div>
             </div>
           </div>
         )}

@@ -165,15 +165,17 @@ const ThumbnailButton = forwardRef<HTMLButtonElement, ThumbnailButtonProps>(
         tabIndex={isActive ? 0 : -1}
         type="button"
       >
-        <img
+        <Image
           src={image}
           alt=""
+          fill
+          sizes="80px"
           className={cn(
-            "absolute inset-0 w-full h-full object-cover transition-all duration-200",
+            "object-cover transition-all duration-200",
             isActive ? "opacity-100" : "opacity-70 hover:opacity-90"
           )}
           loading="lazy"
-          crossOrigin="anonymous"
+          quality={60}
         />
         
         {/* Active indicator */}

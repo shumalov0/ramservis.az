@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, ZoomIn, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // Removed animation imports for better performance
@@ -208,18 +209,20 @@ export default function MainImageViewer({
           </Button>
         </div>
       ) : (
-        <img
+        <Image
           src={currentImageSrc}
           alt={`${carInfo.brand} ${carInfo.model} ${carInfo.year} - Image ${currentIndex + 1} of ${images.length}. ${isZoomed ? 'Zoomed view.' : 'Click to zoom or open fullscreen.'}`}
-          className={`w-full h-full object-cover transition-transform duration-300 cursor-pointer ${isZoomed ? 'scale-110' : 'scale-100'}`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+          className={`object-cover transition-transform duration-300 cursor-pointer ${isZoomed ? 'scale-110' : 'scale-100'}`}
           onLoad={handleImageLoad}
           onError={handleImageError}
           onClick={(e) => {
             e.stopPropagation();
             toggleZoom();
           }}
-          loading={currentIndex === 0 ? 'eager' : 'lazy'}
-          crossOrigin="anonymous"
+          priority={currentIndex === 0}
+          quality={80}
         />
       )}
 
