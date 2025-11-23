@@ -41,6 +41,7 @@
     "@radix-ui/react-tooltip": "^1.1.2",
     "@react-three/drei": "^9.88.17",
     "@react-three/fiber": "^8.15.19",
+    "@supabase/supabase-js": "^2.84.0",
     "@types/node": "20.6.2",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
