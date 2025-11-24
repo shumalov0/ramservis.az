@@ -12,15 +12,15 @@
 //     <section className="relative py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex  items-center">
 //       {/* Background Image */}
 //       <div className="absolute inset-0 z-0">
-//         <img 
-//           src="/cars/12.jpg" 
-//           alt="Luxury Car Fleet" 
+//         <img
+//           src="/cars/12.jpg"
+//           alt="Luxury Car Fleet"
 //           className="w-full h-full object-cover"
 //         />
 //         {/* Dark overlay */}
 //         <div className="absolute inset-0 bg-black/50"></div>
 //       </div>
-      
+
 //       <div className="max-w-7xl mx-auto text-center relative z-10">
 //         <h2 className="text-5xl font-bold text-white dark:text-white mb-6">
 //           {t.heroTitle.split(' ').slice(0, -2).join(' ')}{' '}
@@ -38,8 +38,9 @@
 // export default HeroSection;
 
 // components/HeroSection.tsx
-import { FC } from 'react';
-import { Translation } from '@/lib/translations';
+import { FC } from "react";
+import Image from "next/image";
+import { Translation } from "@/lib/translations";
 
 interface HeroSectionProps {
   t: Translation;
@@ -50,10 +51,14 @@ const HeroSection: FC<HeroSectionProps> = ({ t }) => {
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/cars/12.jpg"
+        <Image
+          src="https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/12.jpg"
           alt="Luxury Car Fleet"
-          className="w-full h-full object-cover brightness-90 dark:brightness-75"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover brightness-90 dark:brightness-75"
         />
         {/* Light və Dark overlay */}
         <div className="absolute inset-0 bg-black/25 dark:bg-black/50"></div>
@@ -64,8 +69,10 @@ const HeroSection: FC<HeroSectionProps> = ({ t }) => {
 
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <h2 className="text-5xl font-bold text-white mb-6">
-          {t.heroTitle.split(' ').slice(0, -2).join(' ')}{' '}
-          <span className="text-brand-gold">{t.heroTitle.split(' ').slice(-2).join(' ')}</span>
+          {t.heroTitle.split(" ").slice(0, -2).join(" ")}{" "}
+          <span className="text-brand-gold">
+            {t.heroTitle.split(" ").slice(-2).join(" ")}
+          </span>
         </h2>
         <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
           {t.heroSubtitle}

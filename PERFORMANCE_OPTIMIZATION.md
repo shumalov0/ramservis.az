@@ -61,6 +61,20 @@ images: {
 - `<img>` → `<Image>`
 - Responsive container əlavə edildi
 
+#### components/HeroSection.tsx
+
+- Hero background `<img>` → `<Image>` (12.jpg)
+- `priority` - ilk yüklənmə üçün
+- `quality={85}` - hero üçün yüksək keyfiyyət
+- `sizes="100vw"` - full width
+
+#### app/home2/page.tsx
+
+- Hero background `<img>` → `<Image>` (12.jpg)
+- CTA section background optimallaşdırıldı (search.jpg)
+- Car grid images optimallaşdırıldı
+- Responsive sizes konfiqurasiyası
+
 ## 📊 Performans Təkmilləşmələri
 
 ### Əvvəl (img tag):
