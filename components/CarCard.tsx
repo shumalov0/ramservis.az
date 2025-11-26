@@ -6,8 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import { Car, enhancedCars } from "@/lib/data";
-import { EnhancedCar } from "@/lib/types";
+import type { Car, EnhancedCar } from "@/lib/types";
 import { Translation } from "@/lib/translations";
 import { useFavorites } from "@/hooks/use-favorites";
 
@@ -30,7 +29,6 @@ const CarCard: FC<CarCardProps> = ({
 }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
 
-  // Handle different image properties between Car and EnhancedCar
   const getCarImage = () => {
     if ("gallery" in car && car.gallery?.length) {
       return car.gallery[0];
@@ -40,16 +38,12 @@ const CarCard: FC<CarCardProps> = ({
     }
     return car.image;
   };
-
   // Get car category from enhanced data
   const getCarCategory = () => {
     if ("category" in car && car.category) {
       return Array.isArray(car.category) ? car.category[0] : car.category;
     }
-    // Fallback to enhanced cars data
-    const enhancedCar = enhancedCars.find((ec) => ec.id === car.id);
-    const category = Array.isArray(enhancedCar?.category) ? enhancedCar?.category[0] : enhancedCar?.category;
-    return category || car.class;
+    return car.class;
   };
 
   return (

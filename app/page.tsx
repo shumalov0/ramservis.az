@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect, lazy, Suspense } from "react";
+import Image from "next/image";
+import type { EnhancedCar } from "@/lib/types";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CarsSection from "@/components/CarsSection";
 import Footer from "@/components/Footer";
-import { cars, enhancedCars } from "@/lib/data";
 import { useTranslation } from "@/lib/translations";
 import BookingBar from "@/components/BookingBar";
 import CategoriesGrid from "@/components/CategoriesGrid";
@@ -21,19 +22,40 @@ const GoogleMapIframe = lazy(() => import("@/components/GoogleMapIframe"));
 export default function Home() {
   const [currentLang, setCurrentLang] = useState("az");
   const t = useTranslation(currentLang);
-  const [isLoading, setIsLoading] = useState(true);
+  const [popularCars, setPopularCars] = useState<EnhancedCar[]>([]);
+  const [allEnhancedCars, setAllEnhancedCars] = useState<EnhancedCar[]>([]);
+  const [isCarsReady, setIsCarsReady] = useState(false);
 
   useEffect(() => {
+    let isMounted = true;
+
     const savedLang = localStorage.getItem("ramservis_language");
     if (savedLang && ["az", "en", "ru", "ar"].includes(savedLang)) {
       setCurrentLang(savedLang);
     }
 
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1200);
+    const loadCars = async () => {
+      try {
+        const dataModule = await import("@/lib/data");
+        if (!isMounted) return;
 
-    return () => clearTimeout(timer);
+        const sortedByPopularity = [...dataModule.enhancedCars].sort(
+          (a, b) => b.popularity - a.popularity
+        );
+
+        setPopularCars(sortedByPopularity.slice(0, 6));
+        setAllEnhancedCars(dataModule.enhancedCars);
+        setIsCarsReady(true);
+      } catch (error) {
+        console.error("Failed to load car data", error);
+      }
+    };
+
+    loadCars();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const handleLanguageChange = (lang: string) => {
@@ -79,110 +101,114 @@ export default function Home() {
         t={t}
       />
 
-      {/* Loading state */}
-      {isLoading ? (
-        <div className="flex justify-center items-center min-h-[70vh]">
-          <LoadingSpinner size="lg" />
+      {/* Hero */}
+      <HeroSection t={t} />
+
+      {/* Features */}
+      <section className="py-16 bg-white/70 dark:bg-brand-dark/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Advanced t={t} />
         </div>
-      ) : (
-        <>
-          {/* Hero */}
-          <HeroSection t={t} />
+      </section>
 
-          {/* Features */}
-          <section className="py-16 bg-white/70 dark:bg-brand-dark/70">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <Advanced t={t} />
+      {/* BookingBar */}
+      <section className="relative flex items-center justify-center py-10 h-[100%] md:h-96 overflow-hidden">
+        <Image
+          src="/cars/search.jpg"
+          alt="Book your car"
+          fill
+          className="object-cover"
+          quality={80}
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 max-w-6xl w-full px-4 ">
+          <div className="text flex flex-col text-center  justify-center items-center ">
+            <p className="text-[10px] sari">{t.rentNow}</p>
+            <h2 className="bookau text-4xl md:text-6xl font-bold text-white mb-8">
+              {t.bookAutoRental}
+            </h2>
+          </div>
+          <BookingBar />
+        </div>
+      </section>
+
+      {/* Categories */}
+      <section className="py-16 bg-white/70 dark:bg-[#1a1a1a]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CategoriesGrid currentLang={currentLang} t={t} />
+        </div>
+      </section>
+
+      {/* Most Ordered Cars */}
+      <section className="py-20 dark:bg-brand-dark/70">
+        {isCarsReady ? (
+          <CarsSection
+            cars={popularCars}
+            t={t}
+            currentLang={currentLang}
+            getLocalizedCarClass={getLocalizedCarClass}
+            getLocalizedFuelType={getLocalizedFuelType}
+            getLocalizedTransmission={getLocalizedTransmission}
+            showViewAllButton={true}
+            showTitle={true}
+          />
+        ) : (
+          <div className="flex justify-center items-center py-16">
+            <LoadingSpinner size="lg" />
+          </div>
+        )}
+      </section>
+
+      {/* Other Cars Section */}
+      {isCarsReady && (
+        <Suspense
+          fallback={
+            <div className="py-16">
+              <LoadingSpinner />
             </div>
-          </section>
-
-          {/* BookingBar */}
-          <section
-            className="relative flex items-center justify-center bg-fixed bg-center bg-cover py-10 h-[100%] md:h-96"
-            style={{ backgroundImage: "url('/cars/search.jpg')" }}
-          >
-            <div className="absolute inset-0 bg-black/40"></div>
-            <div className="relative z-10 max-w-6xl w-full px-4 ">
-              <div className="text flex flex-col text-center  justify-center items-center ">
-                <p className="text-[10px] sari">{t.rentNow}</p>
-                <h2 className="bookau text-4xl md:text-6xl font-bold text-white mb-8">
-                  {t.bookAutoRental}
-                </h2>
-              </div>
-              <BookingBar />
-            </div>
-          </section>
-
-          {/* Categories */}
-          <section className="py-16 bg-white/70 dark:bg-[#1a1a1a]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <CategoriesGrid currentLang={currentLang} t={t} />
-            </div>
-          </section>
-
-          {/* Most Ordered Cars */}
-          <section className="py-20 dark:bg-brand-dark/70">
-            <CarsSection
-              cars={cars}
-              t={t}
-              currentLang={currentLang}
-              getLocalizedCarClass={getLocalizedCarClass}
-              getLocalizedFuelType={getLocalizedFuelType}
-              getLocalizedTransmission={getLocalizedTransmission}
-              showViewAllButton={true}
-              showTitle={true}
-            />
-          </section>
-
-          {/* Other Cars Section */}
-          <Suspense
-            fallback={
-              <div className="py-16">
-                <LoadingSpinner />
-              </div>
-            }
-          >
-            <OtherCarsSection
-              cars={enhancedCars}
-              excludeIds={cars.slice(0, 6).map((car) => car.id)} // Exclude first 6 cars shown in main section
-              maxCars={12}
-              currentLang={currentLang}
-              t={t}
-              getLocalizedCarClass={getLocalizedCarClass}
-              getLocalizedFuelType={getLocalizedFuelType}
-              getLocalizedTransmission={getLocalizedTransmission}
-            />
-          </Suspense>
-
-          {/* Customer Reviews */}
-          <Suspense
-            fallback={
-              <div className="py-16">
-                <LoadingSpinner />
-              </div>
-            }
-          >
-            <GoogleReviews
-              maxReviews={8}
-              showRating={true}
-              currentLang={currentLang}
-              useGoogleAPI={false}
-              minRating={4}
-            />
-          </Suspense>
-
-          {/* Certificates Section */}
-          <Suspense
-            fallback={
-              <div className="py-16">
-                <LoadingSpinner />
-              </div>
-            }
-          >
-            <AboutCertificates t={t} />
-          </Suspense>
-        </>
+          }
+        >
+          <OtherCarsSection
+            cars={allEnhancedCars}
+            excludeIds={popularCars.map((car) => car.id)} // Exclude first 6 cars shown in main section
+            maxCars={12}
+            currentLang={currentLang}
+            t={t}
+            getLocalizedCarClass={getLocalizedCarClass}
+            getLocalizedFuelType={getLocalizedFuelType}
+            getLocalizedTransmission={getLocalizedTransmission}
+          />
+        </Suspense>
       )}
+
+      {/* Customer Reviews */}
+      <Suspense
+        fallback={
+          <div className="py-16">
+            <LoadingSpinner />
+          </div>
+        }
+      >
+        <GoogleReviews
+          maxReviews={8}
+          showRating={true}
+          currentLang={currentLang}
+          useGoogleAPI={false}
+          minRating={4}
+        />
+      </Suspense>
+
+      {/* Certificates Section */}
+      <Suspense
+        fallback={
+          <div className="py-16">
+            <LoadingSpinner />
+          </div>
+        }
+      >
+        <AboutCertificates t={t} />
+      </Suspense>
       {/* Location Map */}
       <Suspense
         fallback={

@@ -1,26 +1,27 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { EnhancedCar } from "@/lib/types";
-import { enhancedCars } from "@/lib/data";
 import CarCard from "@/components/CarCard";
 import { translations } from "@/lib/translations";
 
 interface SimilarCarsProps {
-  currentCar: EnhancedCar;
-  maxRecommendations?: number;
+  similarCars: EnhancedCar[];
   currentLang?: string;
 }
 
 export default function SimilarCars({
-  currentCar,
-  maxRecommendations = 8,
+  similarCars,
   currentLang = "en",
 }: SimilarCarsProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const t = translations[currentLang] || translations.en;
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [similarCars.length]);
 
   // Localization functions
   const getLocalizedCarClass = (carClass: string) => {
@@ -68,50 +69,12 @@ export default function SimilarCars({
     return transmissionMap[transmission]?.[currentLang] || transmission;
   };
 
-  // Calculate similarity score based on category, price range, and features
-  const similarCars = useMemo(() => {
-    const candidates = enhancedCars.filter((car) => car.id !== currentCar.id);
-
-    const scoredCars = candidates.map((car) => {
-      let score = 0;
-
-      // Category match (highest weight)
-      if (car.category === currentCar.category) score += 40;
-
-      // Price range similarity (within 30% range)
-      const priceDiff = Math.abs(car.dailyPrice - currentCar.dailyPrice);
-      const priceRange = currentCar.dailyPrice * 0.3;
-      if (priceDiff <= priceRange) score += 25;
-
-      // Seat count match
-      if (car.seats === currentCar.seats) score += 15;
-
-      // Fuel type match
-      if (car.fuelType === currentCar.fuelType) score += 10;
-
-      // Transmission match
-      if (car.transmission === currentCar.transmission) score += 5;
-
-      // Feature overlap
-      const commonFeatures = car.features.filter((feature) =>
-        currentCar.features.includes(feature)
-      ).length;
-      score += commonFeatures * 2;
-
-      // Popularity boost
-      score += car.popularity * 0.1;
-
-      return { car, score };
-    });
-
-    return scoredCars
-      .sort((a, b) => b.score - a.score)
-      .slice(0, maxRecommendations)
-      .map((item) => item.car);
-  }, [currentCar, maxRecommendations]);
-
   const carsPerSlide = 3;
   const maxSlides = Math.max(1, Math.ceil(similarCars.length / carsPerSlide));
+
+  useEffect(() => {
+    setCurrentIndex((prev) => Math.min(prev, maxSlides - 1));
+  }, [maxSlides]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % maxSlides);

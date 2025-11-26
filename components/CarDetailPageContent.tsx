@@ -12,7 +12,7 @@ import {
   AlertCircle,
   Star,
 } from "lucide-react";
-import { Car } from "@/lib/data";
+import type { Car } from "@/lib/types";
 import { useTranslation } from "@/lib/translations";
 import CarDetailClient from "@/components/CarDetailClient";
 import { useFavorites } from "@/hooks/use-favorites";
@@ -31,12 +31,14 @@ import { EnhancedCar, BookingFormData } from "@/lib/types";
 interface CarDetailPageContentProps {
   car: Car;
   enhancedCar: EnhancedCar;
+  similarCars: EnhancedCar[];
   initialLang: string;
 }
 
 export default function CarDetailPageContent({
   car,
   enhancedCar,
+  similarCars,
   initialLang,
 }: CarDetailPageContentProps) {
   const [currentLang, setCurrentLang] = useState(initialLang);
@@ -101,7 +103,6 @@ export default function CarDetailPageContent({
               }
               carInfo={{ brand: car.brand, model: car.model, year: car.year }}
               thumbnailLayout="horizontal"
-              enableLazyLoading={true}
             />
 
             {/* Features */}
@@ -363,7 +364,7 @@ export default function CarDetailPageContent({
 
         {/* Similar Cars Recommendations */}
         <div className="mt-8 sm:mt-12 lg:mt-16 w-full overflow-hidden">
-          <SimilarCars currentCar={enhancedCar} />
+          <SimilarCars similarCars={similarCars} currentLang={currentLang} />
         </div>
       </div>
     </div>

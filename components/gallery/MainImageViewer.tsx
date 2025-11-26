@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, memo } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, ZoomIn, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-// Removed animation imports for better performance
 import { announceToScreenReader } from '@/lib/accessibility-utils';
-import { getSafeImageSrc, FALLBACK_IMAGES, addCacheBuster } from '@/lib/image-utils';
+import { getSafeImageSrc, FALLBACK_IMAGES, addCacheBuster, DEFAULT_FALLBACK_IMAGE } from '@/lib/image-utils';
 
 interface MainImageViewerProps {
   images: string[];
@@ -16,7 +15,7 @@ interface MainImageViewerProps {
   carInfo: { brand: string; model: string; year: number };
 }
 
-export default function MainImageViewer({
+function MainImageViewer({
   images,
   currentIndex,
   onIndexChange,
@@ -25,7 +24,7 @@ export default function MainImageViewer({
 }: MainImageViewerProps) {
   const [hasError, setHasError] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
-  const [currentImageSrc, setCurrentImageSrc] = useState(getSafeImageSrc(images[currentIndex] || ''));
+  const [overrideSrc, setOverrideSrc] = useState<string | null>(null);
   const [isZoomed, setIsZoomed] = useState(false);
   
   // Touch handling refs and state
@@ -33,6 +32,7 @@ export default function MainImageViewer({
   const touchStartY = useRef<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const wheelDelta = useRef(0);
 
   const handlePrevious = useCallback(() => {
     const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
@@ -54,7 +54,27 @@ export default function MainImageViewer({
   useEffect(() => {
     setHasError(false);
     setRetryCount(0);
-    setCurrentImageSrc(getSafeImageSrc(images[currentIndex] || ''));
+    setOverrideSrc(null);
+  }, [currentIndex, images]);
+
+  // Preload next and previous images for instant switching
+  useEffect(() => {
+    if (images.length <= 1) return;
+    
+    const preloadImage = (index: number) => {
+      if (index >= 0 && index < images.length) {
+        const img = new window.Image();
+        img.src = images[index];
+      }
+    };
+
+    // Preload next image
+    const nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    preloadImage(nextIndex);
+
+    // Preload previous image
+    const prevIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    preloadImage(prevIndex);
   }, [currentIndex, images]);
 
   const toggleZoom = useCallback(() => {
@@ -111,6 +131,25 @@ export default function MainImageViewer({
     setIsDragging(false);
   }, [handlePrevious, handleNext, toggleZoom, isDragging, images.length]);
 
+  const handleWheel = useCallback((event: React.WheelEvent) => {
+    if (images.length <= 1) {
+      return;
+    }
+
+    wheelDelta.current += event.deltaY;
+    const threshold = 80;
+
+    if (Math.abs(wheelDelta.current) >= threshold) {
+      event.preventDefault();
+      if (wheelDelta.current > 0) {
+        handleNext();
+      } else {
+        handlePrevious();
+      }
+      wheelDelta.current = 0;
+    }
+  }, [handleNext, handlePrevious, images.length]);
+
   // Enhanced keyboard navigation - only when component is focused
   const handleContainerKeyDown = useCallback((event: React.KeyboardEvent) => {
     if (event.key === 'ArrowLeft') {
@@ -144,7 +183,7 @@ export default function MainImageViewer({
     // Try next fallback image
     if (currentFallbackIndex < FALLBACK_IMAGES.length - 1) {
       const nextFallback = FALLBACK_IMAGES[currentFallbackIndex + 1];
-      setCurrentImageSrc(nextFallback);
+      setOverrideSrc(nextFallback);
       return;
     }
     
@@ -153,13 +192,14 @@ export default function MainImageViewer({
       setTimeout(() => {
         setRetryCount(prev => prev + 1);
         setHasError(false);
-        setCurrentImageSrc(addCacheBuster(images[currentIndex]));
+        setOverrideSrc(addCacheBuster(images[currentIndex]));
       }, Math.pow(2, retryCount) * 1000);
       return;
     }
     
     // Everything failed
     setHasError(true);
+    setOverrideSrc(DEFAULT_FALLBACK_IMAGE);
   };
 
 
@@ -179,6 +219,7 @@ export default function MainImageViewer({
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onWheel={handleWheel}
       onClick={(e) => {
         // Only zoom if clicking on the main area, not on buttons, and not after a drag
         if (!isDragging && (e.target === e.currentTarget || (e.target as HTMLElement).tagName === 'IMG')) {
@@ -202,7 +243,7 @@ export default function MainImageViewer({
               e.stopPropagation();
               setHasError(false);
               setRetryCount(0);
-              setCurrentImageSrc(addCacheBuster(images[currentIndex]));
+              setOverrideSrc(addCacheBuster(images[currentIndex]));
             }}
           >
             Retry ({retryCount}/2)
@@ -210,7 +251,7 @@ export default function MainImageViewer({
         </div>
       ) : (
         <Image
-          src={currentImageSrc}
+          src={getSafeImageSrc(overrideSrc ?? images[currentIndex] ?? DEFAULT_FALLBACK_IMAGE)}
           alt={`${carInfo.brand} ${carInfo.model} ${carInfo.year} - Image ${currentIndex + 1} of ${images.length}. ${isZoomed ? 'Zoomed view.' : 'Click to zoom or open fullscreen.'}`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
@@ -317,3 +358,5 @@ export default function MainImageViewer({
     </div>
   );
 }
+
+export default memo(MainImageViewer);

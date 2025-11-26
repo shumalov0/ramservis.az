@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef, useEffect, forwardRef, useCallback, useState } from 'react';
+import { useRef, useEffect, forwardRef, useCallback, useState, memo } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { handleArrowNavigation, announceToScreenReader, prefersReducedMotion } from '@/lib/accessibility-utils';
 
@@ -14,7 +13,7 @@ interface ThumbnailStripProps {
   carInfo: { brand: string; model: string; year: number };
 }
 
-export default function ThumbnailStrip({
+function ThumbnailStrip({
   images,
   currentIndex,
   onThumbnailClick,
@@ -130,6 +129,8 @@ export default function ThumbnailStrip({
   );
 }
 
+export default memo(ThumbnailStrip);
+
 interface ThumbnailButtonProps {
   image: string;
   index: number;
@@ -140,16 +141,16 @@ interface ThumbnailButtonProps {
   totalImages: number;
 }
 
-const ThumbnailButton = forwardRef<HTMLButtonElement, ThumbnailButtonProps>(
+const ThumbnailButton = memo(forwardRef<HTMLButtonElement, ThumbnailButtonProps>(
   ({ image, index, isActive, onClick, carInfo, layout, totalImages }, ref) => {
     const aspectRatio = layout === 'horizontal' ? 'aspect-video' : 'aspect-square';
     const size = layout === 'horizontal' ? 'w-20 h-12' : 'w-16 h-16';
 
     return (
-      <motion.button
+      <button
         ref={ref}
         className={cn(
-          "relative overflow-hidden rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 touch-target",
+          "relative overflow-hidden rounded-lg border-2 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 touch-target hover:scale-105 active:scale-95",
           size,
           aspectRatio,
           isActive 
@@ -157,8 +158,6 @@ const ThumbnailButton = forwardRef<HTMLButtonElement, ThumbnailButtonProps>(
             : "border-transparent hover:border-gray-300 dark:hover:border-gray-600"
         )}
         onClick={onClick}
-        whileHover={prefersReducedMotion() ? {} : { scale: 1.05 }}
-        whileTap={prefersReducedMotion() ? {} : { scale: 0.95 }}
         role="tab"
         aria-selected={isActive}
         aria-label={`${isActive ? 'Currently selected: ' : ''}Image ${index + 1} of ${totalImages}: ${carInfo.brand} ${carInfo.model} ${carInfo.year}`}
@@ -171,27 +170,20 @@ const ThumbnailButton = forwardRef<HTMLButtonElement, ThumbnailButtonProps>(
           fill
           sizes="80px"
           className={cn(
-            "object-cover transition-all duration-200",
+            "object-cover transition-opacity duration-150",
             isActive ? "opacity-100" : "opacity-70 hover:opacity-90"
           )}
           loading="lazy"
-          quality={60}
+          quality={50}
         />
         
         {/* Active indicator */}
         {isActive && (
-          <motion.div
-            layoutId="thumbnail-indicator"
-            className="absolute inset-0 bg-amber-500/10 border border-amber-500"
-            initial={false}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          />
+          <div className="absolute inset-0 bg-amber-500/10 border border-amber-500" />
         )}
-
-
-      </motion.button>
+      </button>
     );
   }
-);
+));
 
 ThumbnailButton.displayName = 'ThumbnailButton';

@@ -1,29 +1,4 @@
-import { CustomerReview, Certificate, EnhancedCar, CarCategory, Bus, EnhancedBus } from "./types";
-
-export interface Car {
-  id: string;
-  brand: string;
-  model: string;
-  year: number;
-  class: string;
-  fuelType: string;
-  transmission: string;
-  engineSize: string;
-  seats: number;
-  dailyPrice: number;
-  weeklyPrice: number;
-  monthlyPrice: number;
-  deposit: number;
-  image: string; // primary image (legacy)
-  images?: string[]; // gallery images (4-5)
-  features: string[];
-  rules: {
-    minimumAge: number;
-    drivingExperience: number;
-    passportRequired: boolean;
-    licenseRequired: boolean;
-  };
-}
+import { Car, CustomerReview, Certificate, EnhancedCar, CarCategory, Bus, EnhancedBus } from "./types";
 
 export interface Location {
   id: string;

@@ -1,5 +1,5 @@
-import { Car, enhancedCars } from './data';
-import { CarFilters, EnhancedCar } from './types';
+import { enhancedCars } from './data';
+import { Car, CarFilters, EnhancedCar } from './types';
 import { SortOption } from '@/components/CarsFilters';
 
 /**
@@ -224,4 +224,62 @@ export function getPopularFilters(cars: Car[]) {
       .slice(0, 10)
       .map(([feature, count]) => ({ feature, count }))
   };
+}
+
+/**
+ * Compute similar cars once on the server to avoid shipping the whole dataset to the client.
+ */
+export function getSimilarCars(
+  currentCar: EnhancedCar,
+  candidateCars: EnhancedCar[],
+  maxRecommendations = 8
+): EnhancedCar[] {
+  const scoredCars = candidateCars
+    .filter((car) => car.id !== currentCar.id)
+    .map((car) => {
+      let score = 0;
+
+      const currentCategories = Array.isArray(currentCar.category)
+        ? currentCar.category
+        : [currentCar.category];
+      const carCategories = Array.isArray(car.category)
+        ? car.category
+        : [car.category];
+
+      // Category overlap (highest weight)
+      const hasCategoryMatch = carCategories.some((cat) =>
+        currentCategories.includes(cat)
+      );
+      if (hasCategoryMatch) score += 40;
+
+      // Price similarity within ±30%
+      const priceDiff = Math.abs(car.dailyPrice - currentCar.dailyPrice);
+      const priceRange = Math.max(currentCar.dailyPrice * 0.3, 1);
+      if (priceDiff <= priceRange) score += 25;
+
+      // Seat count match
+      if (car.seats === currentCar.seats) score += 15;
+
+      // Fuel type match
+      if (car.fuelType === currentCar.fuelType) score += 10;
+
+      // Transmission match
+      if (car.transmission === currentCar.transmission) score += 5;
+
+      // Feature overlap
+      const commonFeatures = car.features.filter((feature) =>
+        currentCar.features.includes(feature)
+      ).length;
+      score += commonFeatures * 2;
+
+      // Popularity boost
+      score += car.popularity * 0.1;
+
+      return { car, score };
+    });
+
+  return scoredCars
+    .sort((a, b) => b.score - a.score)
+    .slice(0, maxRecommendations)
+    .map((item) => item.car);
 }

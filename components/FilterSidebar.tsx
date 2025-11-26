@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Filter, SlidersHorizontal } from 'lucide-react';
 import CarsFilters, { SortOption } from '@/components/CarsFilters';
-import { Car } from '@/lib/data';
+import { Car } from '@/lib/types';
 import { CarFilters } from '@/lib/types';
 
 interface FilterSidebarProps {

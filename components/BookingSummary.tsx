@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -264,10 +265,13 @@ export default function BookingSummary({
             {car ? (
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <div className="w-20 h-16 sm:w-24 sm:h-20 relative overflow-hidden rounded-lg flex-shrink-0">
-                  <img
+                  <Image
                     src={car.image}
                     alt={`${car.brand} ${car.model}`}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="96px"
+                    className="object-cover"
+                    quality={70}
                   />
                 </div>
                 <div className="flex-1 min-w-0">

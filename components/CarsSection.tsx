@@ -1,14 +1,12 @@
 // components/CarsSection.tsx
-import { FC, useState, useEffect } from "react";
-import { Car, enhancedCars } from "@/lib/data";
-import { EnhancedCar } from "@/lib/types";
+import { FC } from "react";
+import type { Car, EnhancedCar } from "@/lib/types";
 import { Translation } from "@/lib/translations";
-import LoadingSpinner from "./LoadingSpinner";
 import CarCard from "./CarCard";
 import Link from "next/link";
 
 interface CarsSectionProps {
-  cars: Car[];
+  cars: (Car | EnhancedCar)[];
   t: Translation;
   currentLang: string;
   getLocalizedCarClass: (carClass: string) => string;
@@ -28,26 +26,7 @@ const CarsSection: FC<CarsSectionProps> = ({
   showViewAllButton = false,
   showTitle = true,
 }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Get most ordered cars (top 6 by popularity) - only for homepage
-  const getMostOrderedCars = (): EnhancedCar[] => {
-    return enhancedCars
-      .sort((a, b) => b.popularity - a.popularity)
-      .slice(0, 6);
-  };
-
-  // Use provided cars or get most ordered cars for homepage
-  const displayCars = showViewAllButton ? getMostOrderedCars() : cars;
+  const displayCars = cars;
 
   // Get section title based on language
   const getSectionTitle = () => {
@@ -93,52 +72,46 @@ const CarsSection: FC<CarsSectionProps> = ({
         </div>
       )}
 
-      {isLoading ? (
-        <div className="flex justify-center items-center py-20">
-          <LoadingSpinner size="lg" />
+      <div className="relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          {displayCars.map((car) => (
+            <CarCard
+              key={car.id}
+              car={car}
+              currentLang={currentLang}
+              t={t}
+              getLocalizedCarClass={getLocalizedCarClass}
+              getLocalizedFuelType={getLocalizedFuelType}
+              getLocalizedTransmission={getLocalizedTransmission}
+            />
+          ))}
         </div>
-      ) : (
-        <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            {displayCars.map((car) => (
-              <CarCard
-                key={car.id}
-                car={car}
-                currentLang={currentLang}
-                t={t}
-                getLocalizedCarClass={getLocalizedCarClass}
-                getLocalizedFuelType={getLocalizedFuelType}
-                getLocalizedTransmission={getLocalizedTransmission}
-              />
-            ))}
-          </div>
-          
-          {/* View Other Cars Button - only show if showViewAllButton is true */}
-          {showViewAllButton && (
-            <div className="flex justify-end mt-8">
-              <Link 
-                href="/cars"
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-[#f5b754] hover:bg-[#e6a643] text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-[0_0_15px_rgba(245,183,84,0.3)] hover:shadow-[0_0_20px_rgba(245,183,84,0.5)]"
+        
+        {/* View Other Cars Button - only show if showViewAllButton is true */}
+        {showViewAllButton && (
+          <div className="flex justify-end mt-8">
+            <Link 
+              href="/cars"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-[#f5b754] hover:bg-[#e6a643] text-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-[0_0_15px_rgba(245,183,84,0.3)] hover:shadow-[0_0_20px_rgba(245,183,84,0.5)]"
+            >
+              <span>{getButtonText()}</span>
+              <svg 
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
               >
-                <span>{getButtonText()}</span>
-                <svg 
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M17 8l4 4m0 0l-4 4m4-4H3" 
-                  />
-                </svg>
-              </Link>
-            </div>
-          )}
-        </div>
-      )}
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M17 8l4 4m0 0l-4 4m4-4H3" 
+                />
+              </svg>
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Search, X, Filter, SlidersHorizontal } from 'lucide-react';
-import { Car } from '@/lib/data';
+import { Car } from '@/lib/types';
 
 interface AdvancedSearchProps {
   search: string;

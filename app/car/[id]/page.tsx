@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { cars, enhancedCars } from '@/lib/data';
 import CarDetailPageContent from '@/components/CarDetailPageContent';
 import { EnhancedCar } from '@/lib/types';
+import { getSimilarCars } from '@/lib/car-utils';
 
 export async function generateStaticParams() {
   return cars.map((car) => ({
@@ -38,7 +39,16 @@ export default function CarDetail({ params }: CarDetailProps) {
     }
   };
 
-  return <CarDetailPageContent car={car} enhancedCar={carData} initialLang={'az'} />;
+  const similarCars = getSimilarCars(carData, enhancedCars);
+
+  return (
+    <CarDetailPageContent
+      car={car}
+      enhancedCar={carData}
+      similarCars={similarCars}
+      initialLang={'az'}
+    />
+  );
 }
 
 export function generateMetadata({ params }: { params: { id: string } }): Metadata {

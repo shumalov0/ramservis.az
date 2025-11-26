@@ -8,7 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
-import { Car, enhancedCars } from '@/lib/data';
+import { enhancedCars } from '@/lib/data';
+import { Car } from '@/lib/types';
 import { CarFilters, EnhancedCar } from '@/lib/types';
 import { Search, RotateCcw, Filter, X } from 'lucide-react';
 

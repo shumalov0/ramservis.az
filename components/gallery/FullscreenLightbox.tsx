@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, memo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCw, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-// Removed animation imports for better performance
 import { announceToScreenReader, trapFocus, prefersReducedMotion } from '@/lib/accessibility-utils';
 
 interface FullscreenLightboxProps {
@@ -18,7 +17,7 @@ interface FullscreenLightboxProps {
   carInfo: { brand: string; model: string; year: number };
 }
 
-export default function FullscreenLightbox({
+function FullscreenLightbox({
   images,
   isOpen,
   initialIndex,
@@ -434,3 +433,5 @@ export default function FullscreenLightbox({
     </AnimatePresence>
   );
 }
+
+export default memo(FullscreenLightbox);

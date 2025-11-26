@@ -11,7 +11,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { X, Calendar, MapPin, User, Mail, Phone, CreditCard, MessageCircle } from 'lucide-react';
-import { Car, locations, additionalServices } from '@/lib/data';
+import { locations, additionalServices } from '@/lib/data';
+import { Car } from '@/lib/types';
 import { useTranslation } from '@/lib/translations';
 
 interface BookingModalProps {

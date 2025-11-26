@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle, CreditCard } from 'lucide-react';
-import { Car } from '@/lib/data';
+import { Car } from '@/lib/types';
 import { useTranslation } from '@/lib/translations';
 
 interface CarDetailClientProps {

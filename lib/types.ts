@@ -1,5 +1,31 @@
 // Enhanced TypeScript interfaces for car rental enhancements
 
+// Base car interface shared across the app
+export interface Car {
+  id: string;
+  brand: string;
+  model: string;
+  year: number;
+  class: string;
+  fuelType: string;
+  transmission: string;
+  engineSize: string;
+  seats: number;
+  dailyPrice: number;
+  weeklyPrice: number;
+  monthlyPrice: number;
+  deposit: number;
+  image: string;
+  images?: string[];
+  features: string[];
+  rules: {
+    minimumAge: number;
+    drivingExperience: number;
+    passportRequired: boolean;
+    licenseRequired: boolean;
+  };
+}
+
 // Customer Review interface for Google Reviews integration
 export interface CustomerReview {
   id: string;
