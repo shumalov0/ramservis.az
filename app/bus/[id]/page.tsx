@@ -47,7 +47,7 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   const bus = buses.find(b => b.id === params.id);
   if (!bus) return {};
   const title = `${bus.brand} ${bus.model} ${bus.year} icarə | Bakı Avtobus İcarəsi`;
-  const description = `${bus.brand} ${bus.model} ${bus.year} ${bus.type}, ${bus.capacity} nəfərlik, ${bus.fuelType}, ${bus.transmission}. Günlük ${bus.dailyPrice}$-dan. Ram Servis-də sərfəli avtobus icarəsi.`;
+  const description = `${bus.brand} ${bus.model} ${bus.year} ${bus.type}, ${bus.capacity} nəfərlik, ${bus.fuelType}, ${bus.transmission}. Günlük ₼${bus.dailyPrice}-dan. Ram Servis-də sərfəli avtobus icarəsi.`;
   const url = `https://www.ramservis.az/bus/${bus.id}`;
   return {
     title,

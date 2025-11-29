@@ -55,7 +55,7 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   const car = cars.find(c => c.id === params.id);
   if (!car) return {};
   const title = `${car.brand} ${car.model} ${car.year} icarə | Bakı Rent a Car`;
-  const description = `${car.brand} ${car.model} ${car.year} ${car.class} sinif, ${car.fuelType}, ${car.transmission}. Günlük ${car.dailyPrice}$-dan. Ram Servis-də sərfəli maşın icarəsi.`;
+  const description = `${car.brand} ${car.model} ${car.year} ${car.class} sinif, ${car.fuelType}, ${car.transmission}. Günlük ₼${car.dailyPrice}-dan. Ram Servis-də sərfəli maşın icarəsi.`;
   const url = `https://www.ramservis.az/car/${car.id}`;
   return {
     title,

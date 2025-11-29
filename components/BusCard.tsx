@@ -24,9 +24,13 @@ const BusCard: FC<BusCardProps> = ({ bus, t, currentLang }) => {
     <Card className="rounded-2xl shadow-lg overflow-hidden border border-gray-200 dark:border-slate-700 w-full cursor-pointer hover:shadow-xl transition-shadow duration-300">
       {/* Image section */}
       <div className="aspect-[4/3] relative overflow-hidden imageParent w-full">
-        <div className="w-full h-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
-          <Bus className="w-20 h-20 text-white" />
-        </div>
+        <Image
+          src={bus.image}
+          alt={bus.name}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
         {/* Badge */}
         <div className="absolute top-4 right-4">
           <Badge

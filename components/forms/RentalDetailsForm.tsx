@@ -106,7 +106,7 @@ export default function RentalDetailsForm({
                 </div>
               </div>
               <div className="text-left sm:text-right self-start sm:self-center">
-                <p className="text-xl sm:text-2xl font-bold text-amber-600">${car.dailyPrice}</p>
+                <p className="text-xl sm:text-2xl font-bold text-amber-600">₼{car.dailyPrice}</p>
                 <p className="text-xs sm:text-sm text-amber-700 dark:text-amber-300">{t.perDay}</p>
               </div>
             </div>

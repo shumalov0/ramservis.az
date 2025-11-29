@@ -1,4 +1,12 @@
-import { Car, CustomerReview, Certificate, EnhancedCar, CarCategory, Bus, EnhancedBus } from "./types";
+import {
+  Car,
+  CustomerReview,
+  Certificate,
+  EnhancedCar,
+  CarCategory,
+  Bus,
+  EnhancedBus,
+} from "./types";
 
 export interface Location {
   id: string;
@@ -29,7 +37,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 70,
     monthlyPrice: 60,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/skoda/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/skoda/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/skoda/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/skoda/img2.jpeg",
@@ -49,7 +58,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Ekonom","Sedan"],
+    category: ["Ekonom", "Sedan"],
     popularity: 85,
     availability: true,
     gallery: [
@@ -85,7 +94,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 80,
     monthlyPrice: 65,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorolla/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorolla/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorolla/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorolla/img2.jpeg",
@@ -96,7 +106,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorolla/img7.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorolla/img8.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorolla/img9.jpeg",
-
     ],
     features: [
       "Premium Dəri Oturacaqlar",
@@ -111,7 +120,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Ekonom","Sedan"],
+    category: ["Ekonom", "Sedan"],
     popularity: 92,
     availability: true,
     gallery: [
@@ -147,14 +156,14 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 320,
     monthlyPrice: 300,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/X5/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/X5/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/X5/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/X5/img2.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/X5/img3.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/X5/img4.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/X5/img5.jpeg",
-    
     ],
     features: ["4WD", "Premium Audio", "Heated Seats", "Advanced Safety"],
     rules: {
@@ -164,7 +173,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Business",],
+    category: ["SUV", "Business"],
     popularity: 88,
     availability: true,
     gallery: [
@@ -196,7 +205,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 70,
     monthlyPrice: 60,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/changanNevo05/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/changanNevo05/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/changanNevo05/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/changanNevo05/img2.jpeg",
@@ -208,7 +218,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/changanNevo05/img8.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/changanNevo05/img9.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/changanNevo05/img10.jpeg",
-
     ],
     features: [
       "Panorama Şüşə Dam",
@@ -224,7 +233,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Ekonom","Sedan"],
+    category: ["Ekonom", "Sedan"],
     popularity: 95,
     availability: true,
     gallery: [
@@ -261,7 +270,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 300,
     monthlyPrice: 250,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/e220mercedes/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/e220mercedes/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/e220mercedes/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/e220mercedes/img2.jpeg",
@@ -271,7 +281,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/e220mercedes/img6.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/e220mercedes/img7.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/e220mercedes/img8.jpeg",
-
     ],
     features: [
       "Harman Kardon Premium Səs Sistemi",
@@ -286,7 +295,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Lüks","Sedan"],
+    category: ["Lüks", "Sedan"],
     popularity: 78,
     availability: true,
     gallery: [
@@ -321,7 +330,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 60,
     monthlyPrice: 45,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiaRio/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiaRio/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiaRio/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiaRio/img2.jpeg",
@@ -345,7 +355,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Ekonom","Sedan"],
+    category: ["Ekonom", "Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -379,7 +389,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 60,
     monthlyPrice: 50,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/BydQinPlus/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/BydQinPlus/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/BydQinPlus/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/BydQinPlus/img2.jpeg",
@@ -390,7 +401,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/BydQinPlus/img7.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/BydQinPlus/img8.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/BydQinPlus/img9.jpeg",
-
     ],
     features: [
       "Rəqəmsal Sürət Paneli",
@@ -406,7 +416,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Ekonom","Sedan"],
+    category: ["Ekonom", "Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -442,7 +452,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 60,
     monthlyPrice: 50,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/volksvagenPolo/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/volksvagenPolo/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/volksvagenPolo/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/volksvagenPolo/img2.jpeg",
@@ -451,7 +462,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/volksvagenPolo/img5.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/volksvagenPolo/img6.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/volksvagenPolo/img7.jpeg",
-
     ],
     features: [
       "Əl Kondisioneri",
@@ -467,7 +477,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Ekonom","Sedan"],
+    category: ["Ekonom", "Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -501,7 +511,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 125,
     monthlyPrice: 100,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img2.jpeg",
@@ -512,7 +523,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img7.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img8.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img9.jpeg",
-
     ],
     features: [
       "Adaptive Cruise Control",
@@ -541,7 +551,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img7.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img8.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaRav4/img9.jpeg",
-
     ],
     specifications: {
       engine: "2.5L 4-Cylinder",
@@ -565,7 +574,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 100,
     monthlyPrice: 85,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorollaCross/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorollaCross/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorollaCross/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorollaCross/img2.jpeg",
@@ -573,7 +583,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorollaCross/img4.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorollaCross/img5.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/toyotaCorollaCross/img6.jpeg",
-
     ],
     features: [
       "Tək Zonlu Avtomatik Klima",
@@ -622,7 +631,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 55,
     monthlyPrice: 45,
     deposit: 200,
-    image:       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/FiatDoblo/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/FiatDoblo/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/FiatDoblo/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/FiatDoblo/img2.jpeg",
@@ -631,7 +641,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/FiatDoblo/img5.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/FiatDoblo/img6.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/FiatDoblo/img7.jpeg",
-
     ],
     features: [
       "Bluetooth Connectivity",
@@ -647,7 +656,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Minivan","Hatchback"],
+    category: ["Minivan", "Hatchback"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -681,18 +690,16 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 200,
     monthlyPrice: 170,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img1.jpeg",
     images: [
-     "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img1.jpeg",
-     "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img2.jpeg",
-     "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img3.jpeg",
-     "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img4.jpeg",
-     "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img5.jpeg",
-     "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img6.jpeg",
-     "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img7.jpeg",
-      
- 
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img6.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/LandCruser/img7.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -742,7 +749,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 155,
     monthlyPrice: 140,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landcruserprado/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landcruserprado/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landcruserprado/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landcruserprado/img2.jpeg",
@@ -750,8 +758,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landcruserprado/img4.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landcruserprado/img5.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landcruserprado/img6.jpeg",
-
-
     ],
     features: [
       "Adaptive Cruise Control",
@@ -800,7 +806,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 400,
     monthlyPrice: 250,
     deposit: 200,
-    image:  "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/rangerover/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/rangerover/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/rangerover/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/rangerover/img2.jpeg",
@@ -808,7 +815,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/rangerover/img4.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/rangerover/img5.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/rangerover/img6.jpeg",
-   
     ],
     features: [
       "Adaptive Cruise Control",
@@ -857,7 +863,8 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 230,
     monthlyPrice: 200,
     deposit: 200,
-    image:   "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/mercedesV25/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/mercedesV25/img1.jpeg",
     images: [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/mercedesV25/img1.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/mercedesV25/img2.jpeg",
@@ -865,7 +872,6 @@ export const enhancedCars: EnhancedCar[] = [
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/mercedesV25/img4.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/mercedesV25/img5.jpeg",
       "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/mercedesV25/img6.jpeg",
-
     ],
     features: [
       "Adaptive Cruise Control",
@@ -881,7 +887,7 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Minivan","Hatchback"],
+    category: ["Minivan", "Hatchback"],
     popularity: 82,
     availability: true,
     gallery: [
@@ -914,13 +920,14 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 55,
     monthlyPrice: 50,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img1.jpeg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img5.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -936,15 +943,15 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Ekonom","Sedan"],
+    category: ["Ekonom", "Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/hyundaiaccent/img5.jpeg",
     ],
     specifications: {
       engine: "1.6L 4-Cylinder",
@@ -968,16 +975,16 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 800,
     monthlyPrice: 700,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img1.jpeg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img5.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img6.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img7.jpeg",
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img6.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img7.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -993,17 +1000,17 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Business","Sedan"],
+    category: ["Business", "Sedan"],
     popularity: 82,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img5.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img6.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img7.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img6.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/bmwi7/img7.jpeg",
     ],
     specifications: {
       engine: "0L",
@@ -1027,16 +1034,16 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 100,
     monthlyPrice: 70,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img1.jpeg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img5.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img6.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img7.jpeg",
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img6.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img7.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1052,17 +1059,17 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Business","Sedan"],
+    category: ["Business", "Sedan"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img5.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img6.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img7.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img6.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2024/img7.jpeg",
     ],
     specifications: {
       engine: "2.5L",
@@ -1086,17 +1093,13 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 110,
     monthlyPrice: 80,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img6.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img6.jpg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img6.jpg",
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img7.jpeg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img8.jpeg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img9.jpeg'
-
-
-
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img6.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img7.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img8.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img9.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1112,14 +1115,14 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Business","Sedan"],
+    category: ["Business", "Sedan"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img6.jpg",
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img7.jpeg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img8.jpeg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img9.jpeg'
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img6.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img7.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img8.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/camry2025/img9.jpeg",
     ],
     specifications: {
       engine: "2.5L",
@@ -1143,19 +1146,17 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 30,
     monthlyPrice: 20,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img1.jpeg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img5.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img6.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img7.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img8.jpeg",
-
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img6.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img7.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img8.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1171,18 +1172,18 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Hatchback","Economy"],
+    category: ["Hatchback", "Economy"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img5.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img6.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img7.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img8.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img6.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img7.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/chevroletspark/img8.jpeg",
     ],
     specifications: {
       engine: "1.4L",
@@ -1192,65 +1193,61 @@ export const enhancedCars: EnhancedCar[] = [
       fuelConsumption: "1.4L/100km",
     },
   },
-//   {
-//     id: "23",
-//     brand: "Land Rover ",
-//     model: "Defender",
-//     year: 2023,
-//     class: "Luks",
-//     fuelType: "Benzin",
-//     transmission: "Avtomat",
-//     engineSize: "3.0",
-//     seats: 6,
-//     dailyPrice: 450,
-//     weeklyPrice: 400,
-//     monthlyPrice: 350,
-//     deposit: 200,
-//     image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
-//     images: [
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
+  //   {
+  //     id: "23",
+  //     brand: "Land Rover ",
+  //     model: "Defender",
+  //     year: 2023,
+  //     class: "Luks",
+  //     fuelType: "Benzin",
+  //     transmission: "Avtomat",
+  //     engineSize: "3.0",
+  //     seats: 6,
+  //     dailyPrice: 450,
+  //     weeklyPrice: 400,
+  //     monthlyPrice: 350,
+  //     deposit: 200,
+  //     image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
+  //     images: [
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
 
+  //     ],
+  //     features: [
+  //       "Adaptive Cruise Control",
+  //       "Back-Up Camera",
+  //       "Dual-Zone Automatic Climate Control",
+  //       "Lane Departure Warning",
+  //     ],
 
-
-
-
-//     ],
-//     features: [
-//       "Adaptive Cruise Control",
-//       "Back-Up Camera",
-//       "Dual-Zone Automatic Climate Control",
-//       "Lane Departure Warning",
-//     ],
-
-//     rules: {
-//       minimumAge: 22,
-//       drivingExperience: 2,
-//       passportRequired: true,
-//       licenseRequired: true,
-//     },
-//     // New enhanced fields
-//     category: ["SUV","Luxury"],
-//     popularity: 100,
-//     availability: true,
-//     gallery: [
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
-// "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
-//     ],
-//     specifications: {
-//       engine: "3.0L",
-//       horsepower: 181,
-//       acceleration: "0-100 km/h in 8.9s",
-//       topSpeed: 260,
-//       fuelConsumption: "1.4L/100km",
-//     },
-//   },
+  //     rules: {
+  //       minimumAge: 22,
+  //       drivingExperience: 2,
+  //       passportRequired: true,
+  //       licenseRequired: true,
+  //     },
+  //     // New enhanced fields
+  //     category: ["SUV","Luxury"],
+  //     popularity: 100,
+  //     availability: true,
+  //     gallery: [
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
+  // "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
+  //     ],
+  //     specifications: {
+  //       engine: "3.0L",
+  //       horsepower: 181,
+  //       acceleration: "0-100 km/h in 8.9s",
+  //       topSpeed: 260,
+  //       fuelConsumption: "1.4L/100km",
+  //     },
+  //   },
   {
     id: "24",
     brand: "Land Rover ",
@@ -1265,18 +1262,14 @@ export const enhancedCars: EnhancedCar[] = [
     weeklyPrice: 400,
     monthlyPrice: 350,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
-
-
-
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1292,15 +1285,15 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Luxury"],
+    category: ["SUV", "Luxury"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/defender/img5.jpeg",
     ],
     specifications: {
       engine: "3.0L",
@@ -1319,22 +1312,21 @@ export const enhancedCars: EnhancedCar[] = [
     fuelType: "Benzin",
     transmission: "Avtomat",
     engineSize: "1.6",
-    seats:5,
+    seats: 5,
     dailyPrice: 75,
     weeklyPrice: 70,
     monthlyPrice: 60,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img1.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img1.jpg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img1.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img2.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img3.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img4.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img5.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img6.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img7.jpg",
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img6.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img7.jpg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1350,17 +1342,17 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Luxury"],
+    category: ["SUV", "Luxury"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img1.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img2.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img3.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img4.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img5.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img6.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img7.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img6.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/elantra2022/img7.jpg",
     ],
     specifications: {
       engine: "1.6L",
@@ -1379,21 +1371,19 @@ export const enhancedCars: EnhancedCar[] = [
     fuelType: "Dizel",
     transmission: "Avtomat",
     engineSize: "2.2",
-    seats:7,
+    seats: 7,
     dailyPrice: 350,
     weeklyPrice: 300,
     monthlyPrice: 250,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img1.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img1.jpeg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img5.jpeg",
-
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img5.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1409,15 +1399,15 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["Minivan","Biznes"],
+    category: ["Minivan", "Biznes"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img1.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img2.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img3.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img4.jpeg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiakarnival/img5.jpeg",
     ],
     specifications: {
       engine: "2.2",
@@ -1436,16 +1426,17 @@ export const enhancedCars: EnhancedCar[] = [
     fuelType: "Benzin",
     transmission: "Avtomat",
     engineSize: "2.0",
-    seats:5,
+    seats: 5,
     dailyPrice: 120,
     weeklyPrice: 100,
     monthlyPrice: 80,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img1.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img1.jpg",
     images: [
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img1.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img2.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img3.jpg',
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img3.jpg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1461,13 +1452,13 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Ekonom"],
+    category: ["SUV", "Ekonom"],
     popularity: 100,
     availability: true,
     gallery: [
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img1.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img2.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img3.jpg',
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/kiasportage/img3.jpg",
     ],
     specifications: {
       engine: "2.0",
@@ -1486,16 +1477,17 @@ export const enhancedCars: EnhancedCar[] = [
     fuelType: "Benzin",
     transmission: "Avtomat",
     engineSize: "2.0",
-    seats:5,
+    seats: 5,
     dailyPrice: 100,
     weeklyPrice: 90,
     monthlyPrice: 80,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img9.jpeg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img9.jpeg",
     images: [
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img9.jpeg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img8.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img10.jpeg',
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img9.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img8.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img10.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1510,13 +1502,13 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Biznes"],
+    category: ["SUV", "Biznes"],
     popularity: 100,
     availability: true,
     gallery: [
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img9.jpeg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img8.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img10.jpeg',
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img9.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img8.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/landdiscovery/img10.jpeg",
     ],
     specifications: {
       engine: "2.0",
@@ -1535,21 +1527,20 @@ export const enhancedCars: EnhancedCar[] = [
     fuelType: "Hibrid",
     transmission: "Avtomat",
     engineSize: "2.5",
-    seats:5,
+    seats: 5,
     dailyPrice: 140,
     weeklyPrice: 120,
     monthlyPrice: 100,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img1.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img1.jpg",
     images: [
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img1.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img2.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img3.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img4.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img5.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img6.jpg',
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img6.jpg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1564,16 +1555,16 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Biznes"],
+    category: ["SUV", "Biznes"],
     popularity: 100,
     availability: true,
     gallery: [
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img1.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img2.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img3.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img4.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img5.jpg',
-'https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img6.jpg',
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/lexuss300h/img6.jpg",
     ],
     specifications: {
       engine: "2.0",
@@ -1592,22 +1583,19 @@ export const enhancedCars: EnhancedCar[] = [
     fuelType: "Hibrid",
     transmission: "Avtomat",
     engineSize: "1.5",
-    seats:6,
+    seats: 6,
     dailyPrice: 140,
     weeklyPrice: 120,
     monthlyPrice: 100,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img2.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img3.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img4.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img5.jpg",
-
-
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img5.jpg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1622,15 +1610,15 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Biznes"],
+    category: ["SUV", "Biznes"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img2.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img3.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img4.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img5.jpg",
     ],
     specifications: {
       engine: "2.0",
@@ -1642,29 +1630,27 @@ export const enhancedCars: EnhancedCar[] = [
   },
   {
     id: "31",
-    brand: "Li Auto",
-    model: " L7",
-    year: 2025,
+    brand: "Mercedes ",
+    model: " S-Class",
+    year: 2023,
     class: "Biznes",
-    fuelType: "Hibrid",
+    fuelType: "Benzin",
     transmission: "Avtomat",
-    engineSize: "1.5",
-    seats:6,
-    dailyPrice: 140,
-    weeklyPrice: 120,
-    monthlyPrice: 100,
+    engineSize: "3.0",
+    seats: 5,
+    dailyPrice: 850,
+    weeklyPrice: 800,
+    monthlyPrice: 700,
     deposit: 200,
-    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img1.jpeg",
     images: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img2.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img3.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img4.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img5.jpg",
-
-
-
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img6.jpeg",
     ],
     features: [
       "Adaptive Cruise Control",
@@ -1679,18 +1665,19 @@ export const enhancedCars: EnhancedCar[] = [
       licenseRequired: true,
     },
     // New enhanced fields
-    category: ["SUV","Biznes"],
+    category: ["Biznes", "Sedan"],
     popularity: 100,
     availability: true,
     gallery: [
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img1.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img2.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img3.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img4.jpg",
-"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/li/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/sclass2023/img6.jpeg",
     ],
     specifications: {
-      engine: "2.0",
+      engine: "3.0",
       horsepower: 181,
       acceleration: "0-100 km/h in 8.9s",
       topSpeed: 230,
@@ -1759,20 +1746,20 @@ export const enhancedBuses: EnhancedBus[] = [
     transmission: "Avtomat",
     engineSize: "2.1L",
     capacity: 48,
-    dailyPrice: 150,
-    weeklyPrice: 130,
+    dailyPrice: 170,
+    weeklyPrice: 150,
     monthlyPrice: 110,
     deposit: 300,
-    image:"/buses/napeleon/img1.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img1.jpg",
     images: [
-      "/buses/napeleon/img1.jpg",
-      "/buses/napeleon/img2.jpg",
-      "/buses/napeleon/img3.jpg",
-      "/buses/napeleon/img4.jpg",
-      "/buses/napeleon/img5.jpg",
-      "/buses/napeleon/img6.jpg",
-      "/buses/napeleon/img7.jpg",
-
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img6.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplancofee/img7.jpg",
     ],
     features: [
       "Kondisioner",
@@ -1780,7 +1767,7 @@ export const enhancedBuses: EnhancedBus[] = [
       "USB Şarj Portları",
       "Komfortlu Oturacaqlar",
       "Səs Sistemi",
-      "Arxa Kamera"
+      "Arxa Kamera",
     ],
     rules: {
       minimumAge: 25,
@@ -1809,7 +1796,7 @@ export const enhancedBuses: EnhancedBus[] = [
       fuelConsumption: "8.5L/100km",
     },
     amenities: ["Wi-Fi", "AC", "USB Charging", "Audio System"],
-    routes: ["Şəhərdaxili", "Hava Limanı", "Tur Xidməti"]
+    routes: ["Şəhərdaxili", "Hava Limanı", "Tur Xidməti"],
   },
   {
     id: "bus2",
@@ -1825,22 +1812,21 @@ export const enhancedBuses: EnhancedBus[] = [
     weeklyPrice: 280,
     monthlyPrice: 250,
     deposit: 500,
-    image: "/buses/tourismo/img1.jpg",
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img1.jpg",
     images: [
-      "/buses/temsa/img1.jpg",
-      "/buses/temsa/img2.jpg",
-      "/buses/temsa/img3.jpg",
-      "/buses/temsa/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img4.jpg",
     ],
     features: [
       "Kondisioner",
       "Wi-Fi",
-      "WC",
       "Mətbəx",
       "TV/DVD",
-      "Yataq Yerləri",
       "Panorama Şüşələr",
-      "Premium Oturacaqlar"
+      "Premium Oturacaqlar",
     ],
     rules: {
       minimumAge: 25,
@@ -1853,11 +1839,10 @@ export const enhancedBuses: EnhancedBus[] = [
     popularity: 95,
     availability: true,
     gallery: [
-      "/buses/tourismo/img1.jpg",
-      "/buses/tourismo/img2.jpg",
-      "/buses/tourismo/img3.jpg",
-      "/buses/tourismo/img4.jpg",
-      "/buses/tourismo/img5.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/temsa/img4.jpg",
     ],
     specifications: {
       engine: "10.7L OM 470 Diesel",
@@ -1866,37 +1851,47 @@ export const enhancedBuses: EnhancedBus[] = [
       topSpeed: 120,
       fuelConsumption: "28L/100km",
     },
-    amenities: ["Wi-Fi", "AC", "Toilet", "Kitchen", "TV/DVD", "Sleeping Berths"],
-    routes: ["Şəhərlərarası", "Beynəlxalq Turlar", "Uzun Məsafə"]
+    amenities: [
+      "Wi-Fi",
+      "AC",
+      "Toilet",
+      "Kitchen",
+      "TV/DVD",
+      "Sleeping Berths",
+    ],
+    routes: ["Şəhərlərarası", "Beynəlxalq Turlar", "Uzun Məsafə"],
   },
   {
     id: "bus3",
-    brand: "Iveco",
-    model: "Daily",
-    year: 2023,
-    type: "Minibus",
+    brand: "MAN Truck",
+    model: "Neoplan",
+    year: 2015,
+    type: "Coach",
     fuelType: "Dizel",
-    transmission: "Mexaniki",
-    engineSize: "3.0L",
-    capacity: 25,
-    dailyPrice: 180,
-    weeklyPrice: 160,
-    monthlyPrice: 140,
-    deposit: 350,
-    image: "/buses/iveco/img1.jpg",
+    transmission: "Avtomat",
+    engineSize: "2.1L",
+    capacity: 48,
+    dailyPrice: 170,
+    weeklyPrice: 150,
+    monthlyPrice: 110,
+    deposit: 300,
+    image:
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img1.jpeg",
     images: [
-      "/buses/iveco/img1.jpg",
-      "/buses/iveco/img2.jpg",
-      "/buses/iveco/img3.jpg",
-      "/buses/iveco/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img6.jpeg",
     ],
     features: [
       "Kondisioner",
+      "Wi-Fi",
       "USB Şarj Portları",
       "Komfortlu Oturacaqlar",
       "Səs Sistemi",
-      "Arxa Park Sensorları",
-      "ESP Sistemi"
+      "Arxa Kamera",
     ],
     rules: {
       minimumAge: 25,
@@ -1906,54 +1901,56 @@ export const enhancedBuses: EnhancedBus[] = [
       commercialLicense: true,
     },
     category: ["Minibus"],
-    popularity: 82,
+    popularity: 88,
     availability: true,
     gallery: [
-      "/buses/iveco/img1.jpg",
-      "/buses/iveco/img2.jpg",
-      "/buses/iveco/img3.jpg",
-      "/buses/iveco/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img1.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img2.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img3.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img4.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img5.jpeg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/neoplanyellow/img6.jpeg",
     ],
     specifications: {
-      engine: "3.0L F1C Diesel",
-      horsepower: 170,
-      acceleration: "0-100 km/h in 14.8s",
-      topSpeed: 150,
-      fuelConsumption: "9.2L/100km",
+      engine: "10.5L CDI Diesel",
+      horsepower: 400,
+      acceleration: "0-100 km/h in 12.5s",
+      topSpeed: 160,
+      fuelConsumption: "8.5L/100km",
     },
-    amenities: ["AC", "USB Charging", "Audio System"],
-    routes: ["Şəhərdaxili", "Qısa Məsafə Turlar", "Korporativ"]
+    amenities: ["Wi-Fi", "AC", "USB Charging", "Audio System"],
+    routes: ["Şəhərdaxili", "Hava Limanı", "Tur Xidməti"],
   },
   {
     id: "bus4",
-    brand: "Scania",
-    model: "Touring",
+    brand: "Golden ",
+    model: "Dragon",
     year: 2020,
     type: "Coach",
     fuelType: "Dizel",
     transmission: "Avtomat",
     engineSize: "9.3L",
-    capacity: 53,
+    capacity: 52,
     dailyPrice: 320,
     weeklyPrice: 300,
     monthlyPrice: 270,
     deposit: 600,
-    image: "/buses/scania/img1.jpg",
+    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img1.png",
     images: [
-      "/buses/scania/img1.jpg",
-      "/buses/scania/img2.jpg",
-      "/buses/scania/img3.jpg",
-      "/buses/scania/img4.jpg",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img1.png",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img2.png",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img3.png",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img4.png",
+
     ],
     features: [
       "Kondisioner",
       "Wi-Fi",
-      "WC",
       "Mətbəx",
       "TV Sistemləri",
       "Reclining Oturacaqlar",
       "LED İşıqlandırma",
-      "Səs İzolyasiyası"
+      "Səs İzolyasiyası",
     ],
     rules: {
       minimumAge: 25,
@@ -1966,10 +1963,10 @@ export const enhancedBuses: EnhancedBus[] = [
     popularity: 90,
     availability: true,
     gallery: [
-      "/buses/scania/img1.jpg",
-      "/buses/scania/img2.jpg",
-      "/buses/scania/img3.jpg",
-      "/buses/scania/img4.jpg",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img1.png",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img2.png",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img3.png",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/golden%20dragon/img4.png",
     ],
     specifications: {
       engine: "9.3L DC09 Diesel",
@@ -1978,28 +1975,36 @@ export const enhancedBuses: EnhancedBus[] = [
       topSpeed: 115,
       fuelConsumption: "26L/100km",
     },
-    amenities: ["Wi-Fi", "AC", "Toilet", "Kitchen", "TV Systems", "LED Lighting"],
-    routes: ["Şəhərlərarası", "Beynəlxalq", "Lüks Turlar"]
+    amenities: [
+      "Wi-Fi",
+      "AC",
+      "Toilet",
+      "Kitchen",
+      "TV Systems",
+      "LED Lighting",
+    ],
+    routes: ["Şəhərlərarası", "Beynəlxalq", "Lüks Turlar"],
   },
   {
     id: "bus5",
-    brand: "Ford",
-    model: "Transit",
+    brand: "Hyundai",
+    model: "County",
     year: 2022,
     type: "Minibus",
     fuelType: "Dizel",
     transmission: "Avtomat",
     engineSize: "2.0L",
-    capacity: 16,
-    dailyPrice: 120,
+    capacity: 28,
+    dailyPrice: 170,
     weeklyPrice: 100,
     monthlyPrice: 85,
     deposit: 250,
-    image: "/buses/transit/img1.jpg",
+    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img1.jpg",
     images: [
-      "/buses/transit/img1.jpg",
-      "/buses/transit/img2.jpg",
-      "/buses/transit/img3.jpg",
+    "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img1.jpg",
+    "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img2.jpg",
+    "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img3.jpg",
+    "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img4.jpg"
     ],
     features: [
       "Kondisioner",
@@ -2007,7 +2012,7 @@ export const enhancedBuses: EnhancedBus[] = [
       "USB Portları",
       "Elektrik Şüşələr",
       "Mərkəzi Kilit",
-      "ABS Sistemi"
+      "ABS Sistemi",
     ],
     rules: {
       minimumAge: 23,
@@ -2020,9 +2025,10 @@ export const enhancedBuses: EnhancedBus[] = [
     popularity: 75,
     availability: true,
     gallery: [
-      "/buses/transit/img1.jpg",
-      "/buses/transit/img2.jpg",
-      "/buses/transit/img3.jpg",
+"https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img1.jpg",
+    "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img2.jpg",
+    "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img3.jpg",
+    "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/county/img4.jpg"
     ],
     specifications: {
       engine: "2.0L EcoBlue Diesel",
@@ -2032,28 +2038,30 @@ export const enhancedBuses: EnhancedBus[] = [
       fuelConsumption: "7.8L/100km",
     },
     amenities: ["AC", "Bluetooth", "USB Charging"],
-    routes: ["Şəhərdaxili", "Hava Limanı", "Kiçik Qrup Turları"]
+    routes: ["Şəhərdaxili", "Hava Limanı", "Kiçik Qrup Turları"],
   },
   {
     id: "bus6",
-    brand: "Volkswagen",
-    model: "Crafter",
-    year: 2023,
+    brand: "Mercedes-Benz",
+    model: "Travego",
+    year: 2009,
     type: "Minibus",
     fuelType: "Dizel",
     transmission: "Avtomat",
     engineSize: "2.0L",
-    capacity: 22,
-    dailyPrice: 160,
+    capacity: 47,
+    dailyPrice: 390,
     weeklyPrice: 140,
     monthlyPrice: 120,
     deposit: 300,
-    image: "/buses/crafter/img1.jpg",
+    image: "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img1.jpg",
     images: [
-      "/buses/crafter/img1.jpg",
-      "/buses/crafter/img2.jpg",
-      "/buses/crafter/img3.jpg",
-      "/buses/crafter/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img4.jpg",
+
+
     ],
     features: [
       "Kondisioner",
@@ -2062,7 +2070,7 @@ export const enhancedBuses: EnhancedBus[] = [
       "Komfortlu Oturacaqlar",
       "Səs Sistemi",
       "Panorama Şüşələr",
-      "LED İşıqlar"
+      "LED İşıqlar",
     ],
     rules: {
       minimumAge: 25,
@@ -2075,10 +2083,10 @@ export const enhancedBuses: EnhancedBus[] = [
     popularity: 85,
     availability: true,
     gallery: [
-      "/buses/crafter/img1.jpg",
-      "/buses/crafter/img2.jpg",
-      "/buses/crafter/img3.jpg",
-      "/buses/crafter/img4.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img1.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img2.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img3.jpg",
+      "https://exqjgmrrgwsvfklyzyga.supabase.co/storage/v1/object/public/car-images/buses/travego/img4.jpg",
     ],
     specifications: {
       engine: "2.0L TDI Diesel",
@@ -2088,8 +2096,8 @@ export const enhancedBuses: EnhancedBus[] = [
       fuelConsumption: "8.1L/100km",
     },
     amenities: ["Wi-Fi", "AC", "USB Charging", "Audio System", "LED Lighting"],
-    routes: ["Şəhərdaxili", "Orta Məsafə", "Korporativ Xidmət"]
-  }
+    routes: ["Şəhərdaxili", "Orta Məsafə", "Korporativ Xidmət"],
+  },
 ];
 
 // Keep original buses array for backward compatibility
@@ -2485,7 +2493,8 @@ export const certificates: Certificate[] = [
     id: "2",
     title: "Avtomobil İcarəsi Lisenziyası",
     image: "/certificates/img2.jpg",
-    description: "Azərbaycan Respublikası Nəqliyyat Nazirliyi tərəfindən verilmiş rəsmi lisenziya",
+    description:
+      "Azərbaycan Respublikası Nəqliyyat Nazirliyi tərəfindən verilmiş rəsmi lisenziya",
     issueDate: "2023-01-10",
     validUntil: "2028-01-10",
     issuer: "Nəqliyyat Nazirliyi",
@@ -2514,7 +2523,8 @@ export const certificates: Certificate[] = [
     id: "5",
     title: "Yol Hərəkəti Təhlükəsizliyi Sertifikatı",
     image: "/certificates/img5.jpg",
-    description: "Yol hərəkəti təhlükəsizliyi standartlarına uyğunluq sertifikatı",
+    description:
+      "Yol hərəkəti təhlükəsizliyi standartlarına uyğunluq sertifikatı",
     issueDate: "2024-03-15",
     validUntil: "2027-03-15",
     issuer: "Yol Hərəkəti Təhlükəsizliyi Agentliyi",
@@ -2652,7 +2662,7 @@ function calculateCategoryCounts(): CarCategory[] {
   // Count cars in each category
   enhancedCars.forEach((car) => {
     if (car.category) {
-      car.category.forEach(cat => {
+      car.category.forEach((cat) => {
         categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
       });
     }

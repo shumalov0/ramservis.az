@@ -27,7 +27,7 @@ export default function SocialShare({ car, currentUrl }: SocialShareProps) {
 
   const url = currentUrl || (typeof window !== 'undefined' ? window.location.href : '');
   const title = `Check out this ${car.brand} ${car.model} ${car.year} for rent!`;
-  const description = `${car.brand} ${car.model} ${car.year} - ${car.category} class, ${car.fuelType}, ${car.transmission}. Starting from $${car.dailyPrice}/day. Book now at Ram Servis!`;
+  const description = `${car.brand} ${car.model} ${car.year} - ${car.category} class, ${car.fuelType}, ${car.transmission}. Starting from ₼${car.dailyPrice}/day. Book now at Ram Servis!`;
   const hashtags = ['CarRental', 'Baku', 'RamServis', car.brand.replace(/\s+/g, ''), car.category];
 
   const shareLinks = {

@@ -140,15 +140,7 @@ export default function VisitorStatsPage() {
             </div>
           </div>
 
-          {/* Admin panel linki */}
-          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-            <Link
-              href="/admin/visitor-settings"
-              className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-            >
-              ⚙️ Parametrlər
-            </Link>
-          </div>
+
         </div>
 
         {/* Əlavə məlumat */}

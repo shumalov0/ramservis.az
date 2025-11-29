@@ -1,43 +1,43 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function VisitorSettingsPage() {
-  const [fakeCount, setFakeCount] = useState<string>('');
+  const [fakeCount, setFakeCount] = useState<string>("");
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   // Düzgün password (istəsən dəyişə bilərsən)
-  const CORRECT_PASSWORD = 'ramservis2024';
+  const CORRECT_PASSWORD = "444333";
 
   useEffect(() => {
     // Əvvəl daxil olubmu yoxla
-    const savedAuth = localStorage.getItem('visitor_admin_auth');
-    if (savedAuth === 'true') {
+    const savedAuth = localStorage.getItem("visitor_admin_auth");
+    if (savedAuth === "true") {
       setIsAuthenticated(true);
     }
   }, []);
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (password === CORRECT_PASSWORD) {
       setIsAuthenticated(true);
-      localStorage.setItem('visitor_admin_auth', 'true');
-      setPasswordError('');
+      localStorage.setItem("visitor_admin_auth", "true");
+      setPasswordError("");
     } else {
-      setPasswordError('❌ Yanlış şifrə!');
-      setPassword('');
+      setPasswordError("❌ Yanlış şifrə!");
+      setPassword("");
     }
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    localStorage.removeItem('visitor_admin_auth');
+    localStorage.removeItem("visitor_admin_auth");
   };
 
   // Əgər daxil olmayıbsa, password səhifəsini göstər
@@ -89,8 +89,8 @@ export default function VisitorSettingsPage() {
             </form>
 
             <div className="mt-6 text-center">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
               >
                 ← Ana səhifəyə qayıt
@@ -99,7 +99,10 @@ export default function VisitorSettingsPage() {
 
             <div className="mt-6 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
               <p className="text-xs text-yellow-800 dark:text-yellow-200 text-center">
-                💡 Default şifrə: <code className="bg-yellow-100 dark:bg-yellow-800 px-2 py-1 rounded">ramservis2024</code>
+                💡 Default şifrə:{" "}
+                <code className="bg-yellow-100 dark:bg-yellow-800 px-2 py-1 rounded">
+                  ramservis2024
+                </code>
               </p>
             </div>
           </div>
@@ -111,23 +114,23 @@ export default function VisitorSettingsPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setMessage('');
+    setMessage("");
 
     try {
-      const response = await fetch('/api/visitor-count', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/visitor-count", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fake_count: parseInt(fakeCount) }),
       });
 
       if (response.ok) {
-        setMessage('✅ Rəqəm uğurla yeniləndi!');
-        setFakeCount('');
+        setMessage("✅ Rəqəm uğurla yeniləndi!");
+        setFakeCount("");
       } else {
-        setMessage('❌ Xəta baş verdi!');
+        setMessage("❌ Xəta baş verdi!");
       }
     } catch (error) {
-      setMessage('❌ Xəta baş verdi!');
+      setMessage("❌ Xəta baş verdi!");
     } finally {
       setLoading(false);
     }
@@ -137,10 +140,7 @@ export default function VisitorSettingsPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
       <div className="max-w-2xl mx-auto">
         <div className="mb-6 flex items-center justify-between">
-          <Link 
-            href="/admin/urls" 
-            className="text-blue-600 hover:underline"
-          >
+          <Link href="/admin/urls" className="text-blue-600 hover:underline">
             ← URL-lərə qayıt
           </Link>
           <button
@@ -166,8 +166,8 @@ export default function VisitorSettingsPage() {
                   Ziyarətçi sayğacını görmək üçün
                 </p>
               </div>
-              <a 
-                href="/visitor-stats" 
+              <a
+                href="/visitor-stats"
                 target="_blank"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium"
               >
@@ -181,7 +181,10 @@ export default function VisitorSettingsPage() {
               ℹ️ Necə işləyir?
             </h3>
             <ul className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
-              <li>• Heç bir rəqəm əlavə etməsən: Hər gün avtomatik 15-50 arası fake rəqəm göstərir</li>
+              <li>
+                • Heç bir rəqəm əlavə etməsən: Hər gün avtomatik 15-50 arası
+                fake rəqəm göstərir
+              </li>
               <li>• Rəqəm əlavə etsən: Sənin yazdığın rəqəmi göstərir</li>
               <li>• Supabase-ə qoşulmalısan ki, rəqəm saxlansın</li>
             </ul>
@@ -209,15 +212,17 @@ export default function VisitorSettingsPage() {
               disabled={loading}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition disabled:opacity-50"
             >
-              {loading ? 'Yenilənir...' : 'Rəqəmi Yenilə'}
+              {loading ? "Yenilənir..." : "Rəqəmi Yenilə"}
             </button>
 
             {message && (
-              <div className={`p-4 rounded-lg ${
-                message.includes('✅') 
-                  ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200' 
-                  : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200'
-              }`}>
+              <div
+                className={`p-4 rounded-lg ${
+                  message.includes("✅")
+                    ? "bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200"
+                    : "bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200"
+                }`}
+              >
                 {message}
               </div>
             )}
@@ -228,21 +233,39 @@ export default function VisitorSettingsPage() {
               🔧 Supabase Quraşdırma
             </h3>
             <div className="text-sm text-blue-700 dark:text-blue-300 space-y-2">
-              <p>1. Supabase-də <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">visitor_settings</code> cədvəli yarat:</p>
+              <p>
+                1. Supabase-də{" "}
+                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
+                  visitor_settings
+                </code>{" "}
+                cədvəli yarat:
+              </p>
               <pre className="bg-blue-100 dark:bg-blue-800 p-3 rounded text-xs overflow-x-auto">
-{`CREATE TABLE visitor_settings (
+                {`CREATE TABLE visitor_settings (
   id INT PRIMARY KEY DEFAULT 1,
   fake_count INT,
   use_real BOOLEAN DEFAULT false,
   updated_at TIMESTAMP DEFAULT NOW()
 );`}
               </pre>
-              <p>2. <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">.env.local</code> faylına əlavə et:</p>
+              <p>
+                2.{" "}
+                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
+                  .env.local
+                </code>{" "}
+                faylına əlavə et:
+              </p>
               <pre className="bg-blue-100 dark:bg-blue-800 p-3 rounded text-xs">
-{`NEXT_PUBLIC_SUPABASE_URL=your_url
+                {`NEXT_PUBLIC_SUPABASE_URL=your_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key`}
               </pre>
-              <p>3. <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">app/api/visitor-count/route.ts</code> faylında comment-ləri sil</p>
+              <p>
+                3.{" "}
+                <code className="bg-blue-100 dark:bg-blue-800 px-1 rounded">
+                  app/api/visitor-count/route.ts
+                </code>{" "}
+                faylında comment-ləri sil
+              </p>
             </div>
           </div>
         </div>

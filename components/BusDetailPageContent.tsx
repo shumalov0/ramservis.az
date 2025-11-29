@@ -29,6 +29,7 @@ import { Badge } from '@/components/ui/badge';
 import BookingModal from '@/components/BookingModal';
 import BusesSection from '@/components/BusesSection';
 import { buses } from '@/lib/data';
+import { ImageGallery } from '@/components/gallery';
 
 interface BusDetailPageContentProps {
   bus: Bus;
@@ -38,7 +39,6 @@ interface BusDetailPageContentProps {
 
 export default function BusDetailPageContent({ bus, enhancedBus, initialLang }: BusDetailPageContentProps) {
   const [currentLang, setCurrentLang] = useState(initialLang);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const router = useRouter();
   const t = useTranslation(currentLang);
@@ -60,7 +60,7 @@ export default function BusDetailPageContent({ bus, enhancedBus, initialLang }: 
   };
 
   const handleWhatsApp = () => {
-    const message = `Salam! ${bus.brand} ${bus.model} ${bus.year} avtobusu haqqında məlumat almaq istəyirəm. Günlük qiymət: ${bus.dailyPrice}₼`;
+    const message = `Salam! ${bus.brand} ${bus.model} ${bus.year} avtobusu haqqında məlumat almaq istəyirəm. Günlük qiymət: ₼${bus.dailyPrice}`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/994707004444?text=${encodedMessage}`, '_blank');
   };
@@ -118,41 +118,16 @@ export default function BusDetailPageContent({ bus, enhancedBus, initialLang }: 
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Image Gallery */}
-            <div className="space-y-4">
-              {/* Main Image */}
-              <div className="aspect-[4/3] relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
-                <Image
-                  src={enhancedBus.gallery[selectedImageIndex] || bus.image}
-                  alt={`${bus.brand} ${bus.model}`}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* Thumbnail Gallery */}
-              {enhancedBus.gallery.length > 1 && (
-                <div className="grid grid-cols-4 gap-2">
-                  {enhancedBus.gallery.map((image, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedImageIndex(index)}
-                      className={`aspect-square relative overflow-hidden rounded-lg ${
-                        selectedImageIndex === index
-                          ? 'ring-2 ring-brand-gold'
-                          : 'hover:opacity-80'
-                      }`}
-                    >
-                      <Image
-                        src={image}
-                        alt={`${bus.brand} ${bus.model} ${index + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
+            <div className="space-y-6">
+              <ImageGallery
+                images={
+                  enhancedBus.gallery && enhancedBus.gallery.length > 0
+                    ? enhancedBus.gallery
+                    : [bus.image]
+                }
+                carInfo={{ brand: bus.brand, model: bus.model, year: bus.year }}
+                thumbnailLayout="horizontal"
+              />
             </div>
 
             {/* Bus Details */}
@@ -174,24 +149,24 @@ export default function BusDetailPageContent({ bus, enhancedBus, initialLang }: 
 
               {/* Pricing */}
               <Card className="p-6 bg-gradient-to-r from-brand-gold/5 to-yellow-50 dark:from-brand-gold/10 dark:to-yellow-900/20 border-brand-gold/20">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-3xl font-bold text-gray-900 dark:text-white">
-                      {bus.dailyPrice}₼
-                      <span className="text-lg font-normal text-gray-600 dark:text-gray-400 ml-2">
-                        /gün
-                      </span>
-                    </div>
-                    <div className="flex gap-4 mt-2 text-sm text-gray-600 dark:text-gray-400">
-                      <span>Həftəlik: {bus.weeklyPrice}₼/gün</span>
-                      <span>Aylıq: {bus.monthlyPrice}₼/gün</span>
-                    </div>
+                <div className="text-center">
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    {currentLang === 'az' ? 'Günlük Qiymət (Sürücü ilə)' :
+                     currentLang === 'en' ? 'Daily Price (With Driver)' :
+                     currentLang === 'ru' ? 'Цена за день (С водителем)' :
+                     'السعر اليومي (مع السائق)'}
                   </div>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Depozit</div>
-                    <div className="text-xl font-semibold text-gray-900 dark:text-white">
-                      {bus.deposit}₼
-                    </div>
+                  <div className="text-4xl font-bold text-gray-900 dark:text-white">
+                    {bus.dailyPrice}₼
+                    <span className="text-xl font-normal text-gray-600 dark:text-gray-400 ml-2">
+                      /gün
+                    </span>
+                  </div>
+                  <div className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                    {currentLang === 'az' ? '* Avtobuslar yalnız sürücü ilə icarəyə verilir' :
+                     currentLang === 'en' ? '* Buses are rented only with driver' :
+                     currentLang === 'ru' ? '* Автобусы сдаются только с водителем' :
+                     '* يتم تأجير الحافلات فقط مع السائق'}
                   </div>
                 </div>
               </Card>
@@ -367,52 +342,24 @@ export default function BusDetailPageContent({ bus, enhancedBus, initialLang }: 
             </div>
           </div>
 
-          {/* Rental Rules */}
+          {/* Important Note */}
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-              {currentLang === 'az' ? 'İcarə Şərtləri' :
-               currentLang === 'en' ? 'Rental Requirements' :
-               currentLang === 'ru' ? 'Условия аренды' :
-               'شروط الإيجار'}
-            </h2>
-            <Card className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-brand-gold" />
-                    <div>
-                      <div className="font-medium text-gray-900 dark:text-white">
-                        Minimum yaş: {bus.rules.minimumAge}
-                      </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        Sürücülük təcrübəsi: {bus.rules.drivingExperience} il
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {bus.rules.commercialLicense && (
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-900 dark:text-white">
-                        Kommersiya sürücülük vəsiqəsi tələb olunur
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-900 dark:text-white">
-                      Pasport tələb olunur
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-900 dark:text-white">
-                      Sürücülük vəsiqəsi tələb olunur
-                    </span>
-                  </div>
+            <Card className="p-6 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+              <div className="flex items-start gap-4">
+                <Shield className="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    {currentLang === 'az' ? 'Əhəmiyyətli Qeyd' :
+                     currentLang === 'en' ? 'Important Note' :
+                     currentLang === 'ru' ? 'Важное примечание' :
+                     'ملاحظة هامة'}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    {currentLang === 'az' ? 'Bütün avtobuslar yalnız peşəkar sürücü ilə icarəyə verilir. Qiymətə sürücü xidməti daxildir. Daha ətraflı məlumat üçün bizimlə əlaqə saxlayın.' :
+                     currentLang === 'en' ? 'All buses are rented only with a professional driver. Driver service is included in the price. Contact us for more information.' :
+                     currentLang === 'ru' ? 'Все автобусы сдаются только с профессиональным водителем. Услуги водителя включены в стоимость. Свяжитесь с нами для получения дополнительной информации.' :
+                     'يتم تأجير جميع الحافلات فقط مع سائق محترف. خدمة السائق مشمولة في السعر. اتصل بنا لمزيد من المعلومات.'}
+                  </p>
                 </div>
               </div>
             </Card>

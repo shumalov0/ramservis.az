@@ -18,7 +18,7 @@ import {
   CheckCircle,
   AlertCircle,
   Clock,
-  DollarSign
+  Receipt
 } from 'lucide-react';
 import { BookingFormData, EnhancedCar } from '@/lib/types';
 import { locations, additionalServices } from '@/lib/data';
@@ -483,7 +483,7 @@ export default function BookingSummary({
         <Card className="border-2 border-amber-200 dark:border-amber-800">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-amber-800 dark:text-amber-200">
-              <DollarSign className="h-5 w-5" />
+              <Receipt className="h-5 w-5" />
               {t.priceSummary}
             </CardTitle>
           </CardHeader>

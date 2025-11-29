@@ -207,7 +207,7 @@ export default function InlineBookingForm({
                   Ümumi məbləğ:
                 </span>
                 <span className="font-bold text-lg">
-                  ${priceBreakdown.total}
+                  ₼{priceBreakdown.total}
                 </span>
               </div>
             )}

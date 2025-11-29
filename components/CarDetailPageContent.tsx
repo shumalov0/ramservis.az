@@ -27,6 +27,7 @@ import {
 } from "@/components/dynamic";
 import { InlineBookingForm } from "@/components/booking";
 import { EnhancedCar, BookingFormData } from "@/lib/types";
+import CurrencyConverter from "@/components/CurrencyConverter";
 
 interface CarDetailPageContentProps {
   car: Car;
@@ -137,10 +138,13 @@ export default function CarDetailPageContent({
                   <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                     {car.brand} {car.model}
                   </h1>
-                  <p className="text-2xl font-semibold text-[#f5b754] dark:text-[#f5b754] mb-2">
-                    ₼{car.dailyPrice}
-                    {t.perDay} başlayaraq
-                  </p>
+                  <div className="flex items-center space-x-3 mb-2">
+                    <p className="text-2xl font-semibold text-[#f5b754] dark:text-[#f5b754]">
+                      ₼{car.dailyPrice}
+                      {t.perDay} başlayaraq
+                    </p>
+                    <CurrencyConverter aznPrice={car.dailyPrice} size="sm" />
+                  </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   <SocialShare car={enhancedCar} />
@@ -218,30 +222,42 @@ export default function CarDetailPageContent({
                   <span className="text-gray-700 dark:text-gray-300">
                     {t.dailyPrice}:
                   </span>
-                  <span className="font-semibold text-gray-900 dark:text-white">
-                    ₼{car.dailyPrice}
-                  </span>
+                  <div className="flex items-center space-x-2">
+                    <span className="font-semibold text-gray-900 dark:text-white">
+                      ₼{car.dailyPrice}
+                    </span>
+                    <CurrencyConverter aznPrice={car.dailyPrice} size="sm" />
+                  </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700 dark:text-gray-300">
                     {t.weeklyPrice}:
                   </span>
-                  <span className="font-semibold text-gray-900 dark:text-white">
-                    ₼{car.weeklyPrice}
-                  </span>
+                  <div className="flex items-center space-x-2">
+                    <span className="font-semibold text-gray-900 dark:text-white">
+                      ₼{car.weeklyPrice}
+                    </span>
+                    <CurrencyConverter aznPrice={car.weeklyPrice} size="sm" />
+                  </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700 dark:text-gray-300">
                     {t.monthlyPrice}:
                   </span>
-                  <span className="font-semibold text-gray-900 dark:text-white">
-                    ₼{car.monthlyPrice}
-                  </span>
+                  <div className="flex items-center space-x-2">
+                    <span className="font-semibold text-gray-900 dark:text-white">
+                      ₼{car.monthlyPrice}
+                    </span>
+                    <CurrencyConverter aznPrice={car.monthlyPrice} size="sm" />
+                  </div>
                 </div>
                 <Separator className="bg-gray-200 dark:bg-brand-dark/70 " />
                 <div className="flex justify-between items-center text-red-600 dark:text-red-400">
                   <span>{t.deposit}:</span>
-                  <span className="font-semibold">₼{car.deposit}</span>
+                  <div className="flex items-center space-x-2">
+                    <span className="font-semibold">₼{car.deposit}</span>
+                    <CurrencyConverter aznPrice={car.deposit} size="sm" />
+                  </div>
                 </div>
               </CardContent>
             </Card>

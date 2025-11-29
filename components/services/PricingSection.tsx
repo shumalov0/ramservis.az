@@ -94,7 +94,7 @@ export default function PricingSection({ t }: PricingSectionProps) {
                 </h3>
                 <div className="flex items-baseline justify-center">
                   <span className="text-4xl font-bold text-gray-900 dark:text-white">
-                    ${plan.price}
+                    ₼{plan.price}
                   </span>
                   <span className="text-gray-600 dark:text-gray-400 ml-2">
                     / {plan.period}
