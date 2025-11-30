@@ -15,7 +15,9 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 
 // Lazy load heavy components to improve initial page load
 const GoogleReviews = lazy(() => import("@/components/GoogleReviews"));
-const AboutCertificates = lazy(() => import("@/components/about/AboutCertificates"));
+const AboutCertificates = lazy(
+  () => import("@/components/about/AboutCertificates")
+);
 const OtherCarsSection = lazy(() => import("@/components/OtherCarsSection"));
 const GoogleMapIframe = lazy(() => import("@/components/GoogleMapIframe"));
 
@@ -101,8 +103,10 @@ export default function Home() {
         t={t}
       />
 
-      {/* Hero */}
-      <HeroSection t={t} />
+      {/* Hero - Desktop Only (gizli mobilde) */}
+      <div className="hidden md:block">
+        <HeroSection t={t} />
+      </div>
 
       {/* Features */}
       <section className="py-16 bg-white/70 dark:bg-brand-dark/70">

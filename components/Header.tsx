@@ -152,10 +152,10 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-header transition-colors duration-200 ${
+      className={`fixed top-0 left-0 right-0 w-full z-header transition-all duration-200 ${
         isScrolled
-          ? "bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-[#2a2a2a]/20"
-          : "bg-transparent"
+          ? "bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-[#2a2a2a]/20 pt-2.5 md:pt-0"
+          : "bg-transparent pt-0"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,7 +183,7 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
             ].map((item) => (
               <button
                 key={item.href}
-                onClick={() => window.location.href = item.href}
+                onClick={() => (window.location.href = item.href)}
                 className={`relative group font-semibold tracking-wide cursor-pointer ${
                   isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white"
                 }`}
@@ -206,7 +206,7 @@ const Header: FC<HeaderProps> = ({ currentLang, handleLanguageChange, t }) => {
           {/* Controls */}
           <div className="hidden md:flex items-center ">
             <button
-              onClick={() => window.location.href = "/favorites"}
+              onClick={() => (window.location.href = "/favorites")}
               className={`relative inline-flex items-center cursor-pointer ${
                 isScrolled ? "text-gray-500 dark:text-gray-300" : "text-white"
               } hover:text-brand-gold dark:hover:text-brand-gold`}

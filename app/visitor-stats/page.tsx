@@ -13,17 +13,14 @@ export default function VisitorStatsPage() {
 
   const loadVisitorCount = async () => {
     try {
-      // Supabase-dən məlumat götür
       const response = await fetch('/api/visitor-count');
       const data = await response.json();
 
       let finalCount = 0;
 
-      if (data.use_real && data.fake_count) {
-        // Supabase-dən gələn rəqəm
-        finalCount = data.fake_count;
+      if (data.active && data.count) {
+        finalCount = data.count;
       } else {
-        // Avtomatik fake rəqəm
         const today = new Date().toDateString();
         const seed = today
           .split("")
@@ -46,13 +43,12 @@ export default function VisitorStatsPage() {
       }, 50);
     } catch (error) {
       console.error("Error loading visitor count:", error);
-      // Xəta olarsa, fake rəqəm göstər
       const today = new Date().toDateString();
       const seed = today
         .split("")
         .reduce((acc, char) => acc + char.charCodeAt(0), 0);
-      const fakeCount = 15 + (seed % 36);
-      setCount(fakeCount);
+      const defaultCount = 15 + (seed % 36);
+      setCount(defaultCount);
       setLoading(false);
     }
   };

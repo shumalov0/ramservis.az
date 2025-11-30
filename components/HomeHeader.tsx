@@ -37,10 +37,10 @@ const HomeHeader: FC<HomeHeaderProps> = ({ currentLang, handleLanguageChange, t 
 
   return (
     <header
-      className={`absolute top-0 w-full z-50 transition-colors duration-200 ${
+      className={`absolute top-0 left-0 right-0 w-full z-50 transition-all duration-200 ${
         isScrolled
-          ? "bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-[#2a2a2a]/20"
-          : "bg-transparent"
+          ? "bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-[#2a2a2a]/20 pt-2.5 md:pt-0"
+          : "bg-transparent pt-0"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

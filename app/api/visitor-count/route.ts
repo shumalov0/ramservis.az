@@ -10,33 +10,32 @@ export async function GET() {
   try {
     const { data, error } = await supabase
       .from("visitor_settings")
-      .select("fake_count, use_real")
+      .select("base_count, is_active")
       .single();
 
     if (error) throw error;
 
-    // Məlumatı qaytarırıq (əvvəl null qaytarırdı!)
     return NextResponse.json({
-      fake_count: data?.fake_count || null,
-      use_real: data?.use_real || false,
+      count: data?.base_count || null,
+      active: data?.is_active || false,
     });
   } catch (error) {
     console.error("Supabase GET error:", error);
     return NextResponse.json({
-      fake_count: null,
-      use_real: false,
+      count: null,
+      active: false,
     });
   }
 }
 
 export async function POST(request: Request) {
   try {
-    const { fake_count } = await request.json();
+    const { count } = await request.json();
 
     const { error } = await supabase.from("visitor_settings").upsert({
       id: 1,
-      fake_count,
-      use_real: true,
+      base_count: count,
+      is_active: true,
       updated_at: new Date().toISOString(),
     });
 

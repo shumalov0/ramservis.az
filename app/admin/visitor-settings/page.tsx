@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function VisitorSettingsPage() {
-  const [fakeCount, setFakeCount] = useState<string>("");
+  const [visitorCount, setVisitorCount] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -120,12 +120,12 @@ export default function VisitorSettingsPage() {
       const response = await fetch("/api/visitor-count", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fake_count: parseInt(fakeCount) }),
+        body: JSON.stringify({ count: parseInt(visitorCount) }),
       });
 
       if (response.ok) {
         setMessage("✅ Rəqəm uğurla yeniləndi!");
-        setFakeCount("");
+        setVisitorCount("");
       } else {
         setMessage("❌ Xəta baş verdi!");
       }
@@ -183,7 +183,7 @@ export default function VisitorSettingsPage() {
             <ul className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
               <li>
                 • Heç bir rəqəm əlavə etməsən: Hər gün avtomatik 15-50 arası
-                fake rəqəm göstərir
+                rəqəm göstərir
               </li>
               <li>• Rəqəm əlavə etsən: Sənin yazdığın rəqəmi göstərir</li>
               <li>• Supabase-ə qoşulmalısan ki, rəqəm saxlansın</li>
@@ -193,14 +193,14 @@ export default function VisitorSettingsPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Fake Ziyarətçi Sayı
+                Ziyarətçi Sayı
               </label>
               <input
                 type="number"
                 min="1"
                 max="999"
-                value={fakeCount}
-                onChange={(e) => setFakeCount(e.target.value)}
+                value={visitorCount}
+                onChange={(e) => setVisitorCount(e.target.value)}
                 placeholder="Məsələn: 42"
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                 required
@@ -243,8 +243,8 @@ export default function VisitorSettingsPage() {
               <pre className="bg-blue-100 dark:bg-blue-800 p-3 rounded text-xs overflow-x-auto">
                 {`CREATE TABLE visitor_settings (
   id INT PRIMARY KEY DEFAULT 1,
-  fake_count INT,
-  use_real BOOLEAN DEFAULT false,
+  base_count INT,
+  is_active BOOLEAN DEFAULT false,
   updated_at TIMESTAMP DEFAULT NOW()
 );`}
               </pre>
