@@ -1,7 +1,5 @@
-
-import { Car } from 'lucide-react';
-import { Translation } from '@/lib/translations';
-import Image from 'next/image';
+import { Translation } from "@/lib/translations";
+import Image from "next/image";
 
 interface FooterProps {
   t: Translation;
@@ -48,7 +46,6 @@ interface FooterProps {
 
 // export default Footer;
 
-
 // components/Footer.tsx
 import { FC } from "react";
 import {
@@ -62,7 +59,7 @@ import {
   ArrowUp,
 } from "lucide-react";
 
-const Footer: FC<FooterProps> = ({ t }) =>{
+const Footer: FC<FooterProps> = ({ t }) => {
   return (
     <footer className="bg-brand-dark text-gray-300">
       {/* Top Contact Info */}
@@ -74,6 +71,8 @@ const Footer: FC<FooterProps> = ({ t }) =>{
           <div>
             <p className="text-sm font-semibold">{t.footerCallUs}</p>
             <p className="text-white">+994 70 700 44 44</p>
+            <p className="text-white">+994 70 246 46 01</p>
+            <p className="text-white">+994 12 511 32 44</p>
           </div>
         </div>
 
@@ -103,11 +102,15 @@ const Footer: FC<FooterProps> = ({ t }) =>{
         {/* Left Logo */}
         <div>
           <h2 className="text-3xl font-bold text-[#fbbf24] h-[110px] ">
-             <Image src='/icons/logosyellow.png' alt='footerimg' width={200} height={100} style={{ width: '50%', height: 'auto' }} />
+            <Image
+              src="/icons/logosyellow.png"
+              alt="footerimg"
+              width={200}
+              height={100}
+              style={{ width: "50%", height: "auto" }}
+            />
           </h2>
-          <p className="mt-4 text-gray-400 text-sm">
-            {t.footerDesc}
-          </p>
+          <p className="mt-4 text-gray-400 text-sm">{t.footerDesc}</p>
           <div className="flex space-x-3 mt-6">
             <a
               href="#"
@@ -136,27 +139,27 @@ const Footer: FC<FooterProps> = ({ t }) =>{
           <ul className="space-y-2 text-sm">
             <li>
               <a href="/about" className="hover:text-[#f5b754]">
-                 {t.aboutLink}
+                {t.aboutLink}
               </a>
             </li>
             <li>
               <a href="/cars" className="hover:text-[#f5b754]">
-                 {t.carsLink}
+                {t.carsLink}
               </a>
             </li>
             <li>
               <a href="/bus" className="hover:text-[#f5b754]">
-                 {t.busesLink}
+                {t.busesLink}
               </a>
             </li>
             <li>
               <a href="" className="hover:text-[#f5b754]">
-                 {t.carTypesLink}
+                {t.carTypesLink}
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-[#f5b754]">
-                 {t.faqLink}
+                {t.faqLink}
               </a>
             </li>
             <li>
@@ -170,9 +173,7 @@ const Footer: FC<FooterProps> = ({ t }) =>{
         {/* Subscribe */}
         <div>
           <h3 className="text-xl font-semibold mb-4">{t.subscribe}</h3>
-          <p className="text-sm text-gray-400 mb-4">
-            {t.subscribeDesc}
-          </p>
+          <p className="text-sm text-gray-400 mb-4">{t.subscribeDesc}</p>
           <form className="flex items-center rounded-full border border-[#f5b754] overflow-hidden">
             <input
               type="email"
@@ -192,7 +193,8 @@ const Footer: FC<FooterProps> = ({ t }) =>{
       {/* Bottom */}
       <div className="border-t border-[#2a2a2a] py-6 px-6 max-w-7xl mx-auto flex justify-between items-center text-sm text-gray-400">
         <p>
-          ©2025 <span className="text-[#fbbf24]">Ram Servis.</span> {t.allRightsReservedFooter}
+          ©2025 <span className="text-[#fbbf24]">Ram Servis.</span>{" "}
+          {t.allRightsReservedFooter}
         </p>
         <a
           href="#"
@@ -206,4 +208,3 @@ const Footer: FC<FooterProps> = ({ t }) =>{
 };
 
 export default Footer;
-

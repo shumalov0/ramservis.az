@@ -48,7 +48,7 @@ interface HeroSectionProps {
 
 const HeroSection: FC<HeroSectionProps> = ({ t }) => {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-between">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -67,14 +67,19 @@ const HeroSection: FC<HeroSectionProps> = ({ t }) => {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/40 dark:from-black/70 to-transparent"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto text-center relative z-10">
-        <h2 className="text-5xl font-bold text-white mb-6">
+      {/* Başlıq - Yuxarıda */}
+      <div className="max-w-7xl mx-auto text-center relative z-10 w-full pt-32 lg:pt-40">
+        <h2 className="text-5xl lg:text-6xl font-bold text-white">
           {t.heroTitle.split(" ").slice(0, -2).join(" ")}{" "}
           <span className="text-brand-gold">
             {t.heroTitle.split(" ").slice(-2).join(" ")}
           </span>
         </h2>
-        <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
+      </div>
+
+      {/* Subtitle - Aşağıda */}
+      <div className="max-w-7xl mx-auto text-center relative z-10 w-full pb-24 lg:pb-[400px]">
+        <p className="text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto">
           {t.heroSubtitle}
         </p>
       </div>

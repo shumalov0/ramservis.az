@@ -1,12 +1,10 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { useSearchParams } from "next/navigation";
 import FixedHeader from "@/components/FixedHeader";
 import Footer from "@/components/Footer";
 import { cars } from "@/lib/data";
 import { useTranslation } from "@/lib/translations";
-import { CarFilters } from "@/lib/types";
 import CarsSection from "@/components/CarsSection";
 // Removed unused import
 import { useDebouncedValue } from "@/hooks/use-debounced-value";
@@ -20,7 +18,6 @@ import FilterSidebar from "@/components/FilterSidebar";
 export default function CarsPage() {
   const [currentLang, setCurrentLang] = useState("az");
   const t = useTranslation(currentLang);
-  const params = useSearchParams();
 
   // Calculate default price range from cars data
   const defaultPriceRange = useMemo<[number, number]>(() => {
@@ -55,20 +52,7 @@ export default function CarsPage() {
     }
   }, []);
 
-  useEffect(() => {
-    // if navigated with class from categories, preset class filter
-    const cls = params?.get("class");
-    if (cls) setCarClass(cls);
-
-    // if navigated with category from dropdown, preset category filter
-    const category = params?.get("category");
-    if (category) {
-      setFilters({
-        ...filters,
-        category: [category],
-      });
-    }
-  }, [params, filters, setCarClass, setFilters]);
+  // URL parameters are now handled by the useCarFilters hook
 
   const handleLanguageChange = (lang: string) => {
     setCurrentLang(lang);

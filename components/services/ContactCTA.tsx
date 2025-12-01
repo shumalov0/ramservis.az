@@ -13,7 +13,7 @@ export default function ContactCTA({ t }: ContactCTAProps) {
     {
       icon: Phone,
       title: t.callUs || 'Zəng Edin',
-      value: '+994 50 123 45 67',
+      value: '+994 70 700 44 44 / +994 70 246 46 01 / +994 12 511 32 44',
       action: 'tel:+994707004444',
       color: 'bg-brand-gold'
     },

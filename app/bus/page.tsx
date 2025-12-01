@@ -414,9 +414,11 @@ Thank you! 🙏` :
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                   {t.busCallUs || 'Bizə Zəng Edin'}
                 </h3>
-                <p className="text-brand-gold font-medium">
-                  +994 70 700 44 44
-                </p>
+                <div className="space-y-1">
+                  <p className="text-brand-gold font-medium">+994 70 700 44 44</p>
+                  <p className="text-brand-gold font-medium">+994 70 246 46 01</p>
+                  <p className="text-brand-gold font-medium">+994 12 511 32 44</p>
+                </div>
               </div>
             </a>
 
@@ -433,9 +435,11 @@ Thank you! 🙏` :
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                   {t.busWhatsappUs || 'WhatsApp Yazın'}
                 </h3>
-                <p className="text-green-600 dark:text-green-400 font-medium">
-                  +994 70 700 44 44
-                </p>
+                <div className="space-y-1">
+                  <p className="text-green-600 dark:text-green-400 font-medium">+994 70 700 44 44</p>
+                  <p className="text-green-600 dark:text-green-400 font-medium">+994 70 246 46 01</p>
+                  <p className="text-green-600 dark:text-green-400 font-medium">+994 12 511 32 44</p>
+                </div>
               </div>
             </a>
           </div>

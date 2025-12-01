@@ -1931,7 +1931,7 @@ export const enhancedBuses: EnhancedBus[] = [
     transmission: "Avtomat",
     engineSize: "9.3L",
     capacity: 52,
-    dailyPrice: 320,
+    dailyPrice: 450,
     weeklyPrice: 300,
     monthlyPrice: 270,
     deposit: 600,

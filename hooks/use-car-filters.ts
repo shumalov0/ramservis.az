@@ -30,7 +30,10 @@ export function useCarFilters(
   const searchParams = useSearchParams();
   
   // Initialize state from URL parameters
-  const [filters, setFiltersState] = useState<CarFilters>(() => {
+  const [filters, setFiltersState] = useState<CarFilters>({});
+  
+  // Sync filters with URL on mount and when searchParams change
+  useEffect(() => {
     const urlFilters: CarFilters = {};
     
     // Parse categories from URL
@@ -71,8 +74,8 @@ export function useCarFilters(
       urlFilters.year = [parseInt(minYear), parseInt(maxYear)];
     }
     
-    return urlFilters;
-  });
+    setFiltersState(urlFilters);
+  }, [searchParams]);
   
   const [search, setSearchState] = useState(() => searchParams.get('search') || '');
   const [priceRange, setPriceRangeState] = useState<[number, number]>(() => {

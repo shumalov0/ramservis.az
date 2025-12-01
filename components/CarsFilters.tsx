@@ -70,9 +70,10 @@ const CarsFilters = memo(function CarsFilters({
   }, [cars]);
 
   const handleCategoryChange = useCallback((category: string, checked: boolean) => {
+    const currentCategories = filters.category || [];
     const newCategories = checked 
-      ? [...(filters.category || []), category]
-      : (filters.category || []).filter(c => c !== category);
+      ? [...currentCategories, category]
+      : currentCategories.filter(c => c !== category);
     
     onFiltersChange({
       ...filters,
@@ -81,9 +82,10 @@ const CarsFilters = memo(function CarsFilters({
   }, [filters, onFiltersChange]);
 
   const handleFuelTypeChange = useCallback((fuelType: string, checked: boolean) => {
+    const currentFuelTypes = filters.fuelType || [];
     const newFuelTypes = checked 
-      ? [...(filters.fuelType || []), fuelType]
-      : (filters.fuelType || []).filter(f => f !== fuelType);
+      ? [...currentFuelTypes, fuelType]
+      : currentFuelTypes.filter(f => f !== fuelType);
     
     onFiltersChange({
       ...filters,
@@ -92,9 +94,10 @@ const CarsFilters = memo(function CarsFilters({
   }, [filters, onFiltersChange]);
 
   const handleTransmissionChange = useCallback((transmission: string, checked: boolean) => {
+    const currentTransmissions = filters.transmission || [];
     const newTransmissions = checked 
-      ? [...(filters.transmission || []), transmission]
-      : (filters.transmission || []).filter(t => t !== transmission);
+      ? [...currentTransmissions, transmission]
+      : currentTransmissions.filter(t => t !== transmission);
     
     onFiltersChange({
       ...filters,
@@ -103,9 +106,10 @@ const CarsFilters = memo(function CarsFilters({
   }, [filters, onFiltersChange]);
 
   const handleFeatureChange = useCallback((feature: string, checked: boolean) => {
+    const currentFeatures = filters.features || [];
     const newFeatures = checked 
-      ? [...(filters.features || []), feature]
-      : (filters.features || []).filter(f => f !== feature);
+      ? [...currentFeatures, feature]
+      : currentFeatures.filter(f => f !== feature);
     
     onFiltersChange({
       ...filters,
@@ -113,11 +117,22 @@ const CarsFilters = memo(function CarsFilters({
     });
   }, [filters, onFiltersChange]);
 
-  const clearFilter = useCallback((filterType: keyof CarFilters) => {
-    onFiltersChange({
-      ...filters,
-      [filterType]: undefined
-    });
+  const clearFilter = useCallback((filterType: keyof CarFilters, value?: string) => {
+    if (value && Array.isArray(filters[filterType])) {
+      // Remove specific value from array filter
+      const currentValues = filters[filterType] as string[];
+      const newValues = currentValues.filter(v => v !== value);
+      onFiltersChange({
+        ...filters,
+        [filterType]: newValues.length > 0 ? newValues : undefined
+      });
+    } else {
+      // Clear entire filter
+      onFiltersChange({
+        ...filters,
+        [filterType]: undefined
+      });
+    }
   }, [filters, onFiltersChange]);
 
   return (
@@ -144,7 +159,7 @@ const CarsFilters = memo(function CarsFilters({
             <Badge key={category} variant="outline" className="text-xs">
               {category}
               <button 
-                onClick={() => clearFilter('category')}
+                onClick={() => clearFilter('category', category)}
                 className="ml-1 hover:text-red-500"
               >
                 <X className="h-3 w-3" />
@@ -155,7 +170,7 @@ const CarsFilters = memo(function CarsFilters({
             <Badge key={fuel} variant="outline" className="text-xs">
               {fuel}
               <button 
-                onClick={() => clearFilter('fuelType')}
+                onClick={() => clearFilter('fuelType', fuel)}
                 className="ml-1 hover:text-red-500"
               >
                 <X className="h-3 w-3" />
@@ -166,7 +181,7 @@ const CarsFilters = memo(function CarsFilters({
             <Badge key={trans} variant="outline" className="text-xs">
               {trans}
               <button 
-                onClick={() => clearFilter('transmission')}
+                onClick={() => clearFilter('transmission', trans)}
                 className="ml-1 hover:text-red-500"
               >
                 <X className="h-3 w-3" />

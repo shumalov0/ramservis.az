@@ -89,12 +89,26 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
                       {t.phone}
                     </h3>
-                    <a 
-                      href={`tel:${contactInfo.phone}`}
-                      className="text-[#f5b754] hover:text-yellow-400 font-medium"
-                    >
-                      {contactInfo.phone}
-                    </a>
+                    <div className="space-y-1">
+                      <a 
+                        href="tel:+994707004444"
+                        className="block text-[#f5b754] hover:text-yellow-400 font-medium"
+                      >
+                        +994 70 700 44 44
+                      </a>
+                      <a 
+                        href="tel:+994702464601"
+                        className="block text-[#f5b754] hover:text-yellow-400 font-medium"
+                      >
+                        +994 70 246 46 01
+                      </a>
+                      <a 
+                        href="tel:+994125113244"
+                        className="block text-[#f5b754] hover:text-yellow-400 font-medium"
+                      >
+                        +994 12 511 32 44
+                      </a>
+                    </div>
                   </div>
                 </div>
 
