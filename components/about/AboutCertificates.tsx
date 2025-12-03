@@ -158,8 +158,8 @@ export default function AboutCertificates({ t }: AboutCertificatesProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-zinc-900/50">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gray-50 dark:bg-zinc-900/50 overflow-hidden">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <motion.div
@@ -203,10 +203,10 @@ export default function AboutCertificates({ t }: AboutCertificatesProps) {
               </div>
 
               {/* Carousel */}
-              <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex">
+              <div className="overflow-hidden max-w-full" ref={emblaRef}>
+                <div className="flex -ml-4">
                   {certificates.map((cert, index) => (
-                    <div key={index} className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_25%] pl-4">
+                    <div key={index} className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_25%] pl-4">
                       <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -266,11 +266,11 @@ export default function AboutCertificates({ t }: AboutCertificatesProps) {
           </div>
 
           {/* Achievements */}
-          <div>
+          <div className="overflow-hidden">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               {t.awardsAndAchievements}
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-full">
               {achievements.map((achievement, index) => (
                 <motion.div
                   key={index}

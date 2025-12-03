@@ -108,6 +108,27 @@ export default function RootLayout({
           </>
         )}
 
+        {/* Disable Right Click and Inspect */}
+        <Script id="disable-right-click" strategy="afterInteractive">
+          {`
+            // Disable right-click
+            document.addEventListener('contextmenu', (e) => e.preventDefault());
+            
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            document.addEventListener('keydown', (e) => {
+              if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+                (e.ctrlKey && e.key === 'U')
+              ) {
+                e.preventDefault();
+              }
+            });
+          `}
+        </Script>
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

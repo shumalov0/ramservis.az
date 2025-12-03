@@ -11,6 +11,12 @@ export interface Translation {
   // Hero Section
   heroTitle: string;
   heroSubtitle: string;
+  heroPremiumBadge: string;
+  heroMainTitle: string;
+  heroCarName: string;
+  heroPrice: string;
+  heroViewDetails: string;
+  heroRentNow: string;
   flexibleBooking: string;
   flexibleBookingDesc: string;
   varietyChoice: string;
@@ -506,6 +512,12 @@ export const translations: Record<string, Translation> = {
     // Hero Section
     heroTitle: 'Keyfiyyətli Maşın İcarəsi',
     heroSubtitle: 'Geniş maşın parkımızdan istədiyiniz nəqliyyat vasitəsini seçin və rahat səyahət edin. Peşəkar xidmət və əlverişli qiymətlərlə sizə xidmət edirik.',
+    heroPremiumBadge: 'PREMİUM',
+    heroMainTitle: 'Rental Car',
+    heroCarName: '',
+    heroPrice: '40₼-dan başlayan qiymətlərlə',
+    heroViewDetails: 'Ətraflı Bax',
+    heroRentNow: 'İndi İcarəyə Götür',
     flexibleBooking: 'Çevik Rezervasiya',
     flexibleBookingDesc: 'Online və ya telefon vasitəsilə asan rezervasiya',
     varietyChoice: 'Müxtəlif Seçim',
@@ -1000,6 +1012,12 @@ export const translations: Record<string, Translation> = {
     // Hero Section
     heroTitle: 'Quality Car Rental',
     heroSubtitle: 'Choose your preferred vehicle from our extensive fleet and travel comfortably. We serve you with professional service and affordable prices.',
+    heroPremiumBadge: 'PREMIUM',
+    heroMainTitle: 'Rental Car',
+    heroCarName: '',
+    heroPrice: 'Starting from 40₼',
+    heroViewDetails: 'View Details',
+    heroRentNow: 'Rent Now',
     flexibleBooking: 'Flexible Booking',
     flexibleBookingDesc: 'Easy reservation online or by phone',
     varietyChoice: 'Variety of Choice',
@@ -1494,6 +1512,12 @@ export const translations: Record<string, Translation> = {
     // Hero Section
     heroTitle: 'Качественная Аренда Автомобилей',
     heroSubtitle: 'Выберите подходящий автомобиль из нашего обширного парка и путешествуйте с комфортом. Мы обслуживаем вас профессиональным сервисом и доступными ценами.',
+    heroPremiumBadge: 'ПРЕМИУМ',
+    heroMainTitle: 'Rental Car',
+    heroCarName: '',
+    heroPrice: 'Цены от 40₼',
+    heroViewDetails: 'Подробнее',
+    heroRentNow: 'Арендовать',
     flexibleBooking: 'Гибкое Бронирование',
     flexibleBookingDesc: 'Легкое бронирование онлайн или по телефону',
     varietyChoice: 'Разнообразный Выбор',
@@ -1988,6 +2012,12 @@ export const translations: Record<string, Translation> = {
     // Hero Section
     heroTitle: 'تأجير سيارات عالي الجودة',
     heroSubtitle: 'اختر المركبة المفضلة لديك من أسطولنا الواسع وسافر براحة. نخدمك بخدمة احترافية وأسعار معقولة.',
+    heroPremiumBadge: 'بريميوم',
+    heroMainTitle: 'Rental Car',
+    heroCarName: '',
+    heroPrice: 'أسعار تبدأ من 40₼',
+    heroViewDetails: 'عرض التفاصيل',
+    heroRentNow: 'استأجر الآن',
     flexibleBooking: 'حجز مرن',
     flexibleBookingDesc: 'حجز سهل عبر الإنترنت أو عبر الهاتف',
     varietyChoice: 'تنوع في الاختيار',

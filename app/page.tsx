@@ -103,10 +103,8 @@ export default function Home() {
         t={t}
       />
 
-      {/* Hero - Desktop Only (gizli mobilde) */}
-      <div className="hidden md:block">
-        <HeroSection t={t} />
-      </div>
+      {/* Hero */}
+      <HeroSection t={t} />
 
       {/* Features */}
       <section className="py-16 bg-white/70 dark:bg-brand-dark/70">
